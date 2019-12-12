@@ -1,6 +1,6 @@
 body
 {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
   background-color: black;
@@ -43,7 +43,7 @@ p
   font-size: 18px;
   opacity: 70%;
   text-align: left;
-  margin-left: 50%;
+  margin-left: 65%;
   margin-top: 0;
   margin-bottom: 60px;
 }
