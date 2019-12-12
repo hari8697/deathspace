@@ -1,16 +1,33 @@
 body
 {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .video
 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: fill;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  right: 0; bottom: 0;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto; height: auto;
   pointer-events: none;
+  background-size: cover;
+  z-index: 0;
+}
+
+.nav
+{
+  position: absolute;
+  color: LightGrey;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 1;
+  opacity: 70%;
+  top: 90%;
+  left: 44%;
 }
