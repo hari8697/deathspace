@@ -4,34 +4,32 @@ body
   margin: 0;
   padding: 0;
   background-color: black;
+  overflow-x: hidden;
 }
 
 .video
 {
-  object-fit: cover;
   min-width: 100%;
   min-height: 100%;
   width: 1920px; height: 1080px;
   pointer-events: none;
-  background-size: cover;
-  z-index: 0;
-  transform: translate(0, -12%);
-  background-position: center;
+  object-position: center;
+  object-fit: cover;
+  margin-top: 60px;
 }
 
 .video h3
 {
-  position: absolute;
   color: LightGrey;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 2px;
   text-align: center;
-  z-index: 1;
   opacity: 70%;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  background-position: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
 p
