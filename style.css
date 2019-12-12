@@ -8,18 +8,18 @@ body
 
 .video
 {
-  position: fixed;
-  right: 0; bottom: 0;
   object-fit: cover;
   min-width: 100%;
   min-height: 100%;
-  width: auto; height: auto;
+  width: 1920px; height: 1080px;
   pointer-events: none;
   background-size: cover;
   z-index: 0;
+  transform: translate(0, -12%);
+  background-position: center;
 }
 
-.nav
+.video h3
 {
   position: absolute;
   color: LightGrey;
@@ -30,5 +30,20 @@ body
   z-index: 1;
   opacity: 70%;
   top: 90%;
-  left: 44%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+p
+{
+  width: 500px;
+  height: auto;
+  min-width: 200px;
+  color: LightGrey;
+  font-size: 18px;
+  opacity: 70%;
+  text-align: left;
+  margin-left: 50%;
+  margin-top: 0;
+  margin-bottom: 60px;
 }
