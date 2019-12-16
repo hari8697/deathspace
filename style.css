@@ -7,7 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 .s1{
-  background-color: #262626;
+  background-color: black;
   height: 100vh;
 }
 .menu{
@@ -19,13 +19,14 @@ html {
 .menu a{
   background-color: transparent;
   position: fixed;
-  left: 10vh;
+  left: 8vw;
   z-index: 5;
 }
 .menu .logo-top{
-  left: 15vh;
+  margin-left: 150px;
   top: 2vh;
   opacity: 1;
+  transform: translateX(-50%);
 }
 .title{
   background-color: #262626;
@@ -43,7 +44,7 @@ html {
 }
 .stick{
   height: 500vh;
-  background-color: #262626;
+  background-color: black;
 }
 .nav{
   position: -webkit-sticky;
@@ -51,7 +52,7 @@ html {
   top: 0;
   height: 8vh;
   z-index: 2;
-  background-color: #262626;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,17 +74,17 @@ html {
 
 .s2{
   background-color: #262626;
+  height: 100vh;
 }
 
 p
 {
-  width: 500px;
-  height: 100vh;
+  width: 50%;
   min-width: 200px;
   color: #7E7E7E;
   font-size: 18px;
   opacity: 70%;
-  margin-top: 50px;
   text-align: left;
-  margin-top: 100px;
+  padding-top: 5vh;
+  padding-left: 20vh;
 }
