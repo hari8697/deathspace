@@ -81,9 +81,15 @@ t1.to(".one", 0.3, {
 .reverse();
 
 $(document).on("click", ".toggle-btn", function() {
+  if (t1.reversed()) {
+    $('.menu-hidden').css("pointer-events", "all");
+  } else {
+    $('.menu-hidden').css("pointer-events", "none");
+  }
   t1.reversed(!t1.reversed());
 });
 
 $(document).on("click", ".data a, .menu-hidden", function() {
   t1.reversed(!t1.reversed());
+  $('.menu-hidden').css("pointer-events", "none");
 });

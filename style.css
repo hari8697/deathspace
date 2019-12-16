@@ -31,10 +31,11 @@
    .menu-hidden{
      z-index: 4;
      position: fixed;
-     background: rgba(0, 0, 0, 0.9);
+     background: rgba(0, 0, 0, 0.85);
      height: 100vh;
      width: 100%;
      top: -100%;
+     pointer-events: none;
    }
    .title{
      height: 84vh;
