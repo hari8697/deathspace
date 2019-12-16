@@ -10,16 +10,27 @@
 <body>
   <div class="s1">
     <div class="menu">
-      <a href="">
-        <img src="img/menu.svg" alt="">
-      </a>
+      <div class="toggle-btn">
+        <span class="one"></span>
+        <span class="two"></span>
+      </div>
       <a href="" class="logo-top">
         <img src="img/logo-large.svg" alt="">
       </a>
     </div>
+    <div class="menu-hidden">
+      <div class="data">
+        <ul>
+          <li>Home</li>
+          <li><a href="#s2">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="title" id="button">
       <div class="video">
-        <video data-keepplaying autoplay muted id="myvideo">
+        <video autoplay muted id="myvideo">
           <source src="./img/video.mp4" type="video/mp4" poster="./img/sat.png">
         </video>
       </div>
@@ -39,8 +50,14 @@
         aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript">
+
+
+  </script>
 </body>
 
 </html>
