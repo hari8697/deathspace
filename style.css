@@ -1,47 +1,89 @@
-body
-{
-  font-family: 'Helvetica', sans-serif;
+*{
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black;
-  overflow-x: hidden;
 }
-
-.video
-{
-  min-width: 100%;
-  min-height: 100%;
-  width: 1920px; height: 1080px;
-  pointer-events: none;
-  object-position: center;
+html {
+  scroll-behavior: smooth;
+}
+.s1{
+  background-color: #262626;
+  height: 100vh;
+}
+.menu{
+  background-color: transparent;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+.menu a{
+  background-color: transparent;
+  position: fixed;
+  left: 10vh;
+  z-index: 5;
+}
+.menu .logo-top{
+  left: 15vh;
+  top: 2vh;
+  opacity: 1;
+}
+.title{
+  background-color: #262626;
+  height: 84vh;
+}
+.video{
+  height: 100%;
+}
+.video video{
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-top: 60px;
+  max-height: 100%;
+  pointer-events: none;
+}
+.stick{
+  height: 500vh;
+  background-color: #262626;
+}
+.nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 8vh;
+  z-index: 2;
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(66, 66, 66, 100);
 }
 
-.video h3
+.nav img, h3
 {
-  color: LightGrey;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  color: #7E7E7E;
+  font-size: 24px;
+  font-weight: 400;
   text-align: center;
-  opacity: 70%;
-  background-position: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  height: 50%;
+}
 
+.nav h3{
+  margin-left: 1vh;
+}
+
+.s2{
+  background-color: #262626;
 }
 
 p
 {
   width: 500px;
-  height: auto;
+  height: 100vh;
   min-width: 200px;
-  color: LightGrey;
+  color: #7E7E7E;
   font-size: 18px;
   opacity: 70%;
+  margin-top: 50px;
   text-align: left;
-  margin-left: 65%;
-  margin-top: 0;
-  margin-bottom: 60px;
+  margin-top: 100px;
 }

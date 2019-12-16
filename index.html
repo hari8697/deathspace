@@ -1,23 +1,46 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
+  <meta charset="utf-8">
   <title>Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <section>
-    <div class="video">
-      <video autoplay muted id="myvideo">
-        <source src="video.mp4" type="video/mp4">
-      </video>
-      <h3>Scroll to continue</h3>
+  <div class="s1">
+    <div class="menu">
+      <a href="">
+        <img src="img/menu.svg" alt="">
+      </a>
+      <a href="" class="logo-top">
+        <img src="img/logo-large.svg" alt="">
+      </a>
     </div>
-    <div class="nav">
+    <div class="title" id="button">
+      <div class="video">
+        <video data-keepplaying autoplay muted id="myvideo">
+          <source src="./img/video.mp4" type="video/mp4" poster="./img/sat.png">
+        </video>
+      </div>
     </div>
-  </section>
-  <section>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </section>
-  <script src="app.js"></script>
+    <div class="stick">
+      <div class="nav">
+        <img src="img/mouse.svg" alt="">
+        <h3>Scroll to continue</h3>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="s2">
+    <div class="lol">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
 </body>
+
+</html>
