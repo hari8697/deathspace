@@ -3,12 +3,13 @@
    ============= */
 
    *{
-     font-family: 'Segoe UI', sans-serif;
+     font-family: 'Open Sans', sans-serif;
      margin: 0;
      padding: 0;
    }
    html {
      scroll-behavior: smooth;
+     background: black;
    }
 
 /* =============
@@ -39,7 +40,7 @@
    }
    .title{
      height: 84vh;
-     background-image: url("img/sat.png");
+     /* background-image: url("img/sat.png"); */
      background-position: center;
      background-size: auto;
    }
@@ -53,7 +54,6 @@
    }
    .nav{
      position: -webkit-sticky;
-
      position: sticky;
      top: 0;
      height: 8vh;
@@ -117,7 +117,6 @@
      color: #7E7E7E;
      font-size: 24px;
      font-weight: 400;
-     text-align: center;
      height: 50%;
    }
    .nav h3{
@@ -127,9 +126,14 @@
 /* =============
    Typography
    ============= */
+
     @font-face {
-      font-family: Avenir;
+      font-family: 'Avenir';
       src: url('res/Avenir-Roman.ttf');
+    }
+    @font-face {
+      font-family: 'Consolas';
+      src: url('res/CONSOLA.ttf');
     }
     .data{
       padding: 8em 0 0 8vw;
@@ -140,7 +144,8 @@
    .data a{
      text-decoration: none;
      color: #fff;
-     font-family: Avenir;
+     font-family: Montserrat;
+     font-weight: 400;
      opacity: 75%;
    }
    .data a:hover {
@@ -151,7 +156,8 @@
    }
    .data li:first-child{
      color: grey;
-     font-family: Avenir;
+     font-family: Montserrat;
+     font-style: Italic;
      font-size: 1.5em
    }
 
@@ -159,14 +165,47 @@
      color: #fff;
      font-size: 2.5em;
    }
+   .s2{
+     height: 50vh;
+     width: 100%;
+     margin-top: 15vh;
+     display: grid;
+     grid-template-columns: 1fr 4% 1fr;
+     grid-template-rows: 1fr 1fr 2fr;
+     grid-template-areas: "title . para"
+     "sub . para"
+     ". . para";
+   }
+   .s2 h1{
+     color: #AEAEAE;
+     text-align: right;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 2.8em;
+     font-style: italic;
+     font-weight: 800;
+     width: 100%;
+     max-width: 300px;
+     grid-area: title;
+     justify-self: end;
+   }
+   .s2 h3{
+     color: #AEAEAE;
+     font-size: 1.3em;
+     width: 100%;
+     max-width: 250px;
+     text-align: right;
+     font-style: italic;
+     grid-area: sub;
+     justify-self: end;
+
+   }
    p
    {
+     color: #AEAEAE;
      width: 30%;
      min-width: 300px;
-     color: #7E7E7E;
      font-size: 18px;
      opacity: 70%;
      text-align: left;
-     padding-top: 20vh;
-     padding-left: 20vh;
+     grid-area: para;
    }
