@@ -52,21 +52,17 @@ var t1 = new TimelineMax({
 
 t1.to(".one", 0.3, {
   y:6,
-  ease: Expo.easeInOut
 }, 0)
 .to(".two", 0.3, {
   y:-6,
-  ease: Expo.easeInOut
 }, 0)
 .to(".one", 0.5, {
   y: 6,
   rotation: 45,
-  ease: Expo.easeInOut
 })
 .to(".two", 0.5, {
   y: -6,
   rotation: -45,
-  ease: Expo.easeInOut,
   delay: -0.5
 })
 .staggerFrom(".menu-hidden ul li", 2, {
