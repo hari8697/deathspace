@@ -1,0 +1,128 @@
+.s4{
+  display: grid;
+  grid-template-columns: .2fr 1fr .2fr;
+  grid-template-rows: .5fr 4.5rem 1fr .5fr;
+  grid-template-areas: ". . ."
+    "text text text"
+    ". icons ."
+    ". . .";
+  }
+
+.s4 h1 {
+  color: rgba(174, 174, 174, 1);
+  font-size: 4.5rem;
+  font-family: 'Avenir-Black', sans-serif;
+  margin-bottom: 3.75rem;
+  margin-left: 23vw;
+  grid-area: text;
+}
+
+.s4 ul{
+  margin-top: 3.75rem;
+  grid-area: icons;
+}
+.s4 li {
+  display: inline-block;
+}
+
+.s4 li+li {
+  margin-left: 7vw;
+}
+
+.dot{
+  height: 120px;
+  width: 120px;
+  border: 1.5px solid #5E0ED8;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: all 150ms ease-in-out;
+}
+
+#think{
+  background-image: url(./img/process-icons/think.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 150ms ease-in-out;
+}
+
+#create{
+  background-image: url(./img/process-icons/create.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 150ms ease-in-out;
+}
+
+#iterate{
+  background-image: url(./img/process-icons/iterate.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 150ms ease-in-out;
+}
+
+#develop{
+  background-image: url(./img/process-icons/develop.svg);
+  background-position: 52% 52%;
+  background-repeat: no-repeat;
+  transition: all 150ms ease-in-out;
+}
+
+#deliver{
+  background-image: url(./img/process-icons/deliver.svg);
+  background-position: 47% 50%;
+  background-repeat: no-repeat;
+  transition: all 150ms ease-in-out;
+}
+
+.container:hover .dot {
+  background-color: #5E0ED8;
+  cursor: pointer;
+}
+.container:hover {
+  cursor: pointer;
+}
+
+.container:hover #think{
+  background-image: url(./img/process-icons-white/think.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.container:hover #create{
+  background-image: url(./img/process-icons-white/create.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.container:hover #iterate{
+  background-image: url(./img/process-icons-white/iterate.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.container:hover #develop{
+  background-image: url(./img/process-icons-white/develop.svg);
+  background-position: 52% 52%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.container:hover #deliver{
+  background-image: url(./img/process-icons-white/deliver.svg);
+  background-position: 47% 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.s4 li a {
+  display: block;
+  margin-top: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #AEAEAE;
+  font-family:  'Futura', sans-serif;
+  font-size: 2.18rem;
+}
