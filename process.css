@@ -36,42 +36,42 @@
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 #think{
   background-image: url(./img/process-icons/think.svg);
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 #create{
   background-image: url(./img/process-icons/create.svg);
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 #iterate{
   background-image: url(./img/process-icons/iterate.svg);
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 #develop{
   background-image: url(./img/process-icons/develop.svg);
   background-position: 52% 52%;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 #deliver{
   background-image: url(./img/process-icons/deliver.svg);
   background-position: 47% 50%;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 
 .container:hover .dot {
