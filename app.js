@@ -39,11 +39,11 @@ $(document).ready(function() {
     }
   });
 
-  $(window).load(function() {
-    $('html, body').animate({
-      scrollTop: $(".s1").offset().top
-    }, 0);
-  });
+  // $(window).load(function() {
+  //   $('html, body').animate({
+  //     scrollTop: $(".s1").offset().top
+  //   }, 0);
+  // });
 });
 
 var t1 = new TimelineMax({

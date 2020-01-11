@@ -16,6 +16,9 @@
 /* =============
    Sections
    ============= */
+   .preload {
+     display: none;
+   }
   .s1 {
     background-color: black;
     height: 100vh;
