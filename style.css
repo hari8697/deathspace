@@ -59,7 +59,7 @@
   }
 
   .stick {
-    height: 500vh;
+    height: 350vh;
   }
 
   .nav {
@@ -213,13 +213,13 @@
   @font-face {
     font-family: 'Avenir';
     font-style: normal;
-    src: url('res/Avenir-Medium.ttf');
+    src: url('res/Avenir-Light.ttf');
   }
 
   @font-face {
     font-family: 'Avenir';
     font-style: italic;
-    src: url('res/Avenir-MediumOblique.ttf');
+    src: url('res/Avenir-LightOblique.ttf');
   }
 
   @font-face {

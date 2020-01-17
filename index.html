@@ -1,189 +1,261 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="process.css" />
+    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,800|PT+Mono|Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="process.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|PT+Mono|Roboto&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <div class="preload">
-    <img src="./img/process-icons-white/think.svg" alt="">
-    <img src="./img/process-icons-white/create.svg" alt="">
-    <img src="./img/process-icons-white/iterate.svg" alt="">
-    <img src="./img/process-icons-white/develop.svg" alt="">
-    <img src="./img/process-icons-white/deliver.svg" alt="">
-  </div>
-  <div class="s1 hero">
-    <div class="menu">
-      <div class="toggle-btn">
-        <span class="one"></span>
-        <span class="two"></span>
-      </div>
-      <a href="" class="logo-top">
-        <img src="img/logo-large.svg" alt="">
-      </a>
+  <body>
+    <div class="preload">
+      <img src="./img/process-icons-white/think.svg" alt="" />
+      <img src="./img/process-icons-white/create.svg" alt="" />
+      <img src="./img/process-icons-white/iterate.svg" alt="" />
+      <img src="./img/process-icons-white/develop.svg" alt="" />
+      <img src="./img/process-icons-white/deliver.svg" alt="" />
     </div>
-    <div class="menu-hidden">
-      <div class="data">
+    <div class="s1">
+      <div class="menu">
+        <div class="toggle-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+        </div>
+        <a href="" class="logo-top">
+          <img src="img/logo-large.svg" alt="" />
+        </a>
+      </div>
+      <div class="menu-hidden">
+        <div class="data">
+          <ul>
+            <li>Home</li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="title" id="button">
+        <div class="video">
+          <video autoplay muted id="myvideo">
+            <source
+              src="./img/video.mp4"
+              type="video/mp4"
+              poster="./img/sat.png"
+            />
+          </video>
+        </div>
+      </div>
+      <div class="stick">
+        <div class="nav">
+          <img src="img/mouse.svg" alt="" />
+          <h3>Scroll to continue</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="s2">
+      <div class="text-wrapper">
+        <h1>
+          Design, with purpose.
+        </h1>
+        <p>
+          Hi, I'm DeathSpace. My passion is design, and I believe design can
+          create real impact in the world of business. <br />
+          I currently build stunning responsive websites, with a keen eye for
+          UI/UX. I love mechanical keyboards, PC building, my bed, and my momma.
+        </p>
+      </div>
+    </div>
+
+    <div class="s3">
+      <div class="text-wrapper">
+        <h1>Work</h1>
+        <p>
+          I've worked in the design field for over 3 years now, and now focus on
+          web development & design. You may have a look at my previous work done
+          for clients here.
+        </p>
+        <button class="portfolio-btn">
+          Look Inside
+        </button>
+      </div>
+      <ul class="gallery-list">
+        <li><img src="" alt="" />1</li>
+        <li><img src="" alt="" />2</li>
+        <li><img src="" alt="" />3</li>
+        <li><img src="" alt="" />4</li>
+      </ul>
+    </div>
+
+    <div class="s4">
+      <h1>Process</h1>
+      <div class="icons">
         <ul>
-          <li>Home</li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+            <div class="container">
+              <span class="dot" id="think"> </span>
+              <a href="">Think</a>
+            </div>
+          </li>
+          <li>
+            <div class="container">
+              <span class="dot" id="create"> </span>
+              <a href="">Create</a>
+            </div>
+          </li>
+          <li>
+            <div class="container">
+              <span class="dot" id="iterate"> </span>
+              <a href="">Iterate</a>
+            </div>
+          </li>
+          <li>
+            <div class="container">
+              <span class="dot" id="develop"> </span>
+              <a href="">Develop</a>
+            </div>
+          </li>
+          <li>
+            <div class="container">
+              <span class="dot" id="deliver"> </span>
+              <a href="">Deliver</a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
-    <div class="title" id="button">
-      <div class="video">
-        <video autoplay muted id="myvideo">
-          <source src="./img/video.mp4" type="video/mp4" poster="./img/sat.png">
-        </video>
+
+    <div class="s5">
+      <h1>Services</h1>
+      <div class="services-content">
+        <ul>
+          <li class="">
+            <h3>Design</h3>
+            <div class="content-list-items" id="horizontal">
+              <ul>
+                <div class="list-group1">
+                  <li>UI/UX</li>
+                  <li>Branding / Identity Design</li>
+                </div>
+                <div class="list-group2">
+                  <li>Web Design</li>
+                  <li>Consultation</li>
+                </div>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h3>Web Development</h3>
+            <div class="content-list-items">
+              <ul>
+                <div class="list-group-solo">
+                  <li>Front-end development (HTML/CSS, JavaScript)</li>
+                  <li>Static websites (websites without databases)</li>
+                  <li>
+                    Visual development (interactions, animations, hierarchy,
+                    etc.)
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h3>Miscellaneous</h3>
+            <div class="content-list-items" id="horizontal">
+              <ul>
+                <div class="list-group1">
+                  <li>Domain Registration</li>
+                  <li>Web Hosting</li>
+                </div>
+                <div class="list-group2">
+                  <li>Copywriting</li>
+                  <li>Search Engine Optimisation</li>
+                </div>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="stick">
-      <div class="nav">
-        <img src="img/mouse.svg" alt="">
-        <h3>Scroll to continue</h3>
+
+    <div class="s6">
+      <div class="particles" id="particles-js"></div>
+      <div class="text">
+        <h1>Let's Talk</h1>
+        <p>
+          Have an interesting project in mind? <br />
+          I can help out.
+        </p>
       </div>
-
-    </div>
-  </div>
-
-  <div class="s2 about">
-    <div class="text-wrapper">
-      <h1>
-        Design, with purpose.
-      </h1>
-      <p> Hi, I'm DeathSpace. My passion is design, and I believe design can create real impact in the world of business. <br>
-        I currently build stunning responsive websites, with a keen eye for UI/UX.
-        I love mechanical keyboards, PC building, my bed, and my momma.</p>
-    </div>
-
-  </div>
-
-  <div class="s3 portfolio">
-    <div class="text-wrapper">
-      <h1>Work</h1>
-      <p>
-        I've worked in the design field for over 3 years now, and now focus on web development & design. You may have a look at my previous work done for clients here.
-      </p>
-      <button class="portfolio-btn">
-        Look Inside
-      </button>
-    </div>
-    <ul class="gallery-list">
-      <li><img src="" alt="">1</li>
-      <li><img src="" alt="">2</li>
-      <li><img src="" alt="">3</li>
-      <li><img src="" alt="">4</li>
-    </ul>
-  </div>
-
-  <div class="s4 process">
-    <h1>Process</h1>
-    <ul>
-      <li>
-        <div class="container">
-          <span class="dot" id="think">
-          </span>
-          <a href="">Think</a>
+      <div class="form">
+        <div class="name-field">
+          <p>Name</p>
         </div>
-      </li>
-      <li>
-        <div class="container">
-          <span class="dot" id="create">
-          </span>
-          <a href="">Create</a>
+        <div class="email-field">
+          <p>Your email address</p>
         </div>
-      </li>
-      <li>
-        <div class="container">
-          <span class="dot" id="iterate">
-          </span>
-          <a href="">Iterate</a>
+        <div class="message-field">
+          <p>Message</p>
         </div>
-      </li>
-      <li>
-        <div class="container">
-          <span class="dot" id="develop">
-          </span>
-          <a href="">Develop</a>
-        </div>
-      </li>
-      <li>
-        <div class="container">
-          <span class="dot" id="deliver">
-          </span>
-          <a href="">Deliver</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="s5 services">
-    <h1>Services</h1>
-    <ul>
-      <li class="">
-        <h3>Design</h3>
-        <ul>
-          <li>UI/UX</li>
-          <li>Branding / Identity Design</li>
-          <li>Web Design</li>
-          <li>Consultation</li>
-        </ul>
-      </li>
-      <li>
-        <h3>Web Development</h3>
-        <ul>
-          <li>Front-end development (HTML/CSS, JavaScript)</li>
-          <li>Static websites (websites without databases)</li>
-          <li>Visual development (interactions, animations, hierarchy, etc.)</li>
-        </ul>
-      </li>
-      <li>
-        <h3>Miscellaneous</h3>
-        <ul>
-          <li>Domain Registration</li>
-          <li>Web Hosting</li>
-          <li>Copywriting</li>
-          <li>Search Engine Optimisation</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="s6 contact">
-    <h1>Let's Talk</h1>
-    <p>Have an interesting project in mind? <br>
-      I can help out.</p>
-    <div class="name-field">
-      <p>Name</p>
+        <button class="submit-btn">
+          Submit
+        </button>
+      </div>
     </div>
-    <div class="email-field">
-      <p>Your email address</p>
+    <div class="footer">
+      <div class="links">
+        <div class="follow">
+          <p>follow</p>
+          <ul>
+            <li class="social--links">
+              <span class="dots" id="tw"></span>
+              <a href="">tw</a>
+            </li>
+            <li class="social--links">
+              <span class="dots" id="ig"></span>
+              <a href="">ig</a>
+            </li>
+            <li class="social--links">
+              <span class="dots" id="re"></span>
+              <a href="">re</a>
+            </li>
+          </ul>
+        </div>
+        <div class="email">
+          <p>👋 Say hello</p>
+          <a href="">deathspacedesign@gmail.com</a>
+        </div>
+      </div>
+      <p class="copyright--info">© 2019, Hari Krishnan | All rights reserved</p>
     </div>
-    <div class="message-field">
-      <p>Message</p>
-    </div>
-    <button class="submit-btn">
-      Submit
-    </button>
-  </div>
-  <div style="height: 9999px;"></div>
+    <div style="height: 9999px;"></div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="process.js"></script>
-  <script type="text/javascript">
-
-
-  </script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="process.js"></script>
+    <script type="text/javascript"></script>
+  </body>
 </html>

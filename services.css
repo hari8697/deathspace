@@ -1,0 +1,57 @@
+.s5{
+    display: grid;
+    height: 85vh;
+    grid-template-columns: .25fr 1fr .25fr;
+    grid-template-rows: .15fr 4.5rem 1fr .5fr;
+    grid-template-areas: ". . ."
+    ". text ."
+    ". content ."
+    ". . .";
+    position: relative;
+}
+
+.s5 h1 {
+    margin-left: 13.75rem;
+    grid-area: text;
+}
+
+.s5 h3 {
+    font-family:  'Futura', sans-serif;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 4rem;
+}
+
+.services-content {
+    grid-area: content;
+    /* position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s5 ul{
+    list-style: none;
+}
+
+.content-list-items{
+    margin-left: 1.25rem;
+    margin-top: .7rem;
+}
+
+.content-list-items li {
+    font-size: 1.25rem;
+    margin-top: .7rem;
+    color:  #616161;
+}
+
+.content-list-items ul {
+    display: flex;
+}
+
+.list-group2{
+    margin-left: 15%;
+}

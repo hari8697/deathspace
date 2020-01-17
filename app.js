@@ -89,3 +89,5 @@ $(document).on("click", ".data a, .menu-hidden", function() {
   t1.reversed(!t1.reversed());
   $('.menu-hidden').css("pointer-events", "none");
 });
+
+particlesJS.load('particles-js', 'res/particlesjs-config.json');

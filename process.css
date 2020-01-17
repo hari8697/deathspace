@@ -1,32 +1,43 @@
 .s4{
   display: grid;
-  grid-template-columns: .2fr 1fr .2fr;
+  grid-template-columns: .25fr 1fr .25fr;
   grid-template-rows: .5fr 4.5rem 1fr .5fr;
   grid-template-areas: ". . ."
-    "text text text"
-    ". icons ."
+    ". text ."
+    "icons icons icons"
     ". . .";
+    position: relative;
   }
 
-.s4 h1 {
+.s4 h1, .s5 h1, .s6 h1 {
   color: rgba(174, 174, 174, 1);
   font-size: 4.5rem;
   font-family: 'Avenir-Black', sans-serif;
-  margin-bottom: 3.75rem;
-  margin-left: 23vw;
-  grid-area: text;
 }
 
-.s4 ul{
-  margin-top: 3.75rem;
+.s4 h1{
+  width: 100%;
+  margin: 0;
+  margin-left: 13.75rem;
+  grid-area: text;
+}
+.icons{
+  width: 60vw;
+  min-width: 1200px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
   grid-area: icons;
+}
+.s4 ul{
+  margin-top: 4.6rem;
 }
 .s4 li {
   display: inline-block;
 }
 
 .s4 li+li {
-  margin-left: 7vw;
+  margin-left: 135px;
 }
 
 .dot{
@@ -62,7 +73,7 @@
 
 #develop{
   background-image: url(./img/process-icons/develop.svg);
-  background-position: 52% 52%;
+  background-position: 51% 52%;
   background-repeat: no-repeat;
   transition: all 350ms ease-in-out;
 }
@@ -75,7 +86,7 @@
 }
 
 .container:hover .dot {
-  background-color: #5E0ED8;
+  background-color: #5e0ed8;
   cursor: pointer;
 }
 .container:hover {
@@ -105,7 +116,7 @@
 
 .container:hover #develop{
   background-image: url(./img/process-icons-white/develop.svg);
-  background-position: 52% 52%;
+  background-position: 51% 52%;
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -119,14 +130,11 @@
 
 .s4 li a {
   display: block;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   text-decoration: none;
   color: #AEAEAE;
   font-family:  'Futura', sans-serif;
   font-size: 2.18rem;
-}
-
-.s5 svg{
-  fill: red;
+  font-size: 1.7rem;
 }
