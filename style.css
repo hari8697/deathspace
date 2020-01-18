@@ -77,7 +77,6 @@
 
   .s3, .s4, .s5 {
     background-color: white;
-    height: 50vh;
     min-height: 500px;
   }
 
@@ -320,10 +319,6 @@
     margin: 1rem 0;
     margin-bottom: 22px;
     font-size: 1.25rem;
-  }
-
-  .s3 .gallery-list {
-
   }
 
 /* =============

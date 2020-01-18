@@ -1,11 +1,11 @@
 .s4{
   display: grid;
-  grid-template-columns: .25fr 1fr .25fr;
-  grid-template-rows: .5fr 4.5rem 1fr .5fr;
-  grid-template-areas: ". . ."
-    ". text ."
-    "icons icons icons"
-    ". . .";
+  grid-template-columns: minmax(32px, 1fr) minmax(32px, 1fr) minmax(400px, 1200px) minmax(32px, 1fr);
+  grid-template-rows: minmax(50px, 70px) 4.5rem 1fr minmax(50px, 70px);
+  grid-template-areas: ". . . ."
+    ". . text ."
+    ". icons icons ."
+    ". . . .";
     position: relative;
   }
 
@@ -18,34 +18,45 @@
 .s4 h1{
   width: 100%;
   margin: 0;
-  margin-left: 13.75rem;
+  /* margin-left: 10%; */
   grid-area: text;
 }
 .icons{
-  width: 60vw;
-  min-width: 1200px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+  width: 100%;
   grid-area: icons;
+  display: flex;
+  justify-content: center;
 }
-.s4 ul{
+
+.icons ul{
+  width: 100%;
+  max-width: 935px;
+  margin-top: 4.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 123px);
+  grid-gap: 5rem;
+}
+
+.icons li{
+  list-style: none;
+}
+/* .icons ul{
   margin-top: 4.6rem;
 }
-.s4 li {
+.icons li {
   display: inline-block;
 }
 
-.s4 li+li {
+.icons li+li {
   margin-left: 135px;
-}
+} */
 
-.dot{
+.icons .dot{
   height: 120px;
   width: 120px;
   border: 1.5px solid #5E0ED8;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   position: relative;
   transition: all 350ms ease-in-out;
 }
@@ -128,7 +139,7 @@
   cursor: pointer;
 }
 
-.s4 li a {
+.icons li a {
   display: block;
   margin-top: 1rem;
   text-align: center;
@@ -137,4 +148,8 @@
   font-family:  'Futura', sans-serif;
   font-size: 2.18rem;
   font-size: 1.7rem;
+}
+
+.s4 .popup {
+
 }
