@@ -26,7 +26,7 @@
       }
     },
     "opacity": {
-      "value": 0.7,
+      "value": 0.6,
       "random": false,
       "anim": {
         "enable": false,
@@ -84,7 +84,7 @@
       "grab": {
         "distance": 72,
         "line_linked": {
-          "opacity": 1
+          "opacity": 0.9
         }
       },
       "bubble": {
