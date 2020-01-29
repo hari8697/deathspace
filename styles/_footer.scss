@@ -1,0 +1,79 @@
+.footer {
+  font-size: 1rem;
+
+  .follow {
+    margin-top: 2rem;
+
+    ul {
+      display: flex;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .email {
+    margin-top: 1rem;
+  }
+
+  .follow,
+  .email {
+    margin-left: 3rem;
+  }
+
+  .dots {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  .social--links {
+    width: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+
+    #tw {
+      background: #1381b9;
+    }
+
+    #ig {
+      background: #b91382;
+    }
+
+    #re {
+      background: #b97113;
+    }
+  }
+
+  .follow p,
+  .email p {
+    margin-top: 0.5rem;
+    font-family: "Futura", sans-serif;
+    font-size: 1rem;
+    color: #aeaeae;
+  }
+
+  .social--links a,
+  .email a {
+    text-decoration: none;
+    font-family: "Avenir", sans-serif;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .email a {
+    display: inline-block;
+    margin-top: 0.45rem;
+  }
+
+  .copyright--info {
+    margin-left: 3rem;
+    font-family: "Futura", sans-serif;
+    font-size: 0.7rem;
+    color: #aeaeae;
+    margin-top: 1.8rem;
+    padding-bottom: 2.3rem;
+  }
+}

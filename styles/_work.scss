@@ -1,0 +1,133 @@
+.s3 {
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: minmax(1fr, 32px) minmax(300px, 500px) minmax(
+      1fr,
+      32px
+    );
+  grid-template-rows: 500px 350px;
+  grid-template-areas:
+    "gallery gallery gallery"
+    "texts3 texts3 texts3";
+
+  margin-top: -30%;
+
+  .text-wrapper {
+    width: 100%;
+    height: 110%;
+    grid-area: texts3;
+    background: white;
+    min-height: 350px;
+    margin-top: -10px;
+    h1 {
+      color: rgba(174, 174, 174, 1);
+      font-size: 2rem;
+      font-family: "Avenir-Black", sans-serif;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+    p {
+      font-family: "Futura";
+      color: #616161;
+      font-size: 1rem;
+      max-width: 250px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .text-container {
+    width: 60%;
+    margin: 3.6rem auto;
+  }
+}
+
+.gallery-list {
+  width: 100vw;
+  grid-area: gallery;
+  position: relative;
+  background-color: transparent;
+  z-index: 1;
+
+  li {
+    list-style-type: none;
+    z-index: -2;
+  }
+
+  li:nth-child(1) {
+    width: 66%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  li:nth-child(2) {
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  li:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+  }
+
+  li:nth-child(4) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(94, 14, 216, 1);
+  background-color: transparent;
+  border-radius: 4px;
+  font-family: "Futura";
+  color: rgba(94, 14, 216, 1);
+  font-size: 1rem;
+  transition: all 250ms ease-in-out;
+}
+
+.portfolio-btn:hover {
+  background-color: rgba(94, 14, 216, 1);
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .s3 {
+    background-color: black;
+    grid-template-areas:
+      ". . ."
+      ". texts3 gallery"
+      ". . .";
+    transform: none;
+  }
+  .s3 .text-wrapper {
+    background: black;
+    grid-area: texts3;
+  }
+
+  .gallery-list {
+    width: 50vw;
+    display: flex;
+    grid-area: gallery;
+  }
+  .gallery-list li {
+    width: 25vw;
+    position: relative;
+  }
+
+  .gallery-list li:nth-child(n) {
+    left: 0;
+    transform: none;
+    width: 25vw;
+    position: relative;
+  }
+}

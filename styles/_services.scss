@@ -1,0 +1,49 @@
+.s5 {
+  background: white;
+  height: auto;
+  position: relative;
+
+  h1 {
+    font-family: "Avenir-Black", sans-serif;
+    color: #aeaeae;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  h3 {
+    font-family: "Futura", sans-serif;
+    color: #000000;
+    font-size: 1.25rem;
+    margin-top: 1.75rem;
+    font-weight: 400;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .services-content {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 5rem;
+  }
+
+  .content-list-items {
+    margin-left: 1.25rem;
+    margin-top: 0.7rem;
+
+    li {
+      max-width: 215px;
+      font-family: "Futura", sans-serif;
+      font-size: 1rem;
+      margin-top: 0.7rem;
+      color: #616161;
+    }
+  }
+
+  .list-group2 {
+  }
+}

@@ -1,0 +1,78 @@
+.footer{
+    height: 23vh;
+    font-size: 1rem;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.follow ul{
+    display: flex;
+    margin-top: .5rem;
+}
+
+.follow {
+    margin-left: 14.4vw;
+}
+
+.email{
+    margin-right: 14.4vw;
+}
+
+.social--links{
+    
+    width: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.social--links #tw{
+    background: #1381B9;
+}
+.social--links #ig{
+    background: #B91382;
+}
+.social--links #re{
+    background: #B97113;
+}
+
+.dots{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: tomato;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-100%);
+}
+
+.follow p, .email p{
+    margin-top: 3.75rem;
+    font-family: 'Futura', sans-serif;
+    font-size: 1.56rem;
+    color: #AEAEAE;
+}
+.social--links a, .email a{
+    text-decoration: none;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.56rem;
+    color: #fff;
+}
+.email p, .email a{
+    text-align: right;
+}
+.email a{
+    display: inline-block;
+    margin-top: .45rem;
+}
+.copyright--info{
+    font-family: 'Futura', sans-serif;
+    font-size: 1rem;
+    color: #AEAEAE;
+    margin-top: 2.5rem;
+    margin-left: 14.4vw;
+}
