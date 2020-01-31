@@ -12,6 +12,15 @@ var s3Textp = $(".s3 .text-container p");
 var s3Butt = $(".s3 .portfolio-btn");
 var s4h1 = $(".s4 h1");
 var s4icons = $(".s4 .container");
+var s5h1 = $(".s5 h1");
+var s5li = $(".s5 .services-content > ul li");
+var s6text = $(".s6 .text *");
+var s6form = $(".s6 .form > div");
+var s6formbtn = $(".s6 .submit-btn");
+var footer1 = $(".footer .follow p");
+var footer2 = $(".footer .social--links");
+var footer3 = $(".footer .email *");
+var footer4 = $(".footer > p");
 
 $(document).ready(function() {
   var animArrow = new TimelineMax({
@@ -264,5 +273,123 @@ $(document).ready(function() {
     duration: vh * 0.7
   }).setTween(animS4);
 
-  controller.addScene([logoScene, s2Scene, s3Scene, s3SceneText, s4Scene]);
+  var anims5 = new TimelineMax();
+  anims5
+    .from(s5h1, 1, {
+      y: "50",
+      opacity: "0"
+    })
+    .staggerFrom(
+      s5li,
+      1,
+      {
+        y: "100",
+        opacity: "0"
+      },
+      0.1,
+      0.2
+    );
+
+  var s5Scene = new ScrollMagic.Scene({
+    triggerElement: ".s4",
+    triggerHook: "0",
+    duration: vh * 0.8,
+    offset: -vh * 0.2
+  }).setTween(anims5);
+
+  var anims6 = new TimelineMax();
+  anims6
+    .staggerFrom(
+      s6text,
+      2,
+      {
+        y: "50",
+        opacity: "0"
+      },
+      0.2,
+      0.2
+    )
+    .staggerFrom(
+      s6form,
+      2,
+      {
+        y: "100",
+        opacity: "0"
+      },
+      0.2,
+      0.2
+    )
+    .from(
+      s6formbtn,
+      0.1,
+      {
+        ease: Expo.easeInOut,
+        y: "50",
+        opacity: "0"
+      },
+      2
+    );
+
+  var s6Scene = new ScrollMagic.Scene({
+    triggerElement: ".s5",
+    triggerHook: "0",
+    offset: 0,
+    duration: vh * 0.8
+  }).setTween(anims6);
+
+  var animFooter = new TimelineMax();
+  animFooter
+    .from(footer1, 0.3, {
+      y: "40",
+      opacity: "0"
+    })
+    .staggerFrom(
+      footer2,
+      1,
+      {
+        y: "40",
+        opacity: "0"
+      },
+      0.3,
+      0.25
+    )
+    .staggerFrom(
+      footer3,
+      0.6,
+      {
+        y: "40",
+        opacity: "0"
+      },
+      0.3,
+      1.2
+    )
+    .from(
+      footer4,
+      0.5,
+      {
+        opacity: "0"
+      },
+      2
+    );
+
+  var footerScene = new ScrollMagic.Scene({
+    triggerElement: ".footer",
+    triggerHook: 1,
+    duration: "20%",
+    offset: "0",
+    reverse: true
+  })
+    .setTween(animFooter)
+    .addIndicators();
+
+  controller.addScene([
+    logoScene,
+    s2Scene,
+    s3Scene,
+    s3SceneText,
+    s4Scene,
+    s5Scene,
+    s6Scene,
+    footerScene
+  ]);
 });

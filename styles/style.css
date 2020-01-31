@@ -191,7 +191,7 @@ html {
       grid-template-columns: minmax(1fr, 32px) minmax(300px, 500px) minmax(1fr, 32px);
   -ms-grid-rows: 500px 350px;
       grid-template-rows: 500px 350px;
-      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
+      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
   margin-top: -30%;
 }
 
@@ -296,7 +296,7 @@ html {
 @media only screen and (min-width: 768px) {
   .s3 {
     background-color: black;
-        grid-template-areas: ". . ." ". texts3 gallery" ". . .";
+        grid-template-areas: ". . ." ". texts3 gallery" ". . .";
     -webkit-transform: none;
             transform: none;
   }
@@ -336,7 +336,7 @@ html {
       grid-template-columns: minmax(32px, 1fr) minmax(250px, 1fr) minmax(32px, 1fr);
   -ms-grid-rows: 2rem 2rem 1fr minmax(50px, 70px);
       grid-template-rows: 2rem 2rem 1fr minmax(50px, 70px);
-      grid-template-areas: ". . ." "text text text" ". icons ." ". . .";
+      grid-template-areas: ". . ." "text text text" ". icons ." ". . .";
   position: relative;
   margin-top: 0;
 }
@@ -453,7 +453,7 @@ html {
 }
 
 .s4 .icons #tap {
-  background-image: url("../img/process-icons-mobile/tap.svg");
+  background-image: url("../img/process-icons-mobile/tap-purp.svg");
   background-position: center;
   background-repeat: no-repeat;
   -webkit-transition: all 350ms ease-in-out;
@@ -801,6 +801,7 @@ html {
   color: #aeaeae;
   margin-top: 1.8rem;
   padding-bottom: 2.3rem;
+  opacity: 0.7;
 }
 
 @media only screen and (min-width: 768px) {
