@@ -379,8 +379,7 @@ $(document).ready(function() {
     offset: "0",
     reverse: true
   })
-    .setTween(animFooter)
-    .addIndicators();
+    .setTween(animFooter);
 
   controller.addScene([
     logoScene,
