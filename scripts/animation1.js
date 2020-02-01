@@ -1,5 +1,5 @@
-var vh = $(window).height();
-var vw = $(window).width();
+var vw = window.innerWidth;
+var vh = window.innerHeight;
 var scrollArrow = $(".scrollArrow");
 var header = $(".header");
 var logo = $(".logo-top");
@@ -15,7 +15,7 @@ var s4icons = $(".s4 .container");
 var s5h1 = $(".s5 h1");
 var s5li = $(".s5 .services-content > ul li");
 var s6text = $(".s6 .text *");
-var s6form = $(".s6 .form > div");
+var s6form = $(".s6 .form > input, .s6 textarea");
 var s6formbtn = $(".s6 .submit-btn");
 var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
@@ -163,7 +163,6 @@ $(document).ready(function() {
     triggerHook: "0",
     duration: vh
   }).setTween(animLogo);
-
   var animS2 = new TimelineMax();
 
   animS2
@@ -172,20 +171,23 @@ $(document).ready(function() {
       opacity: "0",
       ease: Expo.easeOut
     })
-    .from(s2Textp, 1, {
-      y: "100",
-      opacity: "0",
-      ease: Expo.easeOut,
-      delay: "-0.5"
-    });
+    .from(
+      s2Textp,
+      1,
+      {
+        y: "100",
+        opacity: "0",
+        ease: Expo.easeOut
+      },
+      0.3
+    );
 
   var s2Scene = new ScrollMagic.Scene({
-    triggerElement: ".s1",
-    triggerHook: "0",
-    offset: vh / 2,
+    triggerElement: ".s2",
+    triggerHook: 0,
+    offset: -vh * 0.5,
     duration: vh
   }).setTween(animS2);
-
   var animS3 = new TimelineMax();
   if (vw < 768) {
     animS3
@@ -197,10 +199,6 @@ $(document).ready(function() {
         ease: Expo.easeInOut,
         y: "-100%",
         delay: "-2"
-      })
-      .to(s2Textp, 1, {
-        opacity: 0,
-        delay: "-1.2"
       });
   }
 
@@ -210,7 +208,6 @@ $(document).ready(function() {
     offset: 0,
     duration: vh
   }).setTween(animS3);
-
   var animS3Text = new TimelineMax();
   animS3Text
     .from(
@@ -233,19 +230,27 @@ $(document).ready(function() {
     )
     .from(
       s3Butt,
-      0.3,
+      0.2,
       {
         opacity: "0"
       },
-      0.4
+      0.7
     );
-
-  var s3SceneText = new ScrollMagic.Scene({
-    triggerElement: ".s3",
-    triggerHook: "0",
-    offset: -vh / 4,
-    duration: vh / 2
-  }).setTween(animS3Text);
+  if (vh > 600) {
+    var s3SceneText = new ScrollMagic.Scene({
+      triggerElement: ".gallery-list",
+      triggerHook: "0",
+      offset: -vh * 0.3,
+      duration: vh / 2
+    }).setTween(animS3Text);
+  } else {
+    var s3SceneText = new ScrollMagic.Scene({
+      triggerElement: ".gallery-list",
+      triggerHook: "0",
+      offset: vh * 0.1,
+      duration: vh / 2
+    }).setTween(animS3Text);
+  }
 
   var animS4 = new TimelineMax();
   if (vw < 768) {
@@ -266,12 +271,21 @@ $(document).ready(function() {
       );
   }
 
-  var s4Scene = new ScrollMagic.Scene({
-    triggerElement: ".s3",
-    triggerHook: "0",
-    offset: vh * 0.2,
-    duration: vh * 0.7
-  }).setTween(animS4);
+  if (vh > 600) {
+    var s4Scene = new ScrollMagic.Scene({
+      triggerElement: ".s3 .text-wrapper",
+      triggerHook: "0",
+      offset: -vh * 0.3,
+      duration: vh * 0.7
+    }).setTween(animS4);
+  } else {
+    var s4Scene = new ScrollMagic.Scene({
+      triggerElement: ".s3 .text-wrapper",
+      triggerHook: "0",
+      offset: -vh * 0.1,
+      duration: vh * 0.7
+    }).setTween(animS4);
+  }
 
   var anims5 = new TimelineMax();
   anims5
@@ -289,13 +303,21 @@ $(document).ready(function() {
       0.1,
       0.2
     );
-
-  var s5Scene = new ScrollMagic.Scene({
-    triggerElement: ".s4",
-    triggerHook: "0",
-    duration: vh * 0.8,
-    offset: -vh * 0.2
-  }).setTween(anims5);
+  if (vh > 600) {
+    var s5Scene = new ScrollMagic.Scene({
+      triggerElement: ".s4",
+      triggerHook: "0",
+      duration: vh * 0.7,
+      offset: -vh * 0.2
+    }).setTween(anims5);
+  } else {
+    var s5Scene = new ScrollMagic.Scene({
+      triggerElement: ".s4",
+      triggerHook: "0",
+      duration: vh,
+      offset: vh * 0.1
+    }).setTween(anims5);
+  }
 
   var anims6 = new TimelineMax();
   anims6
@@ -329,13 +351,22 @@ $(document).ready(function() {
       },
       2
     );
-
-  var s6Scene = new ScrollMagic.Scene({
-    triggerElement: ".s5",
-    triggerHook: "0",
-    offset: 0,
-    duration: vh * 0.8
-  }).setTween(anims6);
+  if (vh > 600) {
+    var s6Scene = new ScrollMagic.Scene({
+      triggerElement: ".s5",
+      triggerHook: "0",
+      offset: 0,
+      duration: vh * 0.8
+    }).setTween(anims6);
+  } else {
+    var s6Scene = new ScrollMagic.Scene({
+      triggerElement: ".s5",
+      triggerHook: "0",
+      offset: vh * 0.3,
+      duration: vh * 0.8
+    }).setTween(anims6);
+    $(".s6").css("padding", "2rem 0");
+  }
 
   var animFooter = new TimelineMax();
   animFooter
@@ -371,15 +402,23 @@ $(document).ready(function() {
       },
       2
     );
-
-  var footerScene = new ScrollMagic.Scene({
-    triggerElement: ".footer",
-    triggerHook: 1,
-    duration: "20%",
-    offset: "0",
-    reverse: true
-  })
-    .setTween(animFooter);
+  if (vh > 600) {
+    var footerScene = new ScrollMagic.Scene({
+      triggerElement: ".footer",
+      triggerHook: vh,
+      duration: "20%",
+      offset: "0",
+      reverse: false
+    }).setTween(animFooter);
+  } else {
+    var footerScene = new ScrollMagic.Scene({
+      triggerElement: ".footer",
+      triggerHook: vh,
+      duration: "25%",
+      offset: "10%",
+      reverse: false
+    }).setTween(animFooter);
+  }
 
   controller.addScene([
     logoScene,

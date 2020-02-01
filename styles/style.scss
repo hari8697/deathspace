@@ -1,7 +1,3 @@
-:root {
-  --appHeight: 100vh;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +55,7 @@ html {
 
 .s1 {
   background-color: black;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,7 +110,6 @@ html {
 }
 
 .s2 {
-  min-height: 900px;
   height: 100vh;
   //   display: grid;
   //   grid-template-columns: 1fr 1fr 1fr;

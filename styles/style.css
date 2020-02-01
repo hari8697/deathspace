@@ -1,7 +1,3 @@
-:root {
-  --appHeight: 100vh;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +55,7 @@ html {
 
 .s1 {
   background-color: black;
-  height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,7 +122,6 @@ html {
 }
 
 .s2 {
-  min-height: 900px;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,7 +340,8 @@ html {
   color: #aeaeae;
   font-size: 2rem;
   font-family: "Avenir-Black", sans-serif;
-  width: 60%;
+  width: 80%;
+  max-width: 235px;
   margin: 0 auto;
   /* margin-left: 10%; */
   -ms-grid-row: 2;
@@ -523,7 +519,8 @@ html {
 .s5 h1 {
   font-family: "Avenir-Black", sans-serif;
   color: #aeaeae;
-  width: 60%;
+  width: 80%;
+  max-width: 235px;
   margin: 0 auto;
 }
 
@@ -629,8 +626,8 @@ html {
 .s6 p {
   color: #fff;
   font-family: "Futura", sans-serif;
-  text-align: center;
   max-width: 250px;
+  text-align: center;
   font-size: 1rem;
 }
 
@@ -645,6 +642,7 @@ html {
 }
 
 .s6 .form {
+  width: 100%;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -665,32 +663,94 @@ html {
   margin-left: 1rem;
 }
 
-.s6 .name-field,
-.s6 .email-field,
-.s6 .message-field {
-  width: 310px;
+.s6 input {
+  font-family: "Futura", sans-serif;
+  font-size: 1rem;
+  width: 82%;
   height: 42px;
-  background: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.45);
   color: white;
-  border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0rem 1rem;
   margin-bottom: 0.625rem;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  caret-color: #0eb5d8;
 }
 
-.s6 .message-field {
+.s6 input::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 input:-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 input::-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 input:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 textarea {
+  width: 82%;
   height: 98px;
-  background: rgba(0, 0, 0, 0.45);
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  text-align: left;
+  margin-bottom: 0.625rem;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  caret-color: #0eb5d8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-family: "Futura", sans-serif;
 }
 
-.s6 .message-field p {
+.s6 textarea::-webkit-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 p {
   margin-top: 0.7rem;
 }
 

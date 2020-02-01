@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/work.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,800|PT+Mono|Roboto&display=swap"
       rel="stylesheet"
@@ -231,15 +230,26 @@
           </p>
         </div>
         <div class="form">
-          <div class="name-field">
-            <p>Name</p>
-          </div>
-          <div class="email-field">
-            <p>Your email address</p>
-          </div>
-          <div class="message-field">
-            <p>Message</p>
-          </div>
+          <input
+            type="text"
+            name="fname"
+            placeholder="Name"
+            class="name-field"
+          />
+          <input
+            type="text"
+            name="fname"
+            placeholder="Your email address"
+            class="email-field"
+          />
+          <textarea
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            class="message-field"
+          ></textarea>
+
           <button class="submit-btn">
             Submit
           </button>
