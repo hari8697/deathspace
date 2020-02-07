@@ -30,11 +30,14 @@ pContainer.on("click", function() {
   var clickIcon = $(this).children("span");
 
   animS4.remove(tween);
+
   var x2 = -(118 - vw * 0.05 + (vw - 188) / 2);
   var y2 = -117;
   var y3 = y2 * 2;
   var titlePos = vw * 0.05 + 43 + 50; // margin + icon margin + iconsize & textmargin
-
+  tl.set(s4icons, {
+    opacity: 1
+  });
   tl.set(clickTitle, {
     position: "absolute",
     "margin-top": 0,
