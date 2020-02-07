@@ -1,5 +1,5 @@
-var vw = window.innerWidth;
-var vh = window.innerHeight;
+var vw = $(window).width();
+var vh = $(window).height();
 var scrollArrow = $(".scrollArrow");
 var header = $(".header");
 var logo = $(".logo-top");
@@ -11,7 +11,7 @@ var s3Texth1 = $(".s3 .text-container h1");
 var s3Textp = $(".s3 .text-container p");
 var s3Butt = $(".s3 .portfolio-btn");
 var s4h1 = $(".s4 h1");
-var s4icons = $(".s4 .container");
+var s4icons = $(".s4 .icons > div:not(:last-child)");
 var s5h1 = $(".s5 h1");
 var s5li = $(".s5 .services-content > ul li");
 var s6text = $(".s6 .text *");
@@ -22,12 +22,15 @@ var footer2 = $(".footer .social--links");
 var footer3 = $(".footer .email *");
 var footer4 = $(".footer > p");
 
+var checkbool = true;
+
+var animS4, tween;
+
 $(document).ready(function() {
   var animArrow = new TimelineMax({
     paused: true,
     repeat: 1000
   });
-
   animArrow
     .set(scrollArrow, {
       rotation: 0.01,
@@ -236,7 +239,7 @@ $(document).ready(function() {
       },
       0.7
     );
-  if (vh > 600) {
+  if (vh / vw > 1.78) {
     var s3SceneText = new ScrollMagic.Scene({
       triggerElement: ".gallery-list",
       triggerHook: "0",
@@ -247,35 +250,42 @@ $(document).ready(function() {
     var s3SceneText = new ScrollMagic.Scene({
       triggerElement: ".gallery-list",
       triggerHook: "0",
-      offset: vh * 0.1,
-      duration: vh / 2
+      offset: vh * -0.2,
+      duration: vh * 0.5
     }).setTween(animS3Text);
   }
 
-  var animS4 = new TimelineMax();
+  animS4 = new TimelineMax();
   if (vw < 768) {
-    animS4
-      .from(s4h1, 1, {
-        y: "50",
+    animS4.from(s4h1, 1, {
+      y: "30",
+      opacity: "0"
+    });
+    tween = TweenMax.staggerFrom(
+      s4icons,
+      2,
+      {
         opacity: "0"
-      })
-      .staggerFrom(
-        s4icons,
-        2,
-        {
-          y: "100",
-          opacity: "0"
-        },
-        0.2,
-        0.2
-      );
+      },
+      0.2
+    );
+
+    animS4.append(tween);
   }
 
-  if (vh > 600) {
+  function iconActiveCheck() {
+    if (checkbool) {
+    } else {
+    }
+    console.log(checkbool);
+  }
+  var s4check = setInterval(iconActiveCheck, 1000);
+
+  if (vh / vw > 1.78) {
     var s4Scene = new ScrollMagic.Scene({
       triggerElement: ".s3 .text-wrapper",
       triggerHook: "0",
-      offset: -vh * 0.3,
+      offset: -vh * 0.4,
       duration: vh * 0.7
     }).setTween(animS4);
   } else {
@@ -290,7 +300,7 @@ $(document).ready(function() {
   var anims5 = new TimelineMax();
   anims5
     .from(s5h1, 1, {
-      y: "50",
+      y: "30",
       opacity: "0"
     })
     .staggerFrom(
@@ -303,19 +313,19 @@ $(document).ready(function() {
       0.1,
       0.2
     );
-  if (vh > 600) {
+  if (vh / vw > 1.78) {
     var s5Scene = new ScrollMagic.Scene({
       triggerElement: ".s4",
       triggerHook: "0",
       duration: vh * 0.7,
-      offset: -vh * 0.2
+      offset: -vh * 0.4
     }).setTween(anims5);
   } else {
     var s5Scene = new ScrollMagic.Scene({
       triggerElement: ".s4",
       triggerHook: "0",
       duration: vh,
-      offset: vh * 0.1
+      offset: -vh * 0.1
     }).setTween(anims5);
   }
 

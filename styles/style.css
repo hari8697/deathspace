@@ -331,7 +331,7 @@ html {
       grid-template-columns: minmax(32px, 1fr) minmax(250px, 1fr) minmax(32px, 1fr);
   -ms-grid-rows: 2rem 2rem 1fr minmax(50px, 70px);
       grid-template-rows: 2rem 2rem 1fr minmax(50px, 70px);
-      grid-template-areas: ". . ." "text text text" ". icons ." ". . .";
+      grid-template-areas: ". . ." "text text text" "icons icons icons" ". . .";
   position: relative;
   margin-top: 0;
 }
@@ -350,62 +350,136 @@ html {
   grid-area: text;
 }
 
-.s4 .icons {
-  width: 100%;
-  max-width: 250px;
-  height: 100%;
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: icons;
-  margin-top: 1rem;
-}
-
-.s4 .icons ul {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 70px 70px;
-      grid-template-columns: 70px 70px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.s4 .icons li {
-  min-width: 70px;
-  list-style: none;
-  margin-top: 1.75rem;
-}
-
-.s4 .icons li a {
+.s4 a {
   display: block;
-  margin-top: 1rem;
+  margin-top: 6px;
   text-align: center;
   text-decoration: none;
   color: #aeaeae;
   font-family: "Futura", sans-serif;
   font-size: 1.25rem;
+  pointer-events: none;
 }
 
-.s4 .icons li:nth-child(6) {
-  height: auto;
-  width: auto;
-}
-
-.s4 .icons li:nth-child(6) a {
-  width: 80px;
-  text-align: left;
-  margin-top: -2rem;
-  margin-left: 1.5rem;
-}
-
-.s4 .icons .dot {
-  height: 67px;
-  width: 67px;
-  border: 1.5px solid #5e0ed8;
-  border-radius: 50%;
-  display: block;
+.s4 .icons {
+  margin-top: 2rem;
+  width: 100vw;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: icons;
+  display: -ms-grid;
+  display: grid;
   position: relative;
-  -webkit-transition: all 350ms ease-in-out;
-  transition: all 350ms ease-in-out;
+  -ms-grid-columns: 1fr 70px 70px 1fr;
+      grid-template-columns: 1fr 70px 70px 1fr;
+  -ms-grid-rows: 100px 100px 100px;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-areas: ". think create ." ". iterate develop ." ". deliver tap .";
+  grid-gap: 1.1rem 3rem;
+}
+
+.s4 .icons .popup {
+  z-index: 3;
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  left: 50%;
+  background: transparent;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.s4 .icons .popup p {
+  width: 60%;
+  margin-top: 129px;
+  font-family: "Futura", sans-serif;
+  color: white;
+}
+
+.s4 .icons .popup .one,
+.s4 .icons .popup .two {
+  display: block;
+  width: 50%;
+  left: 0;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+  background: transparent;
+}
+
+.s4 .icons .popup .two {
+  left: 50%;
+}
+
+.s4 .icons .popup .nav--indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.s4 .icons .popup .nav--indicators ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.s4 .icons .popup .nav--indicators .dot,
+.s4 .icons .popup .nav--indicators .dot--sel {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  list-style: none;
+  background: white;
+  opacity: 0.3;
+}
+
+.s4 .icons .popup .nav--indicators .dot:not(:first-child),
+.s4 .icons .popup .nav--indicators .dot--sel:not(:first-child) {
+  margin-left: 0.87rem;
+}
+
+.s4 .icons .popup .nav--indicators .dot--sel {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+}
+
+.s4 .icons .popup .nav--hor {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.s4 .icons .popup .nav--hor .left {
+  padding-left: 1.3rem;
+}
+
+.s4 .icons .popup .nav--hor .right {
+  padding-right: 1.3rem;
+}
+
+.s4 .icons .popup .close-btn {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.5rem;
 }
 
 .s4 .icons #think {
@@ -458,15 +532,25 @@ html {
   border: none;
 }
 
-.s4 .icons .container:hover {
+.s4 .icons .container--think .dot, .s4 .icons .container--create .dot, .s4 .icons .container--iterate .dot, .s4 .icons .container--develop .dot, .s4 .icons .container--deliver .dot {
+  height: 67px;
+  width: 67px;
+  border: 1.5px solid #5e0ed8;
+  border-radius: 50%;
+  display: block;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.s4 .icons .container--think:hover, .s4 .icons .container--create:hover, .s4 .icons .container--iterate:hover, .s4 .icons .container--develop:hover, .s4 .icons .container--deliver:hover {
   cursor: pointer;
 }
 
-.s4 .icons .container:hover .dot {
+.s4 .icons .container--think:hover .dot, .s4 .icons .container--create:hover .dot, .s4 .icons .container--iterate:hover .dot, .s4 .icons .container--develop:hover .dot, .s4 .icons .container--deliver:hover .dot {
   background-color: #5e0ed8;
 }
 
-.s4 .icons .container:hover #think {
+.s4 .icons .container--think:hover #think, .s4 .icons .container--create:hover #think, .s4 .icons .container--iterate:hover #think, .s4 .icons .container--develop:hover #think, .s4 .icons .container--deliver:hover #think {
   background-image: url("../img/process-icons-mobile-white/think.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -474,7 +558,7 @@ html {
   transition: all 350ms ease-in-out;
 }
 
-.s4 .icons .container:hover #create {
+.s4 .icons .container--think:hover #create, .s4 .icons .container--create:hover #create, .s4 .icons .container--iterate:hover #create, .s4 .icons .container--develop:hover #create, .s4 .icons .container--deliver:hover #create {
   background-image: url("../img/process-icons-mobile-white/create.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -482,7 +566,7 @@ html {
   transition: all 350ms ease-in-out;
 }
 
-.s4 .icons .container:hover #iterate {
+.s4 .icons .container--think:hover #iterate, .s4 .icons .container--create:hover #iterate, .s4 .icons .container--iterate:hover #iterate, .s4 .icons .container--develop:hover #iterate, .s4 .icons .container--deliver:hover #iterate {
   background-image: url("../img/process-icons-mobile-white/iterate.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -490,7 +574,7 @@ html {
   transition: all 350ms ease-in-out;
 }
 
-.s4 .icons .container:hover #develop {
+.s4 .icons .container--think:hover #develop, .s4 .icons .container--create:hover #develop, .s4 .icons .container--iterate:hover #develop, .s4 .icons .container--develop:hover #develop, .s4 .icons .container--deliver:hover #develop {
   background-image: url("../img/process-icons-mobile-white/develop.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -498,7 +582,7 @@ html {
   transition: all 350ms ease-in-out;
 }
 
-.s4 .icons .container:hover #deliver {
+.s4 .icons .container--think:hover #deliver, .s4 .icons .container--create:hover #deliver, .s4 .icons .container--iterate:hover #deliver, .s4 .icons .container--develop:hover #deliver, .s4 .icons .container--deliver:hover #deliver {
   background-image: url("../img/process-icons-mobile-white/deliver.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -506,7 +590,62 @@ html {
   transition: all 350ms ease-in-out;
 }
 
-.s4 .icons li:nth-child(6):hover .dot {
+.s4 .icons .container--think {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: think;
+}
+
+.s4 .icons .container--create {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: create;
+}
+
+.s4 .icons .container--iterate {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: iterate;
+}
+
+.s4 .icons .container--develop {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: develop;
+}
+
+.s4 .icons .container--deliver {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: deliver;
+}
+
+.s4 .icons .container--tap {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: tap;
+  height: auto;
+  width: auto;
+}
+
+.s4 .icons .container--tap a {
+  width: 80px;
+  text-align: left;
+  margin-top: -2rem;
+  margin-left: 1.5rem;
+}
+
+.s4 .icons .container--tap .dot {
+  height: 67px;
+  width: 67px;
+  border: 1.5px solid #5e0ed8;
+  border-radius: 50%;
+  display: block;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.s4 .icons .container--tap:hover .dot {
   background-color: transparent;
 }
 
@@ -667,6 +806,7 @@ html {
   font-family: "Futura", sans-serif;
   font-size: 1rem;
   width: 82%;
+  max-width: 400px;
   height: 42px;
   background-color: rgba(0, 0, 0, 0.45);
   color: white;
@@ -706,6 +846,7 @@ html {
 
 .s6 textarea {
   width: 82%;
+  max-width: 400px;
   height: 98px;
   background-color: rgba(0, 0, 0, 0.45);
   color: white;

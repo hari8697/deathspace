@@ -75,6 +75,7 @@
     font-family: "Futura", sans-serif;
     font-size: 1rem;
     width: 82%;
+    max-width: 400px;
     height: 42px;
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
@@ -97,6 +98,7 @@
 
   textarea {
     width: 82%;
+    max-width: 400px;
     height: 98px;
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
