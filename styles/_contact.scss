@@ -39,6 +39,7 @@
     color: #fff;
     font-size: 2rem;
     text-align: center;
+    pointer-events: none;
   }
 
   p {
@@ -61,18 +62,26 @@
 
   .form {
     width: 100%;
+    pointer-events: none;
     z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    p {
-      margin-left: 1rem;
+
+    div {
+      width: 82%;
+      font-size: 1rem;
+      max-width: 400px;
+      font-family: "Futura", sans-serif;
+      padding-top: 3px;
     }
   }
 
-  input {
+  input:not(:last-child) {
+    margin-top: 0.625rem;
     font-family: "Futura", sans-serif;
+    pointer-events: all;
     font-size: 1rem;
     width: 82%;
     max-width: 400px;
@@ -81,7 +90,6 @@
     color: white;
     box-sizing: border-box;
     padding: 0rem 1rem;
-    margin-bottom: 0.625rem;
     border-radius: 5px;
     border: none;
     resize: none;
@@ -97,13 +105,14 @@
   }
 
   textarea {
+    margin-top: 0.625rem;
+    pointer-events: all;
     width: 82%;
     max-width: 400px;
     height: 98px;
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
     text-align: left;
-    margin-bottom: 0.625rem;
     border-radius: 5px;
     border: none;
     resize: none;
@@ -130,7 +139,8 @@
 
 .submit-btn {
   font-family: "Futura", sans-serif;
-  margin-top: 0.7rem;
+  pointer-events: all;
+  margin-top: 1.3rem;
   padding: 1rem 2.3rem;
   border-radius: 10px;
   background-color: transparent;

@@ -1,6 +1,5 @@
 particlesJS.load("particles-js", "../res/stars.json");
 particlesJS.load("particles2-js", "../res/particlesjs-config.json");
-
 setTimeout(function() {
   let viewheight = $(window).height();
   let viewwidth = $(window).width();
@@ -10,6 +9,11 @@ setTimeout(function() {
     "height=" + viewheight + ", width=" + viewwidth + ", initial-scale=1.0"
   );
 }, 300);
+
+var form = $(".s6 .form");
+new window.JustValidate(".s6 .form", {
+  colorWrong: "#d0ff00"
+});
 
 // Process functions
 
@@ -113,3 +117,5 @@ pContainer.on("click", function() {
 closePopUp.on("click", function() {
   // tl.reverse();
 });
+
+//Contact Functions

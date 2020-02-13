@@ -151,10 +151,8 @@ html {
 }
 
 .particles {
-  width: 100%;
   height: 100%;
   position: absolute;
-  mix-blend-mode: overlay;
   z-index: 0;
 }
 
@@ -224,7 +222,6 @@ html {
 }
 
 .gallery-list {
-  width: 100vw;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -363,7 +360,6 @@ html {
 
 .s4 .icons {
   margin-top: 2rem;
-  width: 100vw;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -760,6 +756,7 @@ html {
   color: #fff;
   font-size: 2rem;
   text-align: center;
+  pointer-events: none;
 }
 
 .s6 p {
@@ -782,6 +779,7 @@ html {
 
 .s6 .form {
   width: 100%;
+  pointer-events: none;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -798,12 +796,18 @@ html {
           align-items: center;
 }
 
-.s6 .form p {
-  margin-left: 1rem;
+.s6 .form div {
+  width: 82%;
+  font-size: 1rem;
+  max-width: 400px;
+  font-family: "Futura", sans-serif;
+  padding-top: 3px;
 }
 
-.s6 input {
+.s6 input:not(:last-child) {
+  margin-top: 0.625rem;
   font-family: "Futura", sans-serif;
+  pointer-events: all;
   font-size: 1rem;
   width: 82%;
   max-width: 400px;
@@ -813,45 +817,45 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0rem 1rem;
-  margin-bottom: 0.625rem;
   border-radius: 5px;
   border: none;
   resize: none;
   caret-color: #0eb5d8;
 }
 
-.s6 input::-webkit-input-placeholder {
+.s6 input:not(:last-child)::-webkit-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
-.s6 input:-ms-input-placeholder {
+.s6 input:not(:last-child):-ms-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
-.s6 input::-ms-input-placeholder {
+.s6 input:not(:last-child)::-ms-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
-.s6 input::placeholder {
+.s6 input:not(:last-child)::placeholder {
   color: white;
   opacity: 0.8;
 }
 
-.s6 input:focus {
+.s6 input:not(:last-child):focus {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .s6 textarea {
+  margin-top: 0.625rem;
+  pointer-events: all;
   width: 82%;
   max-width: 400px;
   height: 98px;
   background-color: rgba(0, 0, 0, 0.45);
   color: white;
   text-align: left;
-  margin-bottom: 0.625rem;
   border-radius: 5px;
   border: none;
   resize: none;
@@ -897,7 +901,8 @@ html {
 
 .submit-btn {
   font-family: "Futura", sans-serif;
-  margin-top: 0.7rem;
+  pointer-events: all;
+  margin-top: 1.3rem;
   padding: 1rem 2.3rem;
   border-radius: 10px;
   background-color: transparent;
@@ -944,11 +949,8 @@ html {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
 }
 
 .footer .social--links {
@@ -956,10 +958,14 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
+}
+
+.footer .social--links a {
+  margin-left: 0.5rem;
 }
 
 .footer .social--links #tw {

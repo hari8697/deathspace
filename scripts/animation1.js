@@ -15,7 +15,7 @@ var s4icons = $(".s4 .icons > div:not(:last-child)");
 var s5h1 = $(".s5 h1");
 var s5li = $(".s5 .services-content > ul li");
 var s6text = $(".s6 .text *");
-var s6form = $(".s6 .form > input, .s6 textarea");
+var s6form = $(".s6 .form input:not(:last-child), .s6 .form textarea");
 var s6formbtn = $(".s6 .submit-btn");
 var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
@@ -25,6 +25,9 @@ var footer4 = $(".footer > p");
 var checkbool = true;
 
 var animS4, tween;
+
+function update() {}
+var updateInterval = setInterval(update, 100);
 
 $(document).ready(function() {
   var animArrow = new TimelineMax({
@@ -182,7 +185,7 @@ $(document).ready(function() {
         opacity: "0",
         ease: Expo.easeOut
       },
-      0.3
+      0.2
     );
 
   var s2Scene = new ScrollMagic.Scene({
@@ -191,7 +194,9 @@ $(document).ready(function() {
     offset: -vh * 0.5,
     duration: vh
   }).setTween(animS2);
+
   var animS3 = new TimelineMax();
+
   if (vw < 768) {
     animS3
       .to(pimg1, 2, {
@@ -273,14 +278,6 @@ $(document).ready(function() {
     animS4.append(tween);
   }
 
-  function iconActiveCheck() {
-    if (checkbool) {
-    } else {
-    }
-    console.log(checkbool);
-  }
-  var s4check = setInterval(iconActiveCheck, 1000);
-
   if (vh / vw > 1.78) {
     var s4Scene = new ScrollMagic.Scene({
       triggerElement: ".s3 .text-wrapper",
@@ -353,13 +350,13 @@ $(document).ready(function() {
     )
     .from(
       s6formbtn,
-      0.1,
+      1,
       {
-        ease: Expo.easeInOut,
-        y: "50",
+        ease: Power2.easeOut,
+        y: "30",
         opacity: "0"
       },
-      2
+      1.6
     );
   if (vh > 600) {
     var s6Scene = new ScrollMagic.Scene({
@@ -416,7 +413,7 @@ $(document).ready(function() {
     var footerScene = new ScrollMagic.Scene({
       triggerElement: ".footer",
       triggerHook: vh,
-      duration: "20%",
+      duration: "18%",
       offset: "0",
       reverse: false
     }).setTween(animFooter);
