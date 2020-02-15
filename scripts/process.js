@@ -286,6 +286,4 @@ closePopUp.on("click", function() {
   tl.set(pself, {
     "z-index": 0
   });
-
-  animS4.append(tween);
 });
