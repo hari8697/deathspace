@@ -87,7 +87,7 @@
         width: 50%;
         left: 0;
         height: 100%;
-        z-index: 5;
+        z-index: 4;
         position: absolute;
         background: transparent;
       }
@@ -104,8 +104,12 @@
         ul {
           display: flex;
         }
-        .dot,
-        .dot--sel {
+        .sel {
+          width: 8px;
+          height: 8px;
+          opacity: 1;
+        }
+        li {
           &:not(:first-child) {
             margin-left: 0.87rem;
           }
@@ -115,11 +119,6 @@
           list-style: none;
           background: white;
           opacity: 0.3;
-        }
-        .dot--sel {
-          width: 8px;
-          height: 8px;
-          opacity: 1;
         }
       }
 

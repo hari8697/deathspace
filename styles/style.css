@@ -78,7 +78,7 @@ html {
   position: fixed;
   width: 100vw;
   height: 60px;
-  z-index: 5;
+  z-index: 10;
   top: 0;
   opacity: 0;
 }
@@ -88,7 +88,7 @@ html {
   position: absolute;
   left: 50%;
   top: 0;
-  z-index: 5;
+  z-index: 10;
   opacity: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -406,7 +406,7 @@ html {
   width: 50%;
   left: 0;
   height: 100%;
-  z-index: 5;
+  z-index: 4;
   position: absolute;
   background: transparent;
 }
@@ -429,8 +429,13 @@ html {
   display: flex;
 }
 
-.s4 .icons .popup .nav--indicators .dot,
-.s4 .icons .popup .nav--indicators .dot--sel {
+.s4 .icons .popup .nav--indicators .sel {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+}
+
+.s4 .icons .popup .nav--indicators li {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -439,15 +444,8 @@ html {
   opacity: 0.3;
 }
 
-.s4 .icons .popup .nav--indicators .dot:not(:first-child),
-.s4 .icons .popup .nav--indicators .dot--sel:not(:first-child) {
+.s4 .icons .popup .nav--indicators li:not(:first-child) {
   margin-left: 0.87rem;
-}
-
-.s4 .icons .popup .nav--indicators .dot--sel {
-  width: 8px;
-  height: 8px;
-  opacity: 1;
 }
 
 .s4 .icons .popup .nav--hor {
