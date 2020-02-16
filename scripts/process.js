@@ -274,6 +274,7 @@ closePopUp.on("click", function() {
   tl.set(clickTitle, {
     position: "static",
     "margin-top": "6px",
+    width: "70px",
     color: "#aeaeae",
     x: 0,
     y: 0,
