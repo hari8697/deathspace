@@ -76,13 +76,20 @@
       font-family: "Futura", sans-serif;
       padding-top: 3px;
     }
+
+    .input {
+      width: 82%;
+    }
   }
-  input:not(:last-child) {
+
+  #name-field,
+  #email-field {
+    width: 100%;
     margin-top: 0.625rem;
     font-family: "Futura", sans-serif;
     pointer-events: all;
     font-size: 1rem;
-    width: 82%;
+    width: 100%;
     max-width: 400px;
     height: 42px;
     background-color: rgba(0, 0, 0, 0.45);
@@ -93,7 +100,6 @@
     border: none;
     resize: none;
     caret-color: #0eb5d8;
-
     &::placeholder {
       color: white;
       opacity: 0.8;
@@ -102,6 +108,31 @@
       background-color: rgba(0, 0, 0, 0.6);
     }
   }
+  // input:not(:last-child) {
+  //   margin-top: 0.625rem;
+  //   font-family: "Futura", sans-serif;
+  //   pointer-events: all;
+  //   font-size: 1rem;
+  //   width: 100%;
+  //   max-width: 400px;
+  //   height: 42px;
+  //   background-color: rgba(0, 0, 0, 0.45);
+  //   color: white;
+  //   box-sizing: border-box;
+  //   padding: 0rem 1rem;
+  //   border-radius: 5px;
+  //   border: none;
+  //   resize: none;
+  //   caret-color: #0eb5d8;
+
+  //   &::placeholder {
+  //     color: white;
+  //     opacity: 0.8;
+  //   }
+  //   &:focus {
+  //     background-color: rgba(0, 0, 0, 0.6);
+  //   }
+  // }
 
   textarea {
     margin-top: 0.625rem;
@@ -147,6 +178,7 @@
   font-size: 1rem;
   border: solid 1px white;
   transition: all 250ms ease-in-out;
+  -webkit-appearance: none;
 
   &:hover {
     cursor: pointer;

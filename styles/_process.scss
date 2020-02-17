@@ -76,7 +76,7 @@
 
       p {
         width: 60%;
-        margin-top: 129px;
+        margin-top: 140px;
         font-family: "Futura", sans-serif;
         color: white;
       }
@@ -130,9 +130,11 @@
         justify-content: space-between;
         transform: translateY(-50%);
         .left {
+          margin-top: 20px;
           padding-left: 1.3rem;
         }
         .right {
+          margin-top: 20px;
           padding-right: 1.3rem;
         }
       }

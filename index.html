@@ -29,6 +29,8 @@
       <img src="./img/process-icons-mobile-white/iterate.svg" alt="" />
       <img src="./img/process-icons-mobile-white/develop.svg" alt="" />
       <img src="./img/process-icons-mobile-white/deliver.svg" alt="" />
+      <img src="./img/preview.png" alt="" />
+      <img src="./img/preview-2.png" alt="" />
       <video src="./img/video.mp4"></video>
     </div>
     <div class="scrollContainer">
@@ -56,13 +58,14 @@
             <video
               autoplay
               loop
-              playsinline
               muted
+              playsinline
               id="myvideo"
-              src="./img/video.mp4"
-              type="video/mp4"
-            ></video>
-            <img src="./img/mobile.jpg" alt="" class="mobile-hero" />
+              poster="./img/preview-2.png"
+            >
+              <source src="./img/video-muted.mp4" type="video/mp4" />
+            </video>
+            <!-- <img src="./img/mobile.jpg" alt="" class="mobile-hero" /> -->
           </div>
         </div>
         <div class="stick">
@@ -151,7 +154,7 @@
             </div>
             <span class="one"></span>
             <span class="two"></span>
-            <p>
+            <p class="desc">
               Development involves bringing the design to life with code.
               Micro-interactions, and animations are created in this stage
             </p>
@@ -245,20 +248,26 @@
             value="https://www.google.com/"
           /> -->
 
-          <input
-            type="text"
-            name="fname"
-            data-validate-field="name"
-            placeholder="Name"
-            class="name-field"
-          />
-          <input
-            type="text"
-            name="email"
-            data-validate-field="email"
-            placeholder="Your email address"
-            class="email-field"
-          />
+          <div class="input">
+            <input
+              type="text"
+              name="fname"
+              data-validate-field="name"
+              placeholder="Name"
+              id="name-field"
+            />
+          </div>
+
+          <div class="input">
+            <input
+              type="text"
+              name="email"
+              data-validate-field="email"
+              placeholder="Your email address"
+              id="email-field"
+            />
+          </div>
+
           <textarea
             name="message"
             cols="30"
@@ -282,21 +291,23 @@
             <ul>
               <li class="social--links">
                 <span class="dots" id="tw"></span>
-                <a href="">tw</a>
+                <a href="https://twitter.com/deathspace_">tw</a>
               </li>
               <li class="social--links">
                 <span class="dots" id="ig"></span>
-                <a href="">ig</a>
+                <a href="https://www.instagram.com/deathspace.design/">ig</a>
               </li>
               <li class="social--links">
                 <span class="dots" id="re"></span>
-                <a href="">re</a>
+                <a href="https://www.reddit.com/user/deathspace_design">re</a>
               </li>
             </ul>
           </div>
           <div class="email">
             <p>👋 Say hello</p>
-            <a href="">deathspacedesign@gmail.com</a>
+            <a href="mailto:deathspacedesign@gmail.com?Subject=Hello%20there!"
+              >deathspacedesign@gmail.com</a
+            >
           </div>
         </div>
         <p class="copyright--info">

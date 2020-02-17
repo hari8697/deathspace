@@ -15,7 +15,7 @@ var s4icons = $(".s4 .icons > div:not(:last-child)");
 var s5h1 = $(".s5 h1");
 var s5li = $(".s5 .services-content > ul li");
 var s6text = $(".s6 .text *");
-var s6form = $(".s6 .form input:not(:last-child), .s6 .form textarea");
+var s6form = $(".s6 .form .input, .s6 .form textarea");
 var s6formbtn = $(".s6 .submit-btn");
 var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
@@ -38,18 +38,18 @@ $(document).ready(function() {
     .set(scrollArrow, {
       rotation: 0.01,
       x: "-50%",
-      y: "-100"
+      y: "-180"
     })
     .to(scrollArrow, 2, {
       rotation: 0.01,
       opacity: 1,
-      y: "-80",
+      y: "-160",
       ease: Expo.easeInOut,
       delay: "1"
     })
     .to(scrollArrow, 1, {
       opacity: 0,
-      y: "-60"
+      y: "-140"
     })
     .reverse();
 

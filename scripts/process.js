@@ -1,8 +1,28 @@
 var pContainer = $(".s4 .icons > div:not(:last-child)");
 var popup = $(".s4 .popup");
+var pDesc = $(".s4 .popup .desc");
 var closePopUp = $(".s4 .popup .close-btn");
 var tl = new TimelineMax();
 var pOpen;
+
+let devText =
+  "Development involves bringing the design to life with code. Micro-interactions, and animations are created in this stage.";
+let delText =
+  "Once development, is completed, all that's left is successfully handing over the website to the client, and setting up domain, hosting, etc.";
+let itText =
+  "We repeat the cycles of ideation and creation till we reach a satisfactory version of the website.";
+let crText =
+  "Designing low/high fidelity wireframes, clickable prototypes, and any other deliverables.";
+let thText =
+  "Discussions, research, site maps, user journey maps, wireframing, strategy, ideas/concepts, all fall into this stage of the process.";
+
+let dots = $(".nav--indicators li");
+let currDot;
+let lArrow = $(".nav--hor .left");
+let rArrow = $(".nav--hor .right");
+let popupLeft = $(".s4 .popup .one");
+let popupRight = $(".s4 .popup .two");
+let tl2 = new TimelineMax();
 // Positions
 
 var x2 = -(118 - vw * 0.05 + (vw - 188) / 2);
@@ -11,20 +31,241 @@ var y2 = -117;
 var y3 = y2 * 2 - 3;
 var titlePos = vw * 0.05 + 43 + 50; // margin + icon margin + iconsize & textmargin
 
+start();
+
 function start() {
   tl.set(popup, {
     x: "-50%"
   });
 }
 
-$(".nav--indicators li").click(function() {
+dots.click(function() {
   $(".sel").removeClass("sel");
   $(this).addClass("sel");
 });
 
-function clickIcon(title, pDot, self, process, xAxis, yAxis) {
+function arrows(a) {
+  $(".sel").removeClass("sel");
+  $(`.nav--indicators li:nth-child(${a})`).addClass("sel");
+
+  lArrow.css("opacity", "1");
+  rArrow.css("opacity", "1");
+
+  if (a == 1) {
+    lArrow.css("opacity", "0");
+  }
+  if (a == 5) {
+    rArrow.css("opacity", "0");
+  }
+}
+
+popupLeft.click(function() {
+  if (currDot > 1) {
+    currDot -= 1;
+
+    paragraph(currDot);
+
+    arrows(currDot);
+
+    processSwitch(currDot);
+
+    changeSwitch(currDot);
+  }
+});
+
+popupRight.click(function() {
+  if (currDot < 5) {
+    currDot += 1;
+    paragraph(currDot);
+    arrows(currDot);
+    processSwitch(currDot);
+
+    changeSwitch(currDot);
+  }
+});
+
+function paragraph(a) {
+  if (a == 1) {
+    tl2.to(pDesc, 0.25, {
+      "margin-top": "138px"
+    });
+  }
+  if (a == 2) {
+    tl2.to(pDesc, 0.25, {
+      "margin-top": "145px"
+    });
+  }
+  if (a == 3) {
+    tl2.to(pDesc, 0.25, {
+      "margin-top": "145px"
+    });
+  }
+  if (a == 4) {
+    tl2.to(pDesc, 0.25, {
+      "margin-top": "140px"
+    });
+  }
+  if (a == 5) {
+    tl2.to(pDesc, 0.25, {
+      "margin-top": "135px"
+    });
+  }
+}
+
+function changeSwitch(a) {
+  // clickTitle.fadeOut(100);
+  // pDesc.fadeOut(100);
+
+  switch (a) {
+    case 1:
+      setTimeout(() => {
+        clickTitle.text("Think");
+      }, 100);
+      setTimeout(() => {
+        pDesc.text(thText);
+      }, 100);
+      break;
+
+    case 2:
+      setTimeout(() => {
+        clickTitle.text("Create");
+      }, 100);
+      setTimeout(() => {
+        pDesc.text(crText);
+      }, 100);
+      break;
+
+    case 3:
+      setTimeout(() => {
+        clickTitle.text("Iterate");
+      }, 100);
+      setTimeout(() => {
+        pDesc.text(itText);
+      }, 100);
+      break;
+
+    case 4:
+      setTimeout(() => {
+        clickTitle.text("Develop");
+      }, 100);
+      setTimeout(() => {
+        pDesc.text(devText);
+      }, 100);
+      break;
+
+    case 5:
+      setTimeout(() => {
+        clickTitle.text("Deliver");
+      }, 100);
+      setTimeout(() => {
+        pDesc.text(delText);
+      }, 100);
+      break;
+
+    default:
+      break;
+  }
+
+  // clickTitle.fadeIn(100);
+  // pDesc.fadeIn(200);
+}
+
+function processSwitch(process) {
+  switch (process) {
+    case "think":
+    case 1:
+      pDot.css({
+        "background-image": "url('../img/process-icons-mobile-white/think.svg')"
+      });
+
+      tl.to(
+        pDot,
+        0.3,
+        {
+          "background-position": "45px 62.5px"
+        },
+        "-=0.2"
+      );
+
+      break;
+
+    case "create":
+    case 2:
+      pDot.css({
+        "background-image":
+          "url('../img/process-icons-mobile-white/create.svg')"
+      });
+
+      tl.to(
+        pDot,
+        0.3,
+        {
+          "background-position": "40px 66px"
+        },
+        "-=0.2"
+      );
+      break;
+
+    case "iterate":
+    case 3:
+      pDot.css({
+        "background-image":
+          "url('../img/process-icons-mobile-white/iterate.svg')"
+      });
+      tl.to(
+        pDot,
+        0.3,
+        {
+          "background-position": "45px 62.5px"
+        },
+        "-=0.2"
+      );
+      break;
+
+    case "develop":
+    case 4:
+      pDot.css({
+        "background-image":
+          "url('../img/process-icons-mobile-white/develop.svg')"
+      });
+      tl.to(
+        pDot,
+        0.3,
+        {
+          "background-position": "45px 62.5px",
+          "background-size": "auto"
+        },
+        "-=0.2"
+      );
+      break;
+
+    case "deliver":
+    case 5:
+      pDot.css({
+        "background-image":
+          "url('../img/process-icons-mobile-white/deliver.svg')"
+      });
+      tl.to(
+        pDot,
+        0.3,
+        {
+          "background-position": "45px 65px"
+        },
+        "-=0.2"
+      );
+      break;
+
+    default:
+      break;
+  }
+}
+function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
   //remove anim
   animS4.remove(tween);
+
+  currDot = dotNo;
+  arrows(dotNo);
+  paragraph(dotNo);
 
   pOpen = process;
   //adjust title
@@ -43,69 +284,20 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis) {
 
   var urlStart = "url('../img/process-icons-mobile-white/";
   var urlEnd = ".svg')";
-
   var url = '"' + urlStart + process + urlEnd + '"';
 
-  console.log(url);
+  tl.set(self, { "z-index": "3" }).to(pDot, 0.3, {
+    position: "absolute",
+    width: "90%",
+    height: "100%",
+    "border-radius": "10px",
+    y: yAxis,
+    x: xAxis,
+    "background-color": "#5e0ed8"
+  });
 
-  switch (process) {
-    case "think":
-      pDot.css(
-        "background-image",
-        "url('../img/process-icons-mobile-white/think.svg')"
-      );
-      break;
+  processSwitch(process);
 
-    case "create":
-      pDot.css(
-        "background-image",
-        "url('../img/process-icons-mobile-white/create.svg')"
-      );
-      break;
-
-    case "iterate":
-      pDot.css(
-        "background-image",
-        "url('../img/process-icons-mobile-white/iterate.svg')"
-      );
-      break;
-
-    case "develop":
-      pDot.css(
-        "background-image",
-        "url('../img/process-icons-mobile-white/develop.svg')"
-      );
-      break;
-
-    case "deliver":
-      pDot.css(
-        "background-image",
-        "url('../img/process-icons-mobile-white/deliver.svg')"
-      );
-      break;
-
-    default:
-      break;
-  }
-
-  tl.set(self, { "z-index": "3" })
-    .to(pDot, 0.3, {
-      position: "absolute",
-      width: "90%",
-      height: "100%",
-      "border-radius": "10px",
-      y: yAxis,
-      x: xAxis,
-      "background-color": "#5e0ed8"
-    })
-    .to(
-      pDot,
-      0.3,
-      {
-        "background-position": "2.7rem 62.5px"
-      },
-      "-=0.2"
-    );
   tl.set($(".nav--indicators"), {
     "z-index": 5
   });
@@ -154,32 +346,42 @@ pContainer.on("click", function() {
   pDot = $(this).children(".dot");
   clickTitle = $(this).children("a");
 
+  tl.set(pContainer, {
+    "pointer-events": "none"
+  });
+
   tl.set(s4icons, {
     opacity: 1
   });
 
   if ($(this).hasClass("container--think")) {
-    clickIcon(clickTitle, pDot, $(this), "think", x1, 0);
+    pDesc.text(thText);
+    clickIcon(clickTitle, pDot, $(this), "think", x1, 0, 1);
   }
 
   if ($(this).hasClass("container--create")) {
-    clickIcon(clickTitle, pDot, $(this), "create", x2, 0);
+    pDesc.text(crText);
+    clickIcon(clickTitle, pDot, $(this), "create", x2, 0, 2);
   }
 
   if ($(this).hasClass("container--iterate")) {
-    clickIcon(clickTitle, pDot, $(this), "iterate", x1, y2);
+    pDesc.text(itText);
+    clickIcon(clickTitle, pDot, $(this), "iterate", x1, y2, 3);
   }
 
   if ($(this).hasClass("container--develop")) {
-    clickIcon(clickTitle, pDot, $(this), "develop", x2, y2);
+    pDesc.text(devText);
+    clickIcon(clickTitle, pDot, $(this), "develop", x2, y2, 4);
   }
 
   if ($(this).hasClass("container--deliver")) {
-    clickIcon(clickTitle, pDot, $(this), "deliver", x1, y3);
+    pDesc.text(delText);
+    clickIcon(clickTitle, pDot, $(this), "deliver", x1, y3, 5);
   }
 });
 
 closePopUp.on("click", function() {
+  pContainer.css("pointer-events", "none");
   tl.clear();
 
   tl.to(popup, 0.8, {
@@ -189,12 +391,12 @@ closePopUp.on("click", function() {
 
   tl.to(
     clickTitle,
-    0.8,
+    0.2,
     {
       opacity: 0,
-      y: 40
+      y: 70
     },
-    0
+    0.2
   );
   tl.to(
     pDot,
@@ -219,6 +421,7 @@ closePopUp.on("click", function() {
   switch (pOpen) {
     case "think":
       setTimeout(function() {
+        clickTitle.text("Think");
         pDot.css(
           "background-image",
           "url('../img/process-icons-mobile/think.svg')"
@@ -228,6 +431,7 @@ closePopUp.on("click", function() {
 
     case "create":
       setTimeout(function() {
+        clickTitle.text("Create");
         pDot.css(
           "background-image",
           "url('../img/process-icons-mobile/create.svg')"
@@ -237,6 +441,7 @@ closePopUp.on("click", function() {
 
     case "iterate":
       setTimeout(function() {
+        clickTitle.text("Iterate");
         pDot.css(
           "background-image",
           "url('../img/process-icons-mobile/iterate.svg')"
@@ -246,6 +451,7 @@ closePopUp.on("click", function() {
 
     case "develop":
       setTimeout(function() {
+        clickTitle.text("Develop");
         pDot.css(
           "background-image",
           "url('../img/process-icons-mobile/develop.svg')"
@@ -255,6 +461,7 @@ closePopUp.on("click", function() {
 
     case "deliver":
       setTimeout(function() {
+        clickTitle.text("Deliver");
         pDot.css(
           "background-image",
           "url('../img/process-icons-mobile/deliver.svg')"
@@ -287,4 +494,13 @@ closePopUp.on("click", function() {
   tl.set(pself, {
     "z-index": 0
   });
+
+  tl.set(pContainer, {
+    "pointer-events": "all"
+  });
+
+  animS4.append(tween);
+
+  animS4.restart();
+  animS4.progress(1);
 });
