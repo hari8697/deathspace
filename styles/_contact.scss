@@ -12,20 +12,21 @@
 
 .s6 {
   height: 90vh;
-  // background-image: linear-gradient(
-  //   69.73deg,
-  //   #ff0023 0.71%,
-  //   #ab00e7 40.37%,
-  //   #0056ff 79.06%,
-  //   #00ffb1 116.07%
-  // );
-  // background-size: 5028px;
-  background-color: #0eb5d8;
+  background-image: linear-gradient(
+    69.73deg,
+    #ff0023 0.71%,
+    #ab00e7 40.37%,
+    #0056ff 79.06%,
+    #00ffb1 116.07%
+  );
+  background-size: 5028px;
+  // // background-color: #0eb5d8;
+  // background-color: #5e0ed8;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // animation: bg-animation 60s infinite;
+  animation: bg-animation 60s infinite;
 
   .particles {
     width: 100%;
