@@ -179,6 +179,10 @@ h1 {
   display: block;
   overflow: hidden;
   pointer-events: none;
+  background: transparent no-repeat url("./img/preview-2.png");
+  background-size: 100% 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .s3 {

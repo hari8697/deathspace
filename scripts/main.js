@@ -1,10 +1,10 @@
 particlesJS.load("particles-js", "../res/stars.json");
 particlesJS.load("particles2-js", "../res/particlesjs-config.json");
 
-let myVideo = $("#myvideo");
+// let myVideo = $("#myvideo");
 
-myVideo[0].load();
-myVideo[0].play();
+// myVideo[0].load();
+// myVideo[0].play();
 
 setTimeout(function() {
   let viewheight = $(window).height();
