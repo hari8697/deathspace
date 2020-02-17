@@ -39,10 +39,10 @@ function start() {
   });
 }
 
-dots.click(function() {
-  $(".sel").removeClass("sel");
-  $(this).addClass("sel");
-});
+// dots.click(function() {
+//   $(".sel").removeClass("sel");
+//   $(this).addClass("sel");
+// });
 
 function arrows(a) {
   $(".sel").removeClass("sel");
@@ -59,29 +59,59 @@ function arrows(a) {
   }
 }
 
+function switchStates() {
+  paragraph(currDot);
+  arrows(currDot);
+  processSwitch(currDot);
+  changeSwitch(currDot);
+}
+
 popupLeft.click(function() {
   if (currDot > 1) {
     currDot -= 1;
-
-    paragraph(currDot);
-
-    arrows(currDot);
-
-    processSwitch(currDot);
-
-    changeSwitch(currDot);
+    switchStates();
   }
 });
 
+popupLeft.touchwipe({
+  wipeLeft: function() {
+    if (currDot < 5) {
+      currDot += 1;
+      switchStates();
+    }
+  },
+  wipeRight: function() {
+    if (currDot > 1) {
+      currDot -= 1;
+      switchStates();
+    }
+  },
+  min_move_x: 20,
+  min_move_y: 20,
+  preventDefaultEvents: true
+});
 popupRight.click(function() {
   if (currDot < 5) {
     currDot += 1;
-    paragraph(currDot);
-    arrows(currDot);
-    processSwitch(currDot);
-
-    changeSwitch(currDot);
+    switchStates();
   }
+});
+popupRight.touchwipe({
+  wipeLeft: function() {
+    if (currDot < 5) {
+      currDot += 1;
+      switchStates();
+    }
+  },
+  wipeRight: function() {
+    if (currDot > 1) {
+      currDot -= 1;
+      switchStates();
+    }
+  },
+  min_move_x: 20,
+  min_move_y: 20,
+  preventDefaultEvents: true
 });
 
 function paragraph(a) {
@@ -182,7 +212,7 @@ function processSwitch(process) {
         pDot,
         0.3,
         {
-          "background-position": "45px 62.5px"
+          "background-position": "48px 64px"
         },
         "-=0.2"
       );
@@ -200,7 +230,7 @@ function processSwitch(process) {
         pDot,
         0.3,
         {
-          "background-position": "40px 66px"
+          "background-position": "42px 68px"
         },
         "-=0.2"
       );
@@ -216,7 +246,7 @@ function processSwitch(process) {
         pDot,
         0.3,
         {
-          "background-position": "45px 62.5px"
+          "background-position": "48px 66px"
         },
         "-=0.2"
       );
@@ -232,7 +262,7 @@ function processSwitch(process) {
         pDot,
         0.3,
         {
-          "background-position": "45px 62.5px",
+          "background-position": "47px 66px",
           "background-size": "auto"
         },
         "-=0.2"
@@ -249,7 +279,7 @@ function processSwitch(process) {
         pDot,
         0.3,
         {
-          "background-position": "45px 65px"
+          "background-position": "47px 67px"
         },
         "-=0.2"
       );
