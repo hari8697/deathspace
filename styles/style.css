@@ -161,7 +161,12 @@ h1 {
 }
 
 .mobile-hero {
-  display: none;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .video {
@@ -179,10 +184,8 @@ h1 {
   display: block;
   overflow: hidden;
   pointer-events: none;
-  background: transparent no-repeat url("./img/preview-2.png");
-  background-size: 100% 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background: transparent;
+  z-index: 1;
 }
 
 .s3 {

@@ -151,7 +151,11 @@ h1 {
 }
 
 .mobile-hero {
-  display: none;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  transform: translate(0px, 0px);
 }
 
 .video {
@@ -165,9 +169,14 @@ h1 {
   display: block;
   overflow: hidden;
   pointer-events: none;
-  background: transparent no-repeat url("./img/preview-2.png");
-  background-size: 100% 100%;
-  object-fit: cover;
+  background: transparent;
+  z-index: 1;
+  // background: transparent url("./img/preview-2.png") 50% 50% / cover no-repeat;
+  // background-size: cover;
+
+  // background: transparent no-repeat url("./img/preview-2.png");
+  // background-size: 50% 50%;
+  // object-fit: fill;
 }
 
 @import "./work";
