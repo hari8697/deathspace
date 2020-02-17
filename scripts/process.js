@@ -529,7 +529,7 @@ closePopUp.on("click", function() {
     "pointer-events": "all"
   });
 
-  animS4.append(tween);
+  animS4.add(tween);
 
   animS4.restart();
   animS4.progress(1);

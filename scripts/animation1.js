@@ -275,7 +275,7 @@ $(document).ready(function() {
       0.2
     );
 
-    animS4.append(tween);
+    animS4.add(tween);
   }
 
   if (vh / vw > 1.78) {
