@@ -916,7 +916,6 @@ h1 {
   border: solid 1px white;
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
-  -webkit-appearance: none;
 }
 
 .submit-btn:hover {
