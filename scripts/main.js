@@ -16,6 +16,19 @@ setTimeout(function() {
   );
 }, 300);
 
+//Portfolio-btn click
+
+var portBtn = $(".portfolio-btn");
+portBtn.click(function() {
+  // portBtn.css({
+  //   "background-color": "rgba(94, 14, 216, 1)",
+  //   color: "white"
+  // });
+  setTimeout(() => {
+    window.location.href = "./portfolio.html";
+  }, 150);
+});
+
 var form = $(".s6 .form");
 new window.JustValidate(".s6 .form", {
   colorWrong: "#d0ff00"

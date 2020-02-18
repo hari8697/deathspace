@@ -1,0 +1,577 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: black;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: normal;
+  src: url("../res/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: italic;
+  src: url("../res/Avenir-BlackOblique.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  src: url("../res/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: italic;
+  src: url("../res/Avenir-LightOblique.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: url("../res/Futura Book font.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: italic;
+  src: url("../res/Futura Book Italic font.ttf");
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.header {
+  background-color: black;
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+}
+
+.logo-top {
+  width: 120px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 10;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.portfolio {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+}
+
+.portfolio h1 {
+  width: 100%;
+  margin-left: 3.44px;
+  font-family: "Avenir-Black", sans-serif;
+  color: #d1d1d1;
+  font-size: 64px;
+  text-align: left;
+  pointer-events: none;
+}
+
+.portfolio--item {
+  width: 90%;
+  margin-bottom: 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Futura", sans-serif;
+  font-size: 1rem;
+}
+
+.portfolio--item--image {
+  width: 100%;
+  display: block;
+}
+
+.portfolio--item .text-wrapper {
+  margin-top: 6px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.portfolio--item .text-wrapper a {
+  text-decoration: none;
+  color: #616161;
+}
+
+.portfolio--item:nth-child(2) {
+  margin-top: -10px;
+}
+
+@-webkit-keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.s6 {
+  height: 90vh;
+  background-image: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
+  background-size: 5028px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: bg-animation 60s infinite;
+          animation: bg-animation 60s infinite;
+}
+
+.s6 .particles {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.s6 h1 {
+  font-family: "Avenir-Black", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.s6 p {
+  color: #fff;
+  font-family: "Futura", sans-serif;
+  max-width: 250px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.s6 .text {
+  margin: 2rem 0;
+  text-align: right;
+  z-index: 1;
+}
+
+.s6 .text p {
+  font-size: 20px;
+}
+
+.s6 .form {
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.s6 .form div {
+  width: 82%;
+  font-size: 1rem;
+  max-width: 400px;
+  font-family: "Futura", sans-serif;
+  padding-top: 3px;
+}
+
+.s6 .form .input {
+  width: 82%;
+}
+
+.s6 #name-field,
+.s6 #email-field,
+.s6 textarea {
+  width: 100%;
+  margin-top: 0.625rem;
+  font-family: "Futura", sans-serif;
+  pointer-events: all;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0rem 1rem;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  caret-color: #0eb5d8;
+}
+
+.s6 #name-field::-webkit-input-placeholder,
+.s6 #email-field::-webkit-input-placeholder,
+.s6 textarea::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field:-ms-input-placeholder,
+.s6 #email-field:-ms-input-placeholder,
+.s6 textarea:-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field::-ms-input-placeholder,
+.s6 #email-field::-ms-input-placeholder,
+.s6 textarea::-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field::placeholder,
+.s6 #email-field::placeholder,
+.s6 textarea::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field:focus,
+.s6 #email-field:focus,
+.s6 textarea:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 textarea {
+  width: 82%;
+  height: 98px;
+  text-align: left;
+  padding: 0.8rem 1rem;
+}
+
+.s6 textarea::-webkit-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 p {
+  margin-top: 0.7rem;
+}
+
+.submit-btn {
+  font-family: "Futura", sans-serif;
+  pointer-events: all;
+  margin-top: 1.3rem;
+  padding: 1rem 2.3rem;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: solid 1px white;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-appearance: none;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #000;
+  font-size: 1rem;
+  mix-blend-mode: screen;
+}
+
+.s6 {
+  height: 90vh;
+  background-image: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
+  background-size: 5028px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: bg-animation 60s infinite;
+          animation: bg-animation 60s infinite;
+}
+
+.s6 .particles {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.s6 h1 {
+  font-family: "Avenir-Black", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.s6 p {
+  color: #fff;
+  font-family: "Futura", sans-serif;
+  max-width: 250px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.s6 .text {
+  margin: 2rem 0;
+  text-align: right;
+  z-index: 1;
+}
+
+.s6 .text p {
+  font-size: 20px;
+}
+
+.s6 .form {
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.s6 .form div {
+  width: 82%;
+  font-size: 1rem;
+  max-width: 400px;
+  font-family: "Futura", sans-serif;
+  padding-top: 3px;
+}
+
+.s6 .form .input {
+  width: 82%;
+}
+
+.s6 #name-field,
+.s6 #email-field,
+.s6 textarea {
+  width: 100%;
+  margin-top: 0.625rem;
+  font-family: "Futura", sans-serif;
+  pointer-events: all;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: 42px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0rem 1rem;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  caret-color: #0eb5d8;
+}
+
+.s6 #name-field::-webkit-input-placeholder,
+.s6 #email-field::-webkit-input-placeholder,
+.s6 textarea::-webkit-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field:-ms-input-placeholder,
+.s6 #email-field:-ms-input-placeholder,
+.s6 textarea:-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field::-ms-input-placeholder,
+.s6 #email-field::-ms-input-placeholder,
+.s6 textarea::-ms-input-placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field::placeholder,
+.s6 #email-field::placeholder,
+.s6 textarea::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 #name-field:focus,
+.s6 #email-field:focus,
+.s6 textarea:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 textarea {
+  width: 82%;
+  height: 98px;
+  text-align: left;
+  padding: 0.8rem 1rem;
+}
+
+.s6 textarea::-webkit-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::-ms-input-placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea::placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.s6 textarea:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.s6 p {
+  margin-top: 0.7rem;
+}
+
+.submit-btn {
+  font-family: "Futura", sans-serif;
+  pointer-events: all;
+  margin-top: 1.3rem;
+  padding: 1rem 2.3rem;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: solid 1px white;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-appearance: none;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #000;
+  font-size: 1rem;
+  mix-blend-mode: screen;
+}
+/*# sourceMappingURL=style.css.map */

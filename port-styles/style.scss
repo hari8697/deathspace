@@ -1,3 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: black;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: normal;
+  src: url("../res/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: italic;
+  src: url("../res/Avenir-BlackOblique.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  src: url("../res/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: italic;
+  src: url("../res/Avenir-LightOblique.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: url("../res/Futura Book font.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: italic;
+  src: url("../res/Futura Book Italic font.ttf");
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.header {
+  background-color: black;
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+}
+
+.logo-top {
+  width: 120px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.portfolio {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   transform: translateY(60px);
+  background-color: white;
+
+  h1 {
+    width: 100%;
+    margin-left: 3.44px;
+    font-family: "Avenir-Black", sans-serif;
+    color: #d1d1d1;
+    font-size: 64px;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  &--item {
+    width: 90%;
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Futura", sans-serif;
+    font-size: 1rem;
+
+    &:nth-child(4) {
+    }
+    &--image {
+      width: 100%;
+      display: block;
+    }
+
+    .text-wrapper {
+      margin-top: 6px;
+      align-self: flex-end;
+      a {
+        text-decoration: none;
+        color: #616161;
+      }
+    }
+  }
+}
+
+.portfolio--item:nth-child(2) {
+  margin-top: -10px;
+}
+
 @keyframes bg-animation {
   0% {
     background-position: left;
@@ -9,6 +128,8 @@
     background-position: left;
   }
 }
+
+@import "../styles/contact";
 
 .s6 {
   height: 90vh;
@@ -111,31 +232,6 @@
       background-color: rgba(0, 0, 0, 0.6);
     }
   }
-  // input:not(:last-child) {
-  //   margin-top: 0.625rem;
-  //   font-family: "Futura", sans-serif;
-  //   pointer-events: all;
-  //   font-size: 1rem;
-  //   width: 100%;
-  //   max-width: 400px;
-  //   height: 42px;
-  //   background-color: rgba(0, 0, 0, 0.45);
-  //   color: white;
-  //   box-sizing: border-box;
-  //   padding: 0rem 1rem;
-  //   border-radius: 5px;
-  //   border: none;
-  //   resize: none;
-  //   caret-color: #0eb5d8;
-
-  //   &::placeholder {
-  //     color: white;
-  //     opacity: 0.8;
-  //   }
-  //   &:focus {
-  //     background-color: rgba(0, 0, 0, 0.6);
-  //   }
-  // }
 
   textarea {
     width: 82%;

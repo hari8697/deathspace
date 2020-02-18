@@ -293,7 +293,7 @@ h1 {
   transition: all 250ms ease-in-out;
 }
 
-.portfolio-btn:hover {
+.portfolio-btn:hover, .portfolio-btn:focus {
   background-color: #5e0ed8;
   color: white;
   cursor: pointer;
@@ -823,7 +823,8 @@ h1 {
 }
 
 .s6 #name-field,
-.s6 #email-field {
+.s6 #email-field,
+.s6 textarea {
   width: 100%;
   margin-top: 0.625rem;
   font-family: "Futura", sans-serif;
@@ -844,52 +845,44 @@ h1 {
 }
 
 .s6 #name-field::-webkit-input-placeholder,
-.s6 #email-field::-webkit-input-placeholder {
+.s6 #email-field::-webkit-input-placeholder,
+.s6 textarea::-webkit-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
 .s6 #name-field:-ms-input-placeholder,
-.s6 #email-field:-ms-input-placeholder {
+.s6 #email-field:-ms-input-placeholder,
+.s6 textarea:-ms-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
 .s6 #name-field::-ms-input-placeholder,
-.s6 #email-field::-ms-input-placeholder {
+.s6 #email-field::-ms-input-placeholder,
+.s6 textarea::-ms-input-placeholder {
   color: white;
   opacity: 0.8;
 }
 
 .s6 #name-field::placeholder,
-.s6 #email-field::placeholder {
+.s6 #email-field::placeholder,
+.s6 textarea::placeholder {
   color: white;
   opacity: 0.8;
 }
 
 .s6 #name-field:focus,
-.s6 #email-field:focus {
+.s6 #email-field:focus,
+.s6 textarea:focus {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .s6 textarea {
-  margin-top: 0.625rem;
-  pointer-events: all;
   width: 82%;
-  max-width: 400px;
   height: 98px;
-  background-color: rgba(0, 0, 0, 0.45);
-  color: white;
   text-align: left;
-  border-radius: 5px;
-  border: none;
-  resize: none;
-  caret-color: #0eb5d8;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 0.8rem 1rem;
-  font-size: 1rem;
-  font-family: "Futura", sans-serif;
 }
 
 .s6 textarea::-webkit-input-placeholder {
