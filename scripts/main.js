@@ -31,7 +31,8 @@ portBtn.click(function() {
 
 var form = $(".s6 .form");
 new window.JustValidate(".s6 .form", {
-  colorWrong: "#d0ff00"
+  colorWrong: "#FFA602"
+  // colorWrong: "#d0ff00"
 });
 
 // Process functions

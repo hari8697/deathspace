@@ -86,9 +86,7 @@ h1 {
 }
 
 .portfolio h1 {
-  position: absolute;
-  left: 0;
-  padding-left: 3.44px;
+  width: 97%;
   font-family: "Avenir-Black", sans-serif;
   color: #d1d1d1;
   font-size: 64px;
@@ -98,6 +96,7 @@ h1 {
 
 .portfolio--item {
   width: 90%;
+  position: relative;
   margin-bottom: 21px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +112,11 @@ h1 {
   font-size: 1rem;
 }
 
+.portfolio--item .pur-arrow {
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
 .portfolio--item--image {
   width: 100%;
   display: block;
@@ -122,6 +126,9 @@ h1 {
   margin-top: 6px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .portfolio--item .text-wrapper a {
@@ -129,8 +136,12 @@ h1 {
   color: #616161;
 }
 
+.portfolio--item:hover {
+  cursor: pointer;
+}
+
 .portfolio--item:nth-child(2) {
-  margin-top: 70px;
+  margin-top: -12px;
 }
 
 @-webkit-keyframes bg-animation {
