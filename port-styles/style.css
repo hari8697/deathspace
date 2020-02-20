@@ -159,13 +159,8 @@ h1 {
 
 .s6 {
   height: 90vh;
-  background-color: #2abad3;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
+  background-size: 5028px;
   -webkit-animation: bg-animation 60s infinite;
           animation: bg-animation 60s infinite;
 }
