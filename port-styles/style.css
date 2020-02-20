@@ -78,6 +78,7 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -85,8 +86,9 @@ h1 {
 }
 
 .portfolio h1 {
-  width: 100%;
-  margin-left: 3.44px;
+  position: absolute;
+  left: 0;
+  padding-left: 3.44px;
   font-family: "Avenir-Black", sans-serif;
   color: #d1d1d1;
   font-size: 64px;
@@ -128,7 +130,7 @@ h1 {
 }
 
 .portfolio--item:nth-child(2) {
-  margin-top: -10px;
+  margin-top: 70px;
 }
 
 @-webkit-keyframes bg-animation {
@@ -155,21 +157,10 @@ h1 {
   }
 }
 
-@keyframes bg-animation {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
-
 .s6 {
   height: 90vh;
-  background-color: #0eb5d8;
+  background-image: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
+  background-size: 5028px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,6 +174,8 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: bg-animation 60s infinite;
+          animation: bg-animation 60s infinite;
 }
 
 .s6 h1 {
@@ -199,153 +192,5 @@ h1 {
   max-width: 250px;
   text-align: center;
   font-size: 1rem;
-}
-
-.s6 .text {
-  margin: 2rem 0;
-  text-align: right;
-  z-index: 1;
-}
-
-.s6 .text p {
-  font-size: 20px;
-}
-
-.s6 .form {
-  width: 100%;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.s6 .form .input {
-  width: 82%;
-}
-
-.s6 #name-field,
-.s6 #email-field,
-.s6 textarea {
-  width: 100%;
-  margin-top: 0.625rem;
-  font-family: "Futura", sans-serif;
-  pointer-events: all;
-  font-size: 1rem;
-  max-width: 400px;
-  height: 42px;
-  background-color: rgba(0, 0, 0, 0.45);
-  color: white;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0rem 1rem;
-  border-radius: 5px;
-  border: none;
-  resize: none;
-  caret-color: #0eb5d8;
-}
-
-.s6 #name-field::-webkit-input-placeholder,
-.s6 #email-field::-webkit-input-placeholder,
-.s6 textarea::-webkit-input-placeholder {
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 #name-field:-ms-input-placeholder,
-.s6 #email-field:-ms-input-placeholder,
-.s6 textarea:-ms-input-placeholder {
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 #name-field::-ms-input-placeholder,
-.s6 #email-field::-ms-input-placeholder,
-.s6 textarea::-ms-input-placeholder {
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 #name-field::placeholder,
-.s6 #email-field::placeholder,
-.s6 textarea::placeholder {
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 #name-field:focus,
-.s6 #email-field:focus,
-.s6 textarea:focus {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.s6 textarea {
-  width: 82%;
-  height: 98px;
-  text-align: left;
-  padding: 0.8rem 1rem;
-}
-
-.s6 textarea::-webkit-input-placeholder {
-  font-size: 1rem;
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 textarea:-ms-input-placeholder {
-  font-size: 1rem;
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 textarea::-ms-input-placeholder {
-  font-size: 1rem;
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 textarea::placeholder {
-  font-size: 1rem;
-  color: white;
-  opacity: 0.8;
-}
-
-.s6 textarea:focus {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.s6 p {
-  margin-top: 0.7rem;
-}
-
-.submit-btn {
-  font-family: "Futura", sans-serif;
-  pointer-events: all;
-  margin-top: 1.3rem;
-  padding: 1rem 2.3rem;
-  border-radius: 10px;
-  background-color: transparent;
-  color: #fff;
-  font-size: 1rem;
-  border: solid 1px white;
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-}
-
-.submit-btn:hover {
-  cursor: pointer;
-  background-color: white;
-  color: #000;
-  font-size: 1rem;
-  mix-blend-mode: screen;
 }
 /*# sourceMappingURL=style.css.map */
