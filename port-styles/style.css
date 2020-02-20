@@ -161,6 +161,8 @@ h1 {
   height: 90vh;
   background: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
   background-size: 5028px;
+  -webkit-animation: bg-animation 60s infinite;
+          animation: bg-animation 60s infinite;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,6 +228,14 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.s6 .form div {
+  width: 82%;
+  font-size: 1rem;
+  max-width: 400px;
+  font-family: "Futura", sans-serif;
+  padding-top: 3px;
 }
 
 .s6 .form .input {
@@ -338,6 +348,7 @@ h1 {
   border: solid 1px white;
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+  -webkit-appearance: none;
 }
 
 .submit-btn:hover {

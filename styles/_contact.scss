@@ -22,7 +22,7 @@
   background-size: 5028px;
   // background-color: #0eb5d8;
   // background-color: #5e0ed8;
-  // animation: bg-animation 60s infinite;
+  animation: bg-animation 60s infinite;
 
   display: flex;
   flex-direction: column;
@@ -71,13 +71,13 @@
     justify-content: center;
     align-items: center;
 
-    // div {
-    //   width: 82%;
-    //   font-size: 1rem;
-    //   max-width: 400px;
-    //   font-family: "Futura", sans-serif;
-    //   padding-top: 3px;
-    // }
+    div {
+      width: 82%;
+      font-size: 1rem;
+      max-width: 400px;
+      font-family: "Futura", sans-serif;
+      padding-top: 3px;
+    }
 
     .input {
       width: 82%;
@@ -143,7 +143,7 @@
   font-size: 1rem;
   border: solid 1px white;
   transition: all 250ms ease-in-out;
-  // -webkit-appearance: none;
+  -webkit-appearance: none;
 
   &:hover {
     cursor: pointer;
