@@ -14,13 +14,9 @@ let animatedImages = false;
 
 animImages = function() {
   if (imgLoaded && !animatedImages) {
-    tl.staggerFromTo(
+    tl.staggerTo(
       portItems,
       0.8,
-      {
-        opacity: 0,
-        y: 70
-      },
       {
         opacity: 1,
         y: 0
@@ -45,6 +41,11 @@ var update = setInterval(animImages, 500);
 var update2 = setInterval(checkImg, 400);
 
 $(document).ready(function() {
+  tl.set(portItems, {
+    opacity: 0,
+    y: 70
+  });
+
   var controller = new ScrollMagic.Controller();
 
   var titleAnim = new TimelineMax();
