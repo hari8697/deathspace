@@ -86,7 +86,9 @@ h1 {
 }
 
 .portfolio h1 {
-  width: 97%;
+  left: 0;
+  position: absolute;
+  z-index: 0;
   font-family: "Avenir-Black", sans-serif;
   color: #d1d1d1;
   font-size: 64px;
@@ -94,8 +96,15 @@ h1 {
   pointer-events: none;
 }
 
-.portfolio--item {
+.portfolio .item-wrapper {
   width: 90%;
+  margin-top: 60px;
+}
+
+.portfolio--item {
+  opacity: 1;
+  width: 100%;
+  z-index: 1;
   position: relative;
   margin-bottom: 21px;
   display: -webkit-box;
@@ -138,10 +147,6 @@ h1 {
 
 .portfolio--item:hover {
   cursor: pointer;
-}
-
-.portfolio--item:nth-child(2) {
-  margin-top: -12px;
 }
 
 @-webkit-keyframes bg-animation {
@@ -368,5 +373,95 @@ h1 {
   color: #000;
   font-size: 1rem;
   mix-blend-mode: screen;
+}
+
+.footer {
+  font-size: 1rem;
+}
+
+.footer .follow {
+  margin-top: 2rem;
+}
+
+.footer .follow ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.footer .email {
+  margin-top: 1rem;
+}
+
+.footer .follow,
+.footer .email {
+  margin-left: 3rem;
+}
+
+.footer .dots {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
+}
+
+.footer .social--links {
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+}
+
+.footer .social--links a {
+  margin-left: 0.5rem;
+}
+
+.footer .social--links #tw {
+  background: #1da1f5;
+}
+
+.footer .social--links #ig {
+  background: #c801a5;
+}
+
+.footer .social--links #re {
+  background: #ec6220;
+}
+
+.footer .follow p,
+.footer .email p {
+  margin-top: 0.5rem;
+  font-family: "Futura", sans-serif;
+  font-size: 1rem;
+  color: #aeaeae;
+}
+
+.footer .social--links a,
+.footer .email a {
+  text-decoration: none;
+  font-family: "Avenir", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer .email a {
+  display: inline-block;
+  margin-top: 0.45rem;
+}
+
+.footer .copyright--info {
+  margin-left: 3rem;
+  font-family: "Futura", sans-serif;
+  font-size: 0.7rem;
+  color: #aeaeae;
+  margin-top: 1.8rem;
+  padding-bottom: 2.3rem;
+  opacity: 0.7;
 }
 /*# sourceMappingURL=style.css.map */
