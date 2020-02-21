@@ -6,9 +6,9 @@ var title = $(".portfolio > h1");
 var s1 = $(".portfolio");
 var imgLoaded = false;
 var portItems = $(".portfolio--item:nth-child(-n+3)");
-var portImages = $(".portfolio--item--image");
+var portImages = $(".portfolio--item:nth-child(-n+3) .portfolio--item--image");
 var portImagesUnloaded = $(".portfolio--item--image:nth-child(n+4)");
-particlesJS.load("particles-js", "../res/particlesjs-config.json");
+// particlesJS.load("particles-js", "../res/particlesjs-config.json");
 
 let animatedImages = false;
 
