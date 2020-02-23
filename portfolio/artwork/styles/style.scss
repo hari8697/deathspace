@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: black;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: normal;
+  src: url("../../../res/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: italic;
+  src: url("../../../res/Avenir-BlackOblique.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  src: url("../../../res/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: italic;
+  src: url("../../../res/Avenir-LightOblique.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: url("../../../res/Futura Book font.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: italic;
+  src: url("../../../res/Futura Book Italic font.ttf");
+}
+
+.header {
+  background-color: black;
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+}
+
+.logo-top {
+  width: 120px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.text-wrapper {
+  margin-top: 90px;
+  margin-left: 2rem;
+  color: #fff;
+  h1 {
+    font-weight: 400;
+    z-index: 0;
+    // padding-left: 3.44px;
+    // width: 97%;
+    font-family: "Avenir-Black", sans-serif;
+    color: #fff;
+    font-size: 24px;
+    text-align: left;
+    pointer-events: none;
+  }
+  h3 {
+    font-weight: 200;
+    margin-top: 6px;
+    color: #aeaeae;
+    font-family: "Futura", sans-serif;
+    font-size: 1rem;
+  }
+  h4 {
+    // font-weight: 200;
+    margin-top: 2px;
+    color: #616161;
+    font-family: "Futura", sans-serif;
+    font-size: 14px;
+  }
+  p {
+    width: 92%;
+    margin-top: 9px;
+    color: #aeaeae;
+    font-family: "Futura", sans-serif;
+    font-size: 14px;
+  }
+}
+
+.images {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-bottom: 30px;
+    border-radius: 5px;
+    width: 90%;
+  }
+}
+
+@import "../../../styles/contact";
+@import "../../../styles/footer";

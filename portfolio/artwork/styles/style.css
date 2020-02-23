@@ -13,41 +13,37 @@ html {
 @font-face {
   font-family: "Avenir-Black";
   font-style: normal;
-  src: url("../res/Avenir-Black.ttf");
+  src: url("../../../res/Avenir-Black.ttf");
 }
 
 @font-face {
   font-family: "Avenir-Black";
   font-style: italic;
-  src: url("../res/Avenir-BlackOblique.ttf");
+  src: url("../../../res/Avenir-BlackOblique.ttf");
 }
 
 @font-face {
   font-family: "Avenir";
   font-style: normal;
-  src: url("../res/Avenir-Light.ttf");
+  src: url("../../../res/Avenir-Light.ttf");
 }
 
 @font-face {
   font-family: "Avenir";
   font-style: italic;
-  src: url("../res/Avenir-LightOblique.ttf");
+  src: url("../../../res/Avenir-LightOblique.ttf");
 }
 
 @font-face {
   font-family: "Futura";
   font-style: normal;
-  src: url("../res/Futura Book font.ttf");
+  src: url("../../../res/Futura Book font.ttf");
 }
 
 @font-face {
   font-family: "Futura";
   font-style: italic;
-  src: url("../res/Futura Book Italic font.ttf");
-}
-
-h1 {
-  font-weight: 400;
+  src: url("../../../res/Futura Book Italic font.ttf");
 }
 
 .header {
@@ -69,43 +65,49 @@ h1 {
           transform: translateX(-50%);
 }
 
-.portfolio {
-  margin-top: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: white;
+.text-wrapper {
+  margin-top: 90px;
+  margin-left: 2rem;
+  color: #fff;
 }
 
-.portfolio h1 {
-  left: 0;
-  position: absolute;
+.text-wrapper h1 {
+  font-weight: 400;
   z-index: 0;
   font-family: "Avenir-Black", sans-serif;
-  color: #d1d1d1;
-  font-size: 64px;
+  color: #fff;
+  font-size: 24px;
   text-align: left;
   pointer-events: none;
 }
 
-.portfolio .item-wrapper {
-  width: 90%;
-  margin-top: 60px;
+.text-wrapper h3 {
+  font-weight: 200;
+  margin-top: 6px;
+  color: #aeaeae;
+  font-family: "Futura", sans-serif;
+  font-size: 1rem;
 }
 
-.portfolio--item {
+.text-wrapper h4 {
+  margin-top: 2px;
+  color: #616161;
+  font-family: "Futura", sans-serif;
+  font-size: 14px;
+}
+
+.text-wrapper p {
+  width: 92%;
+  margin-top: 9px;
+  color: #aeaeae;
+  font-family: "Futura", sans-serif;
+  font-size: 14px;
+}
+
+.images {
   width: 100%;
-  z-index: 1;
-  position: relative;
-  margin-bottom: 21px;
+  margin-top: 50px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,36 +118,15 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Futura", sans-serif;
-  font-size: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.portfolio--item .pur-arrow {
-  margin-left: 5px;
-  margin-top: 3px;
-}
-
-.portfolio--item--image {
-  width: 100%;
-  display: block;
-}
-
-.portfolio--item .text-wrapper {
-  margin-top: 6px;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.portfolio--item .text-wrapper a {
-  text-decoration: none;
-  color: #616161;
-}
-
-.portfolio--item:hover {
-  cursor: pointer;
+.images img {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  width: 90%;
 }
 
 @-webkit-keyframes bg-animation {

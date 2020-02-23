@@ -25,7 +25,7 @@ portBtn.click(function() {
   //   color: "white"
   // });
   setTimeout(() => {
-    window.location.href = "./portfolio.html";
+    window.location.href = "./portfolio";
   }, 150);
 });
 

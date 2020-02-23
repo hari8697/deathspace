@@ -13,37 +13,37 @@ html {
 @font-face {
   font-family: "Avenir-Black";
   font-style: normal;
-  src: url("../res/Avenir-Black.ttf");
+  src: url("../../res/Avenir-Black.ttf");
 }
 
 @font-face {
   font-family: "Avenir-Black";
   font-style: italic;
-  src: url("../res/Avenir-BlackOblique.ttf");
+  src: url("../../res/Avenir-BlackOblique.ttf");
 }
 
 @font-face {
   font-family: "Avenir";
   font-style: normal;
-  src: url("../res/Avenir-Light.ttf");
+  src: url("../../res/Avenir-Light.ttf");
 }
 
 @font-face {
   font-family: "Avenir";
   font-style: italic;
-  src: url("../res/Avenir-LightOblique.ttf");
+  src: url("../../res/Avenir-LightOblique.ttf");
 }
 
 @font-face {
   font-family: "Futura";
   font-style: normal;
-  src: url("../res/Futura Book font.ttf");
+  src: url("../../res/Futura Book font.ttf");
 }
 
 @font-face {
   font-family: "Futura";
   font-style: italic;
-  src: url("../res/Futura Book Italic font.ttf");
+  src: url("../../res/Futura Book Italic font.ttf");
 }
 
 h1 {
@@ -96,9 +96,10 @@ h1 {
   }
 
   &--item {
+    opacity: 0;
     width: 100%;
     z-index: 1;
-    position: relative;
+    // position: relative;
     margin-bottom: 21px;
     display: flex;
     flex-direction: column;
@@ -116,6 +117,8 @@ h1 {
 
     &--image {
       width: 100%;
+
+      border-radius: 5px;
       display: block;
     }
 
@@ -133,12 +136,15 @@ h1 {
       cursor: pointer;
     }
   }
+
+  .popup {
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    position: absolute;
+  }
 }
 
-.portfolio--item:nth-child(2) {
-  // margin-top: 60px;
-  // padding-top: 60px;
-}
-
-@import "../styles/contact";
-@import "../styles/footer";
+@import "../../styles/contact";
+@import "../../styles/footer";
