@@ -65,6 +65,27 @@ html {
           transform: translateX(-50%);
 }
 
+.arrow-wrapper {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.back-arrow {
+  margin-left: 32px;
+  width: 6px;
+  z-index: 10;
+}
+
 .text-wrapper {
   margin-top: 90px;
   margin-left: 2rem;

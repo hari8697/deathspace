@@ -106,7 +106,7 @@ $(document).ready(function() {
       })
       .set(logo, {
         scale: largeLogoSize,
-        y: "50vh",
+        y: "47vh",
         opacity: 0
       })
       .to(logo, 2, {
@@ -415,7 +415,7 @@ $(document).ready(function() {
       triggerHook: vh,
       duration: "18%",
       offset: "0",
-      reverse: false
+      reverse: true
     }).setTween(animFooter);
   } else {
     var footerScene = new ScrollMagic.Scene({
@@ -423,7 +423,7 @@ $(document).ready(function() {
       triggerHook: vh,
       duration: "25%",
       offset: "10%",
-      reverse: false
+      reverse: true
     }).setTween(animFooter);
   }
 

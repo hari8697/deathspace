@@ -487,9 +487,20 @@ h1 {
 }
 
 .s4 .icons .popup .close-btn {
+  width: 50px;
+  height: 50px;
   position: absolute;
-  right: 1.25rem;
-  top: 1.5rem;
+  right: 0;
+  top: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .s4 .icons #think {

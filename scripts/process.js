@@ -86,16 +86,18 @@ popupLeft.touchwipe({
       switchStates();
     }
   },
-  min_move_x: 20,
+  min_move_x: 30,
   min_move_y: 20,
-  preventDefaultEvents: true
+  preventDefaultEvents: false
 });
+
 popupRight.click(function() {
   if (currDot < 5) {
     currDot += 1;
     switchStates();
   }
 });
+
 popupRight.touchwipe({
   wipeLeft: function() {
     if (currDot < 5) {
@@ -109,9 +111,9 @@ popupRight.touchwipe({
       switchStates();
     }
   },
-  min_move_x: 20,
+  min_move_x: 30,
   min_move_y: 20,
-  preventDefaultEvents: true
+  preventDefaultEvents: false
 });
 
 function paragraph(a) {

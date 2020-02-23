@@ -140,9 +140,14 @@
       }
 
       .close-btn {
+        width: 50px;
+        height: 50px;
         position: absolute;
-        right: 1.25rem;
-        top: 1.5rem;
+        right: 0;
+        top: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
 
