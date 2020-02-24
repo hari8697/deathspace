@@ -26,10 +26,6 @@ let animatedImages = false;
 //   window.location = originalUrl;
 // });
 
-$("#artwork").click(function() {
-  window.location.href = "./artwork";
-});
-
 tl.set(portItems, {
   y: 70
 });
@@ -54,15 +50,6 @@ checkImg = function() {
     if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
       imgLoaded = true;
     } else {
-      tl.staggerTo(
-        portItems,
-        0.8,
-        {
-          opacity: 1,
-          y: 0
-        },
-        0.35
-      );
       imgLoaded = false;
     }
   });
