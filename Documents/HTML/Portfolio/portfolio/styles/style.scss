@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: black;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: normal;
+  src: url("../../res/Avenir-Black.ttf");
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  font-style: italic;
+  src: url("../../res/Avenir-BlackOblique.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  src: url("../../res/Avenir-Light.ttf");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-style: italic;
+  src: url("../../res/Avenir-LightOblique.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: normal;
+  src: url("../../res/Futura Book font.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-style: italic;
+  src: url("../../res/Futura Book Italic font.ttf");
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.header {
+  background-color: black;
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  z-index: 10;
+  top: 0;
+}
+
+.logo-top {
+  width: 120px;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.portfolio {
+  min-height: 1vh;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  //   transform: translateY(60px);
+  background-color: white;
+
+  h1 {
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    // padding-left: 3.44px;
+    // width: 97%;
+    font-family: "Avenir-Black", sans-serif;
+    color: #d1d1d1;
+    font-size: 64px;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .item-wrapper {
+    width: 90%;
+    margin-top: 60px;
+  }
+
+  &--item {
+    opacity: 0;
+    width: 100%;
+    z-index: 1;
+    // position: relative;
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    font-family: "Futura", sans-serif;
+    font-size: 1rem;
+
+    .pur-arrow {
+      // align-self: flex-end;
+      // justify-self: flex-end;
+      margin-left: 5px;
+      margin-top: 3px;
+    }
+
+    &--image {
+      width: 100%;
+
+      border-radius: 5px;
+      display: block;
+    }
+
+    .text-wrapper {
+      margin-top: 6px;
+      align-self: flex-end;
+      display: flex;
+      a {
+        text-decoration: none;
+        color: #616161;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .popup {
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    position: absolute;
+  }
+}
+
+@import "../../styles/contact";
+@import "../../styles/footer";

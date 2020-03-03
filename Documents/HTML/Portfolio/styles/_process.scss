@@ -1,0 +1,295 @@
+@mixin icons($name) {
+  background-image: url($name);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 350ms ease-in-out;
+}
+
+@mixin iconsHover($name) {
+  background-image: url($name);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.s4 {
+  background: white;
+  display: grid;
+  grid-template-columns:
+    minmax(32px, 1fr) minmax(250px, 1fr)
+    minmax(32px, 1fr);
+  grid-template-rows: 2rem 2rem 1fr minmax(50px, 70px);
+  grid-template-areas:
+    ". . ."
+    "text text text"
+    "icons icons icons"
+    ". . .";
+  position: relative;
+  margin-top: 0;
+
+  h1 {
+    color: #aeaeae;
+    font-size: 2rem;
+    font-family: "Avenir-Black", sans-serif;
+    width: 80%;
+    max-width: 235px;
+    margin: 0 auto;
+    /* margin-left: 10%; */
+    grid-area: text;
+  }
+  a {
+    display: block;
+    margin-top: 6px;
+    text-align: center;
+    text-decoration: none;
+    color: #aeaeae;
+    font-family: "Futura", sans-serif;
+    font-size: 1.25rem;
+    pointer-events: none;
+  }
+  .icons {
+    margin-top: 2rem;
+    grid-area: icons;
+    display: grid;
+
+    position: relative;
+    grid-template-columns: 1fr 70px 70px 1fr;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas:
+      ". think create ."
+      ". iterate develop ."
+      ". deliver tap .";
+    grid-gap: 1.1rem 3rem;
+
+    .popup {
+      z-index: 3;
+      position: absolute;
+      width: 90%;
+      height: 100%;
+      left: 50%;
+      background: transparent;
+      border-radius: 10px;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+
+      p {
+        width: 60%;
+        margin-top: 140px;
+        font-family: "Futura", sans-serif;
+        color: white;
+      }
+
+      .one,
+      .two {
+        display: block;
+        width: 50%;
+        left: 0;
+        height: 100%;
+        z-index: 4;
+        position: absolute;
+        background: transparent;
+      }
+
+      .two {
+        left: 50%;
+      }
+
+      .nav--indicators {
+        position: absolute;
+        left: 50%;
+        bottom: 8%;
+        transform: translateX(-50%);
+        ul {
+          display: flex;
+        }
+        .sel {
+          width: 8px;
+          height: 8px;
+          opacity: 1;
+        }
+        li {
+          &:not(:first-child) {
+            margin-left: 0.87rem;
+          }
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          list-style: none;
+          background: white;
+          opacity: 0.3;
+        }
+      }
+
+      .nav--hor {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        .left {
+          margin-top: 20px;
+          padding-left: 1.3rem;
+        }
+        .right {
+          margin-top: 20px;
+          padding-right: 1.3rem;
+        }
+      }
+
+      .close-btn {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 0;
+        top: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    #think {
+      @include icons("../img/process-icons-mobile/think.svg");
+    }
+    #create {
+      @include icons("../img/process-icons-mobile/create.svg");
+    }
+    #iterate {
+      @include icons("../img/process-icons-mobile/iterate.svg");
+    }
+    #develop {
+      @include icons("../img/process-icons-mobile/develop.svg");
+    }
+    #deliver {
+      @include icons("../img/process-icons-mobile/deliver.svg");
+    }
+    #tap {
+      @include icons("../img/process-icons-mobile/tap-purp.svg");
+      margin-left: -25px;
+      border: none;
+    }
+
+    .container {
+      &--think,
+      &--create,
+      &--iterate,
+      &--develop,
+      &--deliver {
+        .dot {
+          height: 67px;
+          width: 67px;
+          border: 1.5px solid #5e0ed8;
+          border-radius: 50%;
+          display: block;
+          transition: all 350ms ease-in-out;
+        }
+        &:hover {
+          cursor: pointer;
+          .dot {
+            background-color: #5e0ed8;
+          }
+
+          #think {
+            @include icons("../img/process-icons-mobile-white/think.svg");
+          }
+          #create {
+            @include icons("../img/process-icons-mobile-white/create.svg");
+          }
+          #iterate {
+            @include icons("../img/process-icons-mobile-white/iterate.svg");
+          }
+          #develop {
+            @include icons("../img/process-icons-mobile-white/develop.svg");
+          }
+          #deliver {
+            @include icons("../img/process-icons-mobile-white/deliver.svg");
+          }
+        }
+      }
+
+      &--think {
+        grid-area: think;
+      }
+      &--create {
+        grid-area: create;
+      }
+      &--iterate {
+        grid-area: iterate;
+      }
+      &--develop {
+        .dot {
+          // background-color: #5e0ed8;
+          // position: absolute;
+          // width: 90%;
+          // height: 100%;
+          // transform: translate(-194px, -117px);
+          // // transform: translate(-194px, -117px);
+          // // transform: translate(-118px, -117px);
+          // border-radius: 10px;
+        }
+        grid-area: develop;
+      }
+      &--deliver {
+        grid-area: deliver;
+      }
+      &--tap {
+        grid-area: tap;
+        height: auto;
+        width: auto;
+        a {
+          width: 80px;
+          text-align: left;
+          margin-top: -2rem;
+          margin-left: 1.5rem;
+        }
+        .dot {
+          height: 67px;
+          width: 67px;
+          border: 1.5px solid #5e0ed8;
+          border-radius: 50%;
+          display: block;
+          transition: all 350ms ease-in-out;
+        }
+        &:hover .dot {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+//OLD CODE
+
+// ul {
+//   display: grid;
+//   grid-template-columns: 70px 70px;
+//   justify-content: space-around;
+// }
+
+// li {
+//   min-width: 70px;
+//   list-style: none;
+//   margin-top: 1.75rem;
+//   a {
+//     display: block;
+//     margin-top: 1rem;
+//     text-align: center;
+//     text-decoration: none;
+//     color: #aeaeae;
+//     font-family: "Futura", sans-serif;
+//     font-size: 1.25rem;
+//   }
+// }
+// li:nth-child(6) {
+//   height: auto;
+//   width: auto;
+//   a {
+//     width: 80px;
+//     text-align: left;
+//     margin-top: -2rem;
+//     margin-left: 1.5rem;
+//   }
+// }

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#0D1A2B" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#0D1A2B" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0D1A2B" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,800|PT+Mono|Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="preload">
+      <img src="./img/process-icons-white/think.svg" alt="" />
+      <img src="./img/process-icons-white/create.svg" alt="" />
+      <img src="./img/process-icons-white/iterate.svg" alt="" />
+      <img src="./img/process-icons-white/develop.svg" alt="" />
+      <img src="./img/process-icons-white/deliver.svg" alt="" />
+      <img src="./img/process-icons-mobile-white/think.svg" alt="" />
+      <img src="./img/process-icons-mobile-white/create.svg" alt="" />
+      <img src="./img/process-icons-mobile-white/iterate.svg" alt="" />
+      <img src="./img/process-icons-mobile-white/develop.svg" alt="" />
+      <img src="./img/process-icons-mobile-white/deliver.svg" alt="" />
+      <img src="./img/preview.png" alt="" />
+      <img src="./img/preview-2.png" alt="" />
+      <video src="./img/video.mp4"></video>
+    </div>
+
+    <div class="scrollContainer">
+      <div class="s1">
+        <div class="header">
+          <div class="toggle-btn">
+            <span class="one"></span>
+            <span class="two"></span>
+          </div>
+        </div>
+        <a href="" class="logo-top">
+          <img src="img/logo-large.svg" alt="" />
+        </a>
+        <div class="menu-hidden">
+          <div class="data">
+            <ul>
+              <li>Home</li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero" id="button">
+          <div class="video">
+            <video preload="none" autoplay loop muted playsinline id="myvideo">
+              <source src="./img/video-muted.mp4" type="video/mp4" />
+            </video>
+            <img class="mobile-hero" src="./img/preview-2.png" alt="" />
+            <!-- <img src="./img/mobile.jpg" alt="" class="mobile-hero" /> -->
+          </div>
+        </div>
+        <div class="stick">
+          <img
+            src="img/general-icons/scrollArrow.svg"
+            alt=""
+            class="scrollArrow"
+          />
+        </div>
+      </div>
+      <div class="s2">
+        <div class="particles" id="particles-js"></div>
+        <div class="text-wrapper">
+          <h1>
+            Design, with purpose.
+          </h1>
+          <p>
+            Hi, I'm DeathSpace. My passion is design, and I believe design can
+            create real impact in the world of business. <br />
+            I currently build stunning responsive websites, with a keen eye for
+            UI/UX. <br />
+            I love mechanical keyboards, PC building, my bed, and my momma.
+          </p>
+        </div>
+      </div>
+
+      <div class="s3">
+        <div class="text-wrapper">
+          <div class="text-container">
+            <h1>Work</h1>
+            <p>
+              I've worked in the design field for over 3 years now, and now
+              focus on web development & design. <br />
+              You may have a look at my previous work done for clients here.
+            </p>
+            <button class="portfolio-btn">
+              Look Inside
+            </button>
+          </div>
+        </div>
+        <ul class="gallery-list">
+          <li><img src="./img/port1.jpg" alt="" /></li>
+          <li><img src="./img/port2.jpg" alt="" /></li>
+          <li><img src="./img/port3.jpg" alt="" /></li>
+          <li><img src="" alt="" /></li>
+        </ul>
+      </div>
+
+      <div class="s4">
+        <h1>Process</h1>
+        <div class="icons">
+          <div class="container--think">
+            <span class="dot" id="think"> </span>
+            <a href="#">Think</a>
+          </div>
+          <div class="container--create">
+            <span class="dot" id="create"> </span>
+            <a href="#">Create</a>
+          </div>
+          <div class="container--iterate">
+            <span class="dot" id="iterate"> </span>
+            <a href="#">Iterate</a>
+          </div>
+          <div class="container--develop">
+            <span class="dot" id="develop"> </span>
+            <a href="#">Develop</a>
+          </div>
+          <div class="container--deliver">
+            <span class="dot" id="deliver"> </span>
+            <a href="#">Deliver</a>
+          </div>
+          <div class="container--tap">
+            <span class="dot" id="tap"> </span>
+            <a href="#">Tap for details</a>
+          </div>
+
+          <div class="popup">
+            <div class="nav--indicators">
+              <ul>
+                <li class="sel"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <span class="one"></span>
+            <span class="two"></span>
+            <p class="desc">
+              Development involves bringing the design to life with code.
+              Micro-interactions, and animations are created in this stage
+            </p>
+
+            <div class="nav--hor">
+              <img
+                src="./img/general-icons/left-arrow.png"
+                alt=""
+                class="left"
+              />
+              <img
+                src="./img/general-icons/right-arrow.png"
+                alt=""
+                class="right"
+              />
+            </div>
+            <div class="close-btn">
+              <img src="./img/general-icons/close.png" alt="" class="close" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s5">
+        <h1>Services</h1>
+        <div class="services-content">
+          <ul>
+            <li class="">
+              <h3>Design</h3>
+              <div class="content-list-items" id="horizontal">
+                <ul>
+                  <div class="list-group1">
+                    <li>UI/UX</li>
+                    <li>Branding / Identity Design</li>
+                  </div>
+                  <div class="list-group2">
+                    <li>Web Design</li>
+                    <li>Consultation</li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <h3>Web Development</h3>
+              <div class="content-list-items">
+                <ul>
+                  <div class="list-group-solo">
+                    <li>Front-end development</li>
+                    <li>Static websites</li>
+                    <li>
+                      Visual development (interactions, animations, hierarchy,
+                      etc.)
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <h3>Miscellaneous</h3>
+              <div class="content-list-items" id="horizontal">
+                <ul>
+                  <div class="list-group1">
+                    <li>Domain Registration</li>
+                    <li>Web Hosting</li>
+                  </div>
+                  <div class="list-group2">
+                    <li>Copywriting</li>
+                    <li>Search Engine Optimisation</li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="s6">
+        <div class="particles" id="particles2-js"></div>
+        <div class="text">
+          <h1>Let's Talk</h1>
+          <p>
+            Have an interesting project in mind? I can help out.
+          </p>
+        </div>
+        <form
+          class="form"
+          action="https://getsimpleform.com/messages?form_api_token=4835ebf7194a69690533ee664f3323a4"
+          method="post"
+        >
+          <!-- <input
+            type="hidden"
+            name="redirect_to"
+            value="https://www.google.com/"
+          /> -->
+
+          <div class="input">
+            <input
+              type="text"
+              name="fname"
+              data-validate-field="name"
+              placeholder="Name"
+              id="name-field"
+            />
+          </div>
+
+          <div class="input">
+            <input
+              type="text"
+              name="email"
+              data-validate-field="email"
+              placeholder="Your email address"
+              id="email-field"
+            />
+          </div>
+
+          <textarea
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            class="message-field"
+          ></textarea>
+
+          <input
+            type="submit"
+            name="submitButton"
+            value="Submit"
+            class="submit-btn"
+          />
+        </form>
+      </div>
+      <div class="footer">
+        <div class="links">
+          <div class="follow">
+            <p>follow</p>
+            <ul>
+              <li class="social--links">
+                <span class="dots" id="tw"></span>
+                <a href="https://twitter.com/deathspace_">tw</a>
+              </li>
+              <li class="social--links">
+                <span class="dots" id="ig"></span>
+                <a href="https://www.instagram.com/deathspace.design/">ig</a>
+              </li>
+              <li class="social--links">
+                <span class="dots" id="re"></span>
+                <a href="https://www.reddit.com/user/deathspace_design">re</a>
+              </li>
+            </ul>
+          </div>
+          <div class="email">
+            <p>👋 Say hello</p>
+            <a href="mailto:deathspacedesign@gmail.com?Subject=Hello!"
+              >deathspacedesign@gmail.com</a
+            >
+          </div>
+        </div>
+        <p class="copyright--info">
+          © 2020 Hari Krishnan | All rights reserved
+        </p>
+      </div>
+    </div>
+
+    <!-- <div style="height: 9999px;"></div> -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/jquery.touchwipe.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+      integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.0/CSSRulePlugin.js"
+      integrity="sha256-RMKviu0IG7ZJ8Qi32af0+2QsZ9VCS3cxqy8NmC5vB1E="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"
+      integrity="sha256-ZTEnMVwBY082yM/d9tFkglZux9pVgwfOAg6HD4reObU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"
+      integrity="sha256-31FC/OT6XpfjAhj9FuXjw5/wPXXawCAjJQ29E23/XPk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./scripts/just-validate.min.js"></script>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+    <script type="text/javascript" src="./scripts/animation1.js"></script>
+    <script type="text/javascript" src="./scripts/process.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
