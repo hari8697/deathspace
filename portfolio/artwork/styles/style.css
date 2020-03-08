@@ -1,3 +1,7 @@
+:root {
+  --swiper-theme-color: #9d0bd6 !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -149,6 +153,81 @@ html {
   margin-bottom: 30px;
   border-radius: 5px;
   width: 90%;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 11;
+}
+
+.popup .close-wrapper {
+  z-index: 12;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.swiper-container {
+  position: fixed !important;
+  left: 50%;
+  top: 50%;
+  height: 100vh;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.swiper-container img {
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: no-repeat;
+  background-position: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  background: #8f0ab1;
+  width: 8px;
+  height: 8px;
+  opacity: 0.8;
+}
+
+.swiper-button-prev {
+  color: #f1f1f1;
+  background-image: url("../../../img/general-icons/left-arrow.png") !important;
+}
+
+.swiper-button-next {
+  background-image: url("../../../img/general-icons/right-arrow.png") !important;
 }
 
 @-webkit-keyframes bg-animation {

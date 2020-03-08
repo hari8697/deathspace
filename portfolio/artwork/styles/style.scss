@@ -1,3 +1,7 @@
+:root {
+  --swiper-theme-color: #9d0bd6 !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +49,10 @@ html {
   font-style: italic;
   src: url("../../../res/Futura Book Italic font.ttf");
 }
+
+// .scrollContainer {
+//   position: relative;
+// }
 
 .header {
   background-color: black;
@@ -131,6 +139,72 @@ html {
     border-radius: 5px;
     width: 90%;
   }
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 11;
+
+  .close-wrapper {
+    z-index: 12;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.swiper-container {
+  position: fixed !important;
+  left: 50%;
+  top: 50%;
+  height: 100vh;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  // transform: rotate(90deg) !important;
+  img {
+    width: 100%;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: no-repeat;
+  background-position: center;
+  &::after {
+    content: "" !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(143, 10, 177);
+  width: 8px;
+  height: 8px;
+  opacity: 0.8;
+}
+
+.swiper-button-prev {
+  color: #f1f1f1;
+  background-image: url("../../../img/general-icons/left-arrow.png") !important;
+}
+
+.swiper-button-next {
+  background-image: url("../../../img/general-icons/right-arrow.png") !important;
 }
 
 @import "../../../styles/contact";
