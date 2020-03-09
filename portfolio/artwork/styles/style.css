@@ -163,6 +163,8 @@ html {
   height: 100vh;
   background: black;
   z-index: 11;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .popup .close-wrapper {
@@ -207,6 +209,10 @@ html {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "" !important;
+}
+
+.swiper-pagination {
+  bottom: 25px !important;
 }
 
 .swiper-pagination-bullet {

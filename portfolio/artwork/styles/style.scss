@@ -149,6 +149,8 @@ html {
   height: 100vh;
   background: black;
   z-index: 11;
+  opacity: 0;
+  pointer-events: none;
 
   .close-wrapper {
     z-index: 12;
@@ -185,7 +187,9 @@ html {
     content: "" !important;
   }
 }
-
+.swiper-pagination {
+  bottom: 25px !important;
+}
 .swiper-pagination-bullet {
   background: #fff;
   opacity: 0.3;
