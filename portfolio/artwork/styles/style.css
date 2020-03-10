@@ -191,7 +191,7 @@ html {
   position: fixed !important;
   left: 50%;
   top: 50%;
-  height: 100vh;
+  height: 92vh;
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -213,7 +213,7 @@ html {
 }
 
 .popup .swiper-pagination {
-  bottom: 25px !important;
+  bottom: 20px !important;
 }
 
 .popup .swiper-pagination-bullet {

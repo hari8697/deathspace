@@ -33,7 +33,11 @@ tl3.set(po, {
 
 ports.on("click", function() {
   mySwiper.updateSlides();
-
+  $("html, body").css({
+    overflow: "hidden",
+    height: "92vh",
+    "pointer-events": "none"
+  });
   var $this = $(this);
   if ($this.index() === 0 || $this.is(":nth-child(1)")) {
     mySwiper.activeIndex = 0;
@@ -67,6 +71,11 @@ ports.on("click", function() {
 });
 
 close.on("click", function() {
+  $("html, body").css({
+    overflow: "auto",
+    height: "auto",
+    "pointer-events": "all"
+  });
   tl3.to(po, 0.5, {
     opacity: 0,
     "pointer-events": "none"
