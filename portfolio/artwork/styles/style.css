@@ -132,7 +132,7 @@ html {
 .images {
   width: 100%;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,8 +149,9 @@ html {
 }
 
 .images img {
+  cursor: pointer;
   opacity: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-radius: 5px;
   width: 90%;
 }
@@ -186,7 +187,7 @@ html {
           justify-content: center;
 }
 
-.swiper-container {
+.popup .swiper-container {
   position: fixed !important;
   left: 50%;
   top: 50%;
@@ -196,43 +197,41 @@ html {
           transform: translate(-50%, -50%);
 }
 
-.swiper-container img {
+.popup .swiper-container img {
   width: 100%;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.popup .swiper-button-next,
+.popup .swiper-button-prev {
   background: no-repeat;
   background-position: center;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.popup .swiper-button-next::after,
+.popup .swiper-button-prev::after {
   content: "" !important;
 }
 
-.swiper-pagination {
+.popup .swiper-pagination {
   bottom: 25px !important;
 }
 
-.swiper-pagination-bullet {
+.popup .swiper-pagination-bullet {
   background: #fff;
   opacity: 0.3;
 }
 
-.swiper-pagination-bullet-active {
-  background: #8f0ab1;
-  width: 8px;
-  height: 8px;
+.popup .swiper-pagination-bullet-active {
+  background: #60e2e7;
   opacity: 0.8;
 }
 
-.swiper-button-prev {
+.popup .swiper-button-prev {
   color: #f1f1f1;
   background-image: url("../../../img/general-icons/left-arrow.png") !important;
 }
 
-.swiper-button-next {
+.popup .swiper-button-next {
   background-image: url("../../../img/general-icons/right-arrow.png") !important;
 }
 
@@ -338,7 +337,6 @@ html {
   font-size: 1rem;
   max-width: 400px;
   font-family: "Futura", sans-serif;
-  padding-top: 3px;
 }
 
 .s6 .form .input {

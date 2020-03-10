@@ -69,7 +69,7 @@ h1 {
 }
 
 .portfolio {
-  min-height: 1vh;
+  min-height: 1.5vh;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -97,9 +97,9 @@ h1 {
   }
 
   &--item {
-    opacity: 0;
     width: 100%;
     z-index: 1;
+    cursor: pointer;
     // position: relative;
     margin-bottom: 21px;
     display: flex;

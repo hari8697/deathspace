@@ -128,14 +128,15 @@ html {
 .images {
   width: 100%;
   margin-top: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   img {
+    cursor: pointer;
     opacity: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     border-radius: 5px;
     width: 90%;
   }
@@ -164,51 +165,51 @@ html {
     align-items: center;
     justify-content: center;
   }
-}
 
-.swiper-container {
-  position: fixed !important;
-  left: 50%;
-  top: 50%;
-  height: 100vh;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  // transform: rotate(90deg) !important;
-  img {
+  .swiper-container {
+    position: fixed !important;
+    left: 50%;
+    top: 50%;
+    height: 100vh;
     width: 100%;
+    transform: translate(-50%, -50%);
+    // transform: rotate(90deg) !important;
+    img {
+      width: 100%;
+    }
   }
-}
 
-.swiper-button-next,
-.swiper-button-prev {
-  background: no-repeat;
-  background-position: center;
-  &::after {
-    content: "" !important;
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: no-repeat;
+    background-position: center;
+    &::after {
+      content: "" !important;
+    }
   }
-}
-.swiper-pagination {
-  bottom: 25px !important;
-}
-.swiper-pagination-bullet {
-  background: #fff;
-  opacity: 0.3;
-}
 
-.swiper-pagination-bullet-active {
-  background: rgb(143, 10, 177);
-  width: 8px;
-  height: 8px;
-  opacity: 0.8;
-}
+  .swiper-pagination {
+    bottom: 25px !important;
+  }
 
-.swiper-button-prev {
-  color: #f1f1f1;
-  background-image: url("../../../img/general-icons/left-arrow.png") !important;
-}
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.3;
+  }
 
-.swiper-button-next {
-  background-image: url("../../../img/general-icons/right-arrow.png") !important;
+  .swiper-pagination-bullet-active {
+    background: #60e2e7;
+    opacity: 0.8;
+  }
+
+  .swiper-button-prev {
+    color: #f1f1f1;
+    background-image: url("../../../img/general-icons/left-arrow.png") !important;
+  }
+
+  .swiper-button-next {
+    background-image: url("../../../img/general-icons/right-arrow.png") !important;
+  }
 }
 
 @import "../../../styles/contact";

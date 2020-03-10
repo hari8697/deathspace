@@ -70,7 +70,7 @@ h1 {
 }
 
 .portfolio {
-  min-height: 1vh;
+  min-height: 1.5vh;
   margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,9 +103,9 @@ h1 {
 }
 
 .portfolio--item {
-  opacity: 0;
   width: 100%;
   z-index: 1;
+  cursor: pointer;
   margin-bottom: 21px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,7 +260,6 @@ h1 {
   font-size: 1rem;
   max-width: 400px;
   font-family: "Futura", sans-serif;
-  padding-top: 3px;
 }
 
 .s6 .form .input {

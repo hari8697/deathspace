@@ -7,8 +7,8 @@ new window.JustValidate(".s6 .form", {
 var vw = $(window).width();
 var vh = $(window).height();
 var portImagesCheck = $(".images img:nth-child(1)");
-var portImages = $(".images img:nth-child(-n+3)");
-var portImagesUnloaded = $(".images img:nth-child(n+4)");
+var portImages = $(".images img:nth-child(-n+2)");
+var portImagesUnloaded = $(".images img:nth-child(n+3)");
 var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
 var footer3 = $(".footer .email *");
@@ -32,7 +32,10 @@ animImages = function() {
       },
       0.35
     );
-    animatedImages = true;
+
+    setTimeout(() => {
+      animatedImages = true;
+    }, 800);
   }
 };
 
@@ -51,6 +54,7 @@ var update2 = setInterval(checkImg, 100);
 
 var controller = new ScrollMagic.Controller();
 
+var image3 = new ImageObject(3);
 var image4 = new ImageObject(4);
 var image5 = new ImageObject(5);
 var image6 = new ImageObject(6);
@@ -105,7 +109,17 @@ if (vh > 600) {
   }).setTween(animFooter);
 }
 
-controller.addScene([image4.Scene, image5.Scene, image6.Scene, footerScene]);
+var update3 = setInterval(function() {
+  if (animatedImages) {
+    controller.addScene([
+      image3.Scene,
+      image4.Scene,
+      image5.Scene,
+      image6.Scene,
+      footerScene
+    ]);
+  }
+}, 100);
 
 function ImageObject(i) {
   this.tl = new TimelineMax();

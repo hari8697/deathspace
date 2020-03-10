@@ -6,6 +6,7 @@ var title = $(".portfolio > h1");
 var s1 = $(".portfolio");
 var imgLoaded = false;
 var portItems = $(".portfolio--item:nth-child(-n+3)");
+var portText = $(".portfolio--item:nth-child(-n+3) .text-wrapper");
 var portImages = $(".portfolio--item:nth-child(-n+3) .portfolio--item--image");
 var portImagesUnloaded = $(".portfolio--item--image:nth-child(n+4)");
 var footer1 = $(".footer .follow p");
@@ -26,39 +27,59 @@ let animatedImages = false;
 //   window.location = originalUrl;
 // });
 
-tl.set(portItems, {
-  y: 70
-});
-
-animImages = function() {
-  if (imgLoaded && !animatedImages) {
-    tl.staggerTo(
-      portItems,
-      0.8,
-      {
-        opacity: 1,
-        y: 0
-      },
-      0.35
-    );
-    animatedImages = true;
-  }
-};
-
-checkImg = function() {
-  portImages.each(function() {
-    if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
-      imgLoaded = true;
-    } else {
-      imgLoaded = false;
-    }
-  });
-};
-
-var update = setInterval(animImages, 200);
-var update2 = setInterval(checkImg, 100);
+// tl.set(portItems, {
+//   y: 70,
+//   opacity: 0
+// });
 
 $(document).ready(function() {
+  animImages = function() {
+    if (imgLoaded && !animatedImages) {
+      tl.staggerFromTo(
+        portItems,
+        1,
+        {
+          y: 70,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1
+        },
+        0.25
+      );
+
+      tl.staggerFromTo(
+        portText,
+        1,
+        {
+          x: -20,
+          opacity: 0
+        },
+        {
+          x: 0,
+          opacity: 1
+        },
+        0.35,
+        0.75
+      );
+      animatedImages = true;
+    }
+  };
+
+  checkImg = function() {
+    portImages.each(function() {
+      if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
+        imgLoaded = true;
+      } else {
+        imgLoaded = false;
+      }
+    });
+  };
+
+  var update = setInterval(animImages, 200);
+  var update2 = setInterval(checkImg, 100);
+
   var controller = new ScrollMagic.Controller();
 
   var titleAnim = new TimelineMax();
@@ -140,18 +161,31 @@ $(document).ready(function() {
 
 function ImageObject(i) {
   this.tl = new TimelineMax();
-  this.tl.fromTo(
-    $(`.portfolio--item:nth-child(${i})`),
-    0.8,
-    {
-      opacity: 0,
-      y: 70
-    },
-    {
-      opacity: 1,
-      y: 0
-    }
-  );
+  this.tl
+    .fromTo(
+      $(`.portfolio--item:nth-child(${i})`),
+      0.8,
+      {
+        opacity: 0,
+        y: 70
+      },
+      {
+        opacity: 1,
+        y: 0
+      }
+    )
+    .fromTo(
+      $(`.portfolio--item:nth-child(${i}) .text-wrapper`),
+      0.8,
+      {
+        opacity: 0,
+        x: -20
+      },
+      {
+        opacity: 1,
+        x: 0
+      }
+    );
   this.Scene = new ScrollMagic.Scene({
     triggerElement: `.portfolio--item:nth-child(${i})`,
     triggerHook: 1
