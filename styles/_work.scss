@@ -102,32 +102,69 @@
 
 @media only screen and (min-width: 768px) {
   .s3 {
-    background-color: black;
-    grid-template-areas:
-      ". . ."
-      ". texts3 gallery"
-      ". . .";
+    display: flex;
     transform: none;
+    margin-top: 0;
+    min-height: auto;
+    padding-bottom: 50px;
   }
   .s3 .text-wrapper {
-    background: black;
-    grid-area: texts3;
+    width: 50%;
+    background: transparent;
+
+    h1 {
+      font-size: 40px;
+      color: #fff;
+      opacity: 0.4;
+    }
+
+    p {
+      max-width: none;
+      color: #fff;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .text-container {
+    }
   }
 
+  .portfolio-btn {
+    color: #fff;
+    opacity: 0.8;
+  }
   .gallery-list {
-    width: 50vw;
+    width: 50%;
     display: flex;
-    grid-area: gallery;
+    justify-content: center;
+    align-items: center;
+
+    li:nth-child(n) {
+      left: 0;
+      transform: none;
+      width: 100%;
+      position: relative;
+    }
+    li:nth-child(1) {
+      width: 90%;
+    }
+
+    li:nth-child(2) {
+      width: 50%;
+    }
+
+    li:nth-child(3) {
+      display: none;
+    }
+
+    li:nth-child(4) {
+      display: none;
+    }
+    img {
+      border-radius: 5px;
+    }
   }
   .gallery-list li {
-    width: 25vw;
-    position: relative;
-  }
-
-  .gallery-list li:nth-child(n) {
-    left: 0;
-    transform: none;
-    width: 25vw;
     position: relative;
   }
 }

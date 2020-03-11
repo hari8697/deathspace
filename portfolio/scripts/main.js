@@ -18,6 +18,14 @@ var footer4 = $(".footer > p");
 
 let animatedImages = false;
 
+if (!imgLoaded) {
+  $("html, body").css({
+    overflow: "hidden",
+    height: "100%",
+    "pointer-events": "none"
+  });
+}
+
 // $(window).on("load", function() {
 //   var originalUrl = window.location.href;
 //   history.pushState({}, "", "portfolio");
@@ -32,38 +40,39 @@ let animatedImages = false;
 //   opacity: 0
 // });
 
+// portItems.css({ opacity: 0 });
+
 $(document).ready(function() {
   animImages = function() {
     if (imgLoaded && !animatedImages) {
-      tl.staggerFromTo(
+      tl.staggerFrom(
         portItems,
         1,
         {
           y: 70,
           opacity: 0
         },
-        {
-          y: 0,
-          opacity: 1
-        },
         0.25
       );
 
-      tl.staggerFromTo(
+      tl.staggerFrom(
         portText,
         1,
         {
           x: -20,
           opacity: 0
         },
-        {
-          x: 0,
-          opacity: 1
-        },
         0.35,
         0.75
       );
       animatedImages = true;
+      setTimeout(() => {
+        $("html, body").css({
+          overflow: "auto",
+          height: "auto",
+          "pointer-events": "all"
+        });
+      }, 1800);
     }
   };
 

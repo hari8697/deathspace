@@ -25,7 +25,10 @@ var footer4 = $(".footer > p");
 var checkbool = true;
 
 var animS4, tween;
-
+if (vh / vw < 1.78) {
+  console.log(pimg1);
+  $(".gallery-list li:nth-child(1) img").attr("src", "../img/port3.jpg");
+}
 function update() {}
 var updateInterval = setInterval(update, 100);
 
@@ -91,7 +94,7 @@ $(document).ready(function() {
   if (vw > 500) {
     largeLogoSize = 2;
     medLogoSize = 1;
-    smallLogoSize = 0.6;
+    smallLogoSize = 0.5;
   } else {
     largeLogoSize = 1.2;
     medLogoSize = 0.7;
@@ -179,21 +182,29 @@ $(document).ready(function() {
     })
     .from(
       s2Textp,
-      1,
+      2,
       {
-        y: "100",
         opacity: "0",
         ease: Expo.easeOut
       },
-      0.2
+      0.25
     );
 
-  var s2Scene = new ScrollMagic.Scene({
-    triggerElement: ".s2",
-    triggerHook: 0,
-    offset: -vh * 0.5,
-    duration: vh
-  }).setTween(animS2);
+  if (vh / vw > 1.78) {
+    var s2Scene = new ScrollMagic.Scene({
+      triggerElement: ".s2",
+      triggerHook: 0,
+      offset: -vh * 0.5,
+      duration: vh
+    }).setTween(animS2);
+  } else {
+    var s2Scene = new ScrollMagic.Scene({
+      triggerElement: ".s2",
+      triggerHook: 0,
+      offset: -vh * 0.5,
+      duration: vh
+    }).setTween(animS2);
+  }
 
   var animS3 = new TimelineMax();
 
@@ -253,9 +264,9 @@ $(document).ready(function() {
     }).setTween(animS3Text);
   } else {
     var s3SceneText = new ScrollMagic.Scene({
-      triggerElement: ".gallery-list",
+      triggerElement: ".s2",
       triggerHook: "0",
-      offset: vh * -0.2,
+      offset: vh * 0.1,
       duration: vh * 0.5
     }).setTween(animS3Text);
   }

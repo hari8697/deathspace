@@ -58,7 +58,7 @@ h1 {
 }
 
 .s1 {
-  background-color: black;
+  background-color: #0d0020;
   overflow-x: hidden;
   height: 100%;
   display: flex;
@@ -188,6 +188,10 @@ h1 {
 @import "./footer";
 
 @media only screen and (min-width: 768px) {
+  html {
+    background: #0d0020;
+  }
+
   .mobile-hero {
     display: none;
   }
@@ -195,13 +199,21 @@ h1 {
     height: 100%;
     display: block;
   }
+
+  .particles {
+    width: 100%;
+  }
   .s2 .text-wrapper h1 {
-    font-size: 2.7em;
+    font-size: 40px;
+    opacity: 0.4;
     max-width: 800px;
   }
   .s2 .text-wrapper p {
-    margin-top: 1rem;
-    max-width: 700px;
-    font-size: 1.2rem;
+    // font-family: "Avenir", sans-serif;
+    max-width: 600px;
+    color: #ffffff;
+    opacity: 0.8;
+    margin-top: 20px;
+    font-size: 1rem;
   }
 }

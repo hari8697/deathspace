@@ -48,3 +48,31 @@
   .list-group2 {
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .s5 {
+    background: none;
+
+    h1 {
+      font-size: 40px;
+      color: #fff;
+      opacity: 0.4;
+    }
+
+    h3,
+    p {
+      max-width: none;
+      color: #fff;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .content-list-items {
+      li {
+        color: #fff;
+        font-size: 1rem;
+        opacity: 0.6;
+      }
+    }
+  }
+}
