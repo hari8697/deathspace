@@ -272,22 +272,21 @@ $(document).ready(function() {
   }
 
   animS4 = new TimelineMax();
-  if (vw < 768) {
-    animS4.from(s4h1, 1, {
-      y: "30",
-      opacity: "0"
-    });
-    tween = TweenMax.staggerFrom(
-      s4icons,
-      2,
-      {
-        opacity: "0"
-      },
-      0.2
-    );
 
-    animS4.add(tween);
-  }
+  animS4.from(s4h1, 1, {
+    y: "30",
+    opacity: "0"
+  });
+  tween = TweenMax.staggerFrom(
+    s4icons,
+    2,
+    {
+      opacity: "0"
+    },
+    0.2
+  );
+
+  animS4.add(tween);
 
   if (vh / vw > 1.78) {
     var s4Scene = new ScrollMagic.Scene({
@@ -300,7 +299,7 @@ $(document).ready(function() {
     var s4Scene = new ScrollMagic.Scene({
       triggerElement: ".s3 .text-wrapper",
       triggerHook: "0",
-      offset: -vh * 0.1,
+      offset: -vh * 0.35,
       duration: vh * 0.7
     }).setTween(animS4);
   }
@@ -332,7 +331,7 @@ $(document).ready(function() {
     var s5Scene = new ScrollMagic.Scene({
       triggerElement: ".s4",
       triggerHook: "0",
-      duration: vh,
+      duration: vh * 0.45,
       offset: -vh * 0.1
     }).setTween(anims5);
   }

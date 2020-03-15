@@ -81,3 +81,28 @@
     opacity: 0.7;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    .links {
+      display: flex;
+      justify-content: space-between;
+    }
+    .follow {
+      margin-left: 12%;
+    }
+    .email {
+      margin-top: 2rem;
+      margin-right: 12%;
+
+      p {
+        width: 100%;
+        text-align: right;
+      }
+    }
+
+    .copyright--info {
+      margin-left: 12%;
+    }
+  }
+}

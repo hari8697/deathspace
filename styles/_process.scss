@@ -264,18 +264,78 @@
 @media only screen and (min-width: 768px) {
   .s4 {
     background: none;
-
+    display: grid;
+    grid-template-columns:
+      minmax(32px, 300px) minmax(500px, 1fr)
+      minmax(32px, 300px);
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+      ". text ."
+      ". icons .";
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
     h1 {
+      // width: 85%;
+      // max-width: 900px;
+      // margin: 0;
+      // margin-left: auto;
+      width: 100%;
+      max-width: 700px;
+      align-self: center;
+      justify-self: center;
+      grid-area: text;
       font-size: 40px;
       color: #fff;
       opacity: 0.4;
     }
 
+    a {
+      margin-top: 15px;
+    }
     h3 {
       max-width: none;
       color: #fff;
       font-size: 1rem;
       opacity: 0.8;
+    }
+    .icons {
+      width: 100%;
+      max-width: 700px;
+      // margin-left: auto;
+      // margin-right: auto;
+      align-self: center;
+      justify-self: center;
+      grid-area: icons;
+      display: flex;
+      justify-content: space-evenly;
+
+      .container {
+        &--tap {
+          display: none;
+        }
+      }
+
+      #think {
+        @include icons("../img/process-icons/think.svg");
+      }
+      #create {
+        @include icons("../img/process-icons/create.svg");
+      }
+      #iterate {
+        @include icons("../img/process-icons/iterate.svg");
+      }
+      #develop {
+        @include icons("../img/process-icons/develop.svg");
+      }
+      #deliver {
+        @include icons("../img/process-icons/deliver.svg");
+      }
+      #tap {
+        @include icons("../img/process-icons/tap-purp.svg");
+        margin-left: -25px;
+        border: none;
+      }
     }
   }
 }

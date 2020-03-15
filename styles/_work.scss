@@ -112,6 +112,11 @@
     width: 50%;
     background: transparent;
 
+    .text-container {
+      // margin: 0;
+      // margin-left: 250px;
+    }
+
     h1 {
       font-size: 40px;
       color: #fff;
@@ -120,6 +125,7 @@
 
     p {
       max-width: none;
+      min-width: 250px;
       color: #fff;
       font-size: 1rem;
       opacity: 0.8;
@@ -144,6 +150,7 @@
     }
     li:nth-child(1) {
       width: 90%;
+      max-width: 450px;
     }
 
     li:nth-child(2) {
