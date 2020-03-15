@@ -339,35 +339,25 @@
     }
   }
 }
-//OLD CODE
 
-// ul {
-//   display: grid;
-//   grid-template-columns: 70px 70px;
-//   justify-content: space-around;
-// }
-
-// li {
-//   min-width: 70px;
-//   list-style: none;
-//   margin-top: 1.75rem;
-//   a {
-//     display: block;
-//     margin-top: 1rem;
-//     text-align: center;
-//     text-decoration: none;
-//     color: #aeaeae;
-//     font-family: "Futura", sans-serif;
-//     font-size: 1.25rem;
-//   }
-// }
-// li:nth-child(6) {
-//   height: auto;
-//   width: auto;
-//   a {
-//     width: 80px;
-//     text-align: left;
-//     margin-top: -2rem;
-//     margin-left: 1.5rem;
-//   }
-// }
+@media only screen and (min-width: 768px) {
+  .s4 {
+    .icons {
+      #think {
+        @include icons("../img/process-icons-mobile-white/think.svg");
+      }
+      #create {
+        @include icons("../img/process-icons-mobile-white/create.svg");
+      }
+      #iterate {
+        @include icons("../img/process-icons-mobile-white/iterate.svg");
+      }
+      #develop {
+        @include icons("../img/process-icons-mobile-white/develop.svg");
+      }
+      #deliver {
+        @include icons("../img/process-icons-mobile-white/deliver.svg");
+      }
+    }
+  }
+}

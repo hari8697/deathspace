@@ -198,7 +198,7 @@ h1 {
       grid-template-columns: minmax(1fr, 32px) minmax(300px, 500px) minmax(1fr, 32px);
   -ms-grid-rows: 500px 350px;
       grid-template-rows: 500px 350px;
-      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
+      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
   margin-top: -30%;
 }
 
@@ -252,6 +252,7 @@ h1 {
 
 .gallery-list li:nth-child(1) {
   width: 66%;
+  max-width: 535px;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -378,7 +379,7 @@ h1 {
       grid-template-columns: minmax(32px, 1fr) minmax(250px, 1fr) minmax(32px, 1fr);
   -ms-grid-rows: 2rem 2rem 1fr minmax(50px, 70px);
       grid-template-rows: 2rem 2rem 1fr minmax(50px, 70px);
-      grid-template-areas: ". . ." "text text text" "icons icons icons" ". . .";
+      grid-template-areas: ". . ." "text text text" "icons icons icons" ". . .";
   position: relative;
   margin-top: 0;
 }
@@ -421,7 +422,7 @@ h1 {
       grid-template-columns: 1fr 70px 70px 1fr;
   -ms-grid-rows: 100px 100px 100px;
       grid-template-rows: 100px 100px 100px;
-      grid-template-areas: ". think create ." ". iterate develop ." ". deliver tap .";
+      grid-template-areas: ". think create ." ". iterate develop ." ". deliver tap .";
   grid-gap: 1.1rem 3rem;
 }
 
@@ -806,6 +807,44 @@ h1 {
     transition: all 350ms ease-in-out;
     margin-left: -25px;
     border: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .s4 .icons #think {
+    background-image: url("../img/process-icons-mobile-white/think.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .s4 .icons #create {
+    background-image: url("../img/process-icons-mobile-white/create.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .s4 .icons #iterate {
+    background-image: url("../img/process-icons-mobile-white/iterate.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .s4 .icons #develop {
+    background-image: url("../img/process-icons-mobile-white/develop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
+  }
+  .s4 .icons #deliver {
+    background-image: url("../img/process-icons-mobile-white/deliver.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 350ms ease-in-out;
+    transition: all 350ms ease-in-out;
   }
 }
 
