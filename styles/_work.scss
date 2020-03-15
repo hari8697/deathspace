@@ -146,7 +146,7 @@
     li:nth-child(n) {
       left: 0;
       transform: none;
-      width: 100%;
+      width: 90%;
       position: relative;
     }
     li:nth-child(1) {
@@ -155,7 +155,8 @@
     }
 
     li:nth-child(2) {
-      width: 50%;
+      width: 70%;
+      max-width: 350px;
     }
 
     li:nth-child(3) {

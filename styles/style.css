@@ -198,7 +198,7 @@ h1 {
       grid-template-columns: minmax(1fr, 32px) minmax(300px, 500px) minmax(1fr, 32px);
   -ms-grid-rows: 500px 350px;
       grid-template-rows: 500px 350px;
-      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
+      grid-template-areas: "gallery gallery gallery" "texts3 texts3 texts3";
   margin-top: -30%;
 }
 
@@ -347,7 +347,7 @@ h1 {
     left: 0;
     -webkit-transform: none;
             transform: none;
-    width: 100%;
+    width: 90%;
     position: relative;
   }
   .gallery-list li:nth-child(1) {
@@ -355,7 +355,8 @@ h1 {
     max-width: 450px;
   }
   .gallery-list li:nth-child(2) {
-    width: 50%;
+    width: 70%;
+    max-width: 350px;
   }
   .gallery-list li:nth-child(3) {
     display: none;
@@ -379,7 +380,7 @@ h1 {
       grid-template-columns: minmax(32px, 1fr) minmax(250px, 1fr) minmax(32px, 1fr);
   -ms-grid-rows: 2rem 2rem 1fr minmax(50px, 70px);
       grid-template-rows: 2rem 2rem 1fr minmax(50px, 70px);
-      grid-template-areas: ". . ." "text text text" "icons icons icons" ". . .";
+      grid-template-areas: ". . ." "text text text" "icons icons icons" ". . .";
   position: relative;
   margin-top: 0;
 }
@@ -422,7 +423,7 @@ h1 {
       grid-template-columns: 1fr 70px 70px 1fr;
   -ms-grid-rows: 100px 100px 100px;
       grid-template-rows: 100px 100px 100px;
-      grid-template-areas: ". think create ." ". iterate develop ." ". deliver tap .";
+      grid-template-areas: ". think create ." ". iterate develop ." ". deliver tap .";
   grid-gap: 1.1rem 3rem;
 }
 
