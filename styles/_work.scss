@@ -101,6 +101,18 @@
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .s3 .text-wrapper {
+    margin-left: 15vw;
+
+    p {
+      min-width: 250px;
+    }
+  }
+  .gallery-list {
+    margin-right: 15vw;
+  }
+}
 @media only screen and (min-width: 768px) {
   .s3 {
     display: flex;
@@ -126,7 +138,7 @@
 
     p {
       max-width: none;
-      min-width: 250px;
+      min-width: 150px;
       color: #fff;
       font-size: 1rem;
       opacity: 0.8;
@@ -151,11 +163,13 @@
     }
     li:nth-child(1) {
       width: 90%;
+      min-width: 280px;
       max-width: 450px;
     }
 
     li:nth-child(2) {
       width: 70%;
+      min-width: 220px;
       max-width: 350px;
     }
 

@@ -14,6 +14,8 @@ var s4h1 = $(".s4 h1");
 var s4icons = $(".s4 .icons > div:not(:last-child)");
 var s5h1 = $(".s5 h1");
 var s5li = $(".s5 .services-content > ul li");
+var s5h3 = $(".s5 .services-content h3");
+var s5items = $(".s5 .content-list-items li");
 var s6text = $(".s6 .text *");
 var s6form = $(".s6 .form .input, .s6 .form textarea");
 var s6formbtn = $(".s6 .submit-btn");
@@ -25,36 +27,57 @@ var footer4 = $(".footer > p");
 var checkbool = true;
 
 var animS4, tween;
-if (vh / vw < 1.78) {
-  console.log(pimg1);
+if (vw > 768) {
   $(".gallery-list li:nth-child(1) img").attr("src", "../img/port3.jpg");
 }
-function update() {}
-var updateInterval = setInterval(update, 100);
+
+// function update() {}
+// var updateInterval = setInterval(update, 100);
 
 $(document).ready(function() {
   var animArrow = new TimelineMax({
     paused: true,
     repeat: 1000
   });
-  animArrow
-    .set(scrollArrow, {
-      rotation: 0.01,
-      x: "-50%",
-      y: "-180"
-    })
-    .to(scrollArrow, 2, {
-      rotation: 0.01,
-      opacity: 1,
-      y: "-160",
-      ease: Expo.easeInOut,
-      delay: "1"
-    })
-    .to(scrollArrow, 1, {
-      opacity: 0,
-      y: "-140"
-    })
-    .reverse();
+  if (vh / vw > 1) {
+    animArrow
+      .set(scrollArrow, {
+        rotation: 0.01,
+        x: "-50%",
+        y: "-200"
+      })
+      .to(scrollArrow, 2, {
+        rotation: 0.01,
+        opacity: 1,
+        y: "-160",
+        ease: Expo.easeInOut,
+        delay: "1"
+      })
+      .to(scrollArrow, 1, {
+        opacity: 0,
+        y: "-120"
+      })
+      .reverse();
+  } else {
+    animArrow
+      .set(scrollArrow, {
+        rotation: 0.01,
+        x: "-50%",
+        y: "-120"
+      })
+      .to(scrollArrow, 2, {
+        rotation: 0.01,
+        opacity: 1,
+        y: "-80",
+        ease: Expo.easeInOut,
+        delay: "1"
+      })
+      .to(scrollArrow, 1, {
+        opacity: 0,
+        y: "-40"
+      })
+      .reverse();
+  }
 
   function updateAnim(anim) {
     if (anim.reversed()) {
@@ -173,24 +196,41 @@ $(document).ready(function() {
     duration: vh
   }).setTween(animLogo);
   var animS2 = new TimelineMax();
-
-  animS2
-    .from(s2Texth1, 1, {
-      y: "100",
-      opacity: "0",
-      ease: Expo.easeOut
-    })
-    .from(
-      s2Textp,
-      2,
-      {
+  if (vh / vw > 1) {
+    animS2
+      .from(s2Texth1, 2, {
+        y: "100",
         opacity: "0",
         ease: Expo.easeOut
-      },
-      0.25
-    );
+      })
+      .from(
+        s2Textp,
+        2,
+        {
+          opacity: "0",
+          ease: Expo.easeOut
+        },
+        0.25
+      );
+  } else {
+    animS2
+      .from(s2Texth1, 1.2, {
+        y: "100",
+        opacity: "0",
+        ease: Power2.easeOut
+      })
+      .from(
+        s2Textp,
+        1.5,
+        {
+          opacity: "0",
+          ease: Power2.easeOut
+        },
+        "-=0.5"
+      );
+  }
 
-  if (vh / vw > 1.78) {
+  if (vh / vw > 1) {
     var s2Scene = new ScrollMagic.Scene({
       triggerElement: ".s2",
       triggerHook: 0,
@@ -200,9 +240,8 @@ $(document).ready(function() {
   } else {
     var s2Scene = new ScrollMagic.Scene({
       triggerElement: ".s2",
-      triggerHook: 0,
-      offset: -vh * 0.5,
-      duration: vh
+      triggerHook: 1,
+      offset: vh * 0.6
     }).setTween(animS2);
   }
 
@@ -219,43 +258,67 @@ $(document).ready(function() {
         y: "-100%",
         delay: "-2"
       });
+    var s3Scene = new ScrollMagic.Scene({
+      triggerElement: ".s2",
+      triggerHook: "0",
+      offset: 0,
+      duration: vh
+    }).setTween(animS3);
+  } else {
+    animS3
+      .from(pimg1, 3, {
+        ease: Power2.easeOut,
+        opacity: 0,
+        delay: 1,
+        x: 50
+      })
+      .from(
+        pimg2,
+        2,
+        {
+          ease: Power2.easeOut,
+          opacity: 0,
+          x: 50
+        },
+        "-=2.5"
+      );
+    var s3Scene = new ScrollMagic.Scene({
+      triggerElement: ".s3",
+      triggerHook: 1,
+      offset: vh * 0.2
+    }).setTween(animS3);
   }
 
-  var s3Scene = new ScrollMagic.Scene({
-    triggerElement: ".s2",
-    triggerHook: "0",
-    offset: 0,
-    duration: vh
-  }).setTween(animS3);
   var animS3Text = new TimelineMax();
-  animS3Text
-    .from(
-      s3Texth1,
-      1,
-      {
-        y: "60",
-        opacity: "0"
-      },
-      0
-    )
-    .from(
-      s3Textp,
-      1,
-      {
-        y: "20",
-        opacity: "0"
-      },
-      0.3
-    )
-    .from(
-      s3Butt,
-      0.2,
-      {
-        opacity: "0"
-      },
-      0.7
-    );
-  if (vh / vw > 1.78) {
+
+  if (vw < 768) {
+    animS3Text
+      .from(
+        s3Texth1,
+        1,
+        {
+          y: "60",
+          opacity: "0"
+        },
+        0
+      )
+      .from(
+        s3Textp,
+        1,
+        {
+          y: "20",
+          opacity: "0"
+        },
+        0.3
+      )
+      .from(
+        s3Butt,
+        0.2,
+        {
+          opacity: "0"
+        },
+        0.7
+      );
     var s3SceneText = new ScrollMagic.Scene({
       triggerElement: ".gallery-list",
       triggerHook: "0",
@@ -263,32 +326,53 @@ $(document).ready(function() {
       duration: vh / 2
     }).setTween(animS3Text);
   } else {
+    animS3Text
+      .from(s3Texth1, 1.2, {
+        y: "60",
+        opacity: "0"
+      })
+      .from(
+        s3Textp,
+        1.5,
+        {
+          opacity: "0"
+        },
+        "-=0.6"
+      )
+      .from(
+        s3Butt,
+        0.5,
+        {
+          opacity: "0",
+          ease: Expo.easeOut
+        },
+        "-=1.4"
+      );
+
     var s3SceneText = new ScrollMagic.Scene({
-      triggerElement: ".s2",
-      triggerHook: "0",
-      offset: vh * 0.1,
-      duration: vh * 0.5
+      triggerElement: ".s3",
+      triggerHook: 1,
+      offset: vh * 0.2
     }).setTween(animS3Text);
   }
 
   animS4 = new TimelineMax();
-
-  animS4.from(s4h1, 1, {
-    y: "30",
-    opacity: "0"
-  });
-  tween = TweenMax.staggerFrom(
-    s4icons,
-    2,
-    {
+  if (vh / vw > 1) {
+    animS4.from(s4h1, 1, {
+      y: "30",
       opacity: "0"
-    },
-    0.2
-  );
+    });
+    tween = TweenMax.staggerFrom(
+      s4icons,
+      2,
+      {
+        opacity: "0"
+      },
+      0.2
+    );
 
-  animS4.add(tween);
+    animS4.add(tween);
 
-  if (vh / vw > 1.78) {
     var s4Scene = new ScrollMagic.Scene({
       triggerElement: ".s3 .text-wrapper",
       triggerHook: "0",
@@ -296,31 +380,50 @@ $(document).ready(function() {
       duration: vh * 0.7
     }).setTween(animS4);
   } else {
+    tween = TweenMax.staggerFrom(
+      s4icons,
+      2,
+      {
+        opacity: "0",
+        delay: 0.3
+      },
+      0.2
+    );
+
+    animS4.add(tween);
+    animS4.from(
+      s4h1,
+      0.7,
+      {
+        y: "60",
+        opacity: "0"
+      },
+      0
+    );
     var s4Scene = new ScrollMagic.Scene({
-      triggerElement: ".s3 .text-wrapper",
-      triggerHook: "0",
-      offset: -vh * 0.35,
-      duration: vh * 0.7
+      triggerElement: ".s4",
+      triggerHook: 1,
+      offset: vh * 0.4
     }).setTween(animS4);
   }
 
-  var anims5 = new TimelineMax();
-  anims5
-    .from(s5h1, 1, {
-      y: "30",
-      opacity: "0"
-    })
-    .staggerFrom(
-      s5li,
-      1,
-      {
-        y: "100",
+  if (vh / vw > 1) {
+    var anims5 = new TimelineMax();
+    anims5
+      .from(s5h1, 1, {
+        y: "30",
         opacity: "0"
-      },
-      0.1,
-      0.2
-    );
-  if (vh / vw > 1.78) {
+      })
+      .staggerFrom(
+        s5li,
+        1,
+        {
+          y: "100",
+          opacity: "0"
+        },
+        0.1,
+        0.2
+      );
     var s5Scene = new ScrollMagic.Scene({
       triggerElement: ".s4",
       triggerHook: "0",
@@ -328,47 +431,72 @@ $(document).ready(function() {
       offset: -vh * 0.4
     }).setTween(anims5);
   } else {
+    var anims5 = new TimelineMax();
+    anims5
+      .from(s5h1, 1.2, {
+        y: "60",
+        opacity: "0"
+      })
+      .staggerFrom(
+        s5h3,
+        1,
+        {
+          y: "30",
+          opacity: "0"
+        },
+        0.3,
+        0.4
+      )
+      .staggerFrom(
+        s5items,
+        0.8,
+        {
+          y: "20",
+          opacity: "0"
+        },
+        0.1,
+        0.5
+      );
     var s5Scene = new ScrollMagic.Scene({
-      triggerElement: ".s4",
-      triggerHook: "0",
-      duration: vh * 0.45,
-      offset: -vh * 0.1
+      triggerElement: ".s6",
+      triggerHook: 1,
+      offset: -vh * 0.3
     }).setTween(anims5);
   }
 
   var anims6 = new TimelineMax();
-  anims6
-    .staggerFrom(
-      s6text,
-      2,
-      {
-        y: "50",
-        opacity: "0"
-      },
-      0.2,
-      0.2
-    )
-    .staggerFrom(
-      s6form,
-      2,
-      {
-        y: "100",
-        opacity: "0"
-      },
-      0.2,
-      0.2
-    )
-    .from(
-      s6formbtn,
-      1,
-      {
-        ease: Power2.easeOut,
-        y: "30",
-        opacity: "0"
-      },
-      1.6
-    );
-  if (vh > 600) {
+  if (vh / vw > 1) {
+    anims6
+      .staggerFrom(
+        s6text,
+        2,
+        {
+          y: "50",
+          opacity: "0"
+        },
+        0.2,
+        0.2
+      )
+      .staggerFrom(
+        s6form,
+        2,
+        {
+          y: "100",
+          opacity: "0"
+        },
+        0.2,
+        0.2
+      )
+      .from(
+        s6formbtn,
+        1,
+        {
+          ease: Power2.easeOut,
+          y: "30",
+          opacity: "0"
+        },
+        1.6
+      );
     var s6Scene = new ScrollMagic.Scene({
       triggerElement: ".s5",
       triggerHook: "0",
@@ -376,55 +504,122 @@ $(document).ready(function() {
       duration: vh * 0.8
     }).setTween(anims6);
   } else {
+    anims6
+      .staggerFrom(
+        s6text,
+        1.2,
+        {
+          y: "50",
+          opacity: "0"
+        },
+        0.2,
+        0.2
+      )
+      .staggerFrom(
+        s6form,
+        1.2,
+        {
+          y: "100",
+          opacity: "0"
+        },
+        0.2,
+        0.2
+      )
+      .from(
+        s6formbtn,
+        0.3,
+        {
+          ease: Expo.easeOut,
+          x: -20,
+          opacity: "0"
+        },
+        "-=.6"
+      );
     var s6Scene = new ScrollMagic.Scene({
-      triggerElement: ".s5",
-      triggerHook: "0",
-      offset: vh * 0.3,
-      duration: vh * 0.8
+      triggerElement: ".s6",
+      triggerHook: 1,
+      offset: vh * 0.5,
+      reverse: false
     }).setTween(anims6);
-    $(".s6").css("padding", "2rem 0");
   }
 
   var animFooter = new TimelineMax();
-  animFooter
-    .from(footer1, 0.3, {
-      y: "40",
-      opacity: "0"
-    })
-    .staggerFrom(
-      footer2,
-      1,
-      {
+
+  if (vh / vw > 1) {
+    animFooter
+      .from(footer1, 0.3, {
         y: "40",
         opacity: "0"
-      },
-      0.3,
-      0.25
-    )
-    .staggerFrom(
-      footer3,
-      0.6,
-      {
+      })
+      .staggerFrom(
+        footer2,
+        1,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        0.25
+      )
+      .staggerFrom(
+        footer3,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        1.2
+      )
+      .from(
+        footer4,
+        0.5,
+        {
+          opacity: "0"
+        },
+        2
+      );
+  } else {
+    animFooter
+      .from(footer1, 0.3, {
         y: "40",
         opacity: "0"
-      },
-      0.3,
-      1.2
-    )
-    .from(
-      footer4,
-      0.5,
-      {
-        opacity: "0"
-      },
-      2
-    );
-  if (vh > 600) {
+      })
+      .staggerFrom(
+        footer2,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.2,
+        0.25
+      )
+      .staggerFrom(
+        footer3,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        0.25
+      )
+      .from(
+        footer4,
+        0.5,
+        {
+          opacity: "0"
+        },
+        0.7
+      );
+  }
+
+  if (vh / vw < 1) {
     var footerScene = new ScrollMagic.Scene({
       triggerElement: ".footer",
       triggerHook: vh,
-      duration: "18%",
-      offset: "0",
+      offset: vh * 0.1,
       reverse: true
     }).setTween(animFooter);
   } else {

@@ -90,6 +90,7 @@ h1 {
 }
 
 .hero {
+  opacity: 0.8;
   height: 100vh;
   overflow: hidden;
 }
@@ -110,7 +111,6 @@ h1 {
   width: 40px;
   left: 50%;
   opacity: 0;
-  padding-bottom: 100px;
   z-index: 1;
 }
 
@@ -202,7 +202,7 @@ h1 {
 
   .particles {
     width: 100%;
-    height: 2362px;
+    height: 2000px;
   }
   .s2 .text-wrapper h1 {
     font-size: 40px;
