@@ -261,7 +261,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s4 {
     background: none;
     display: grid;
@@ -340,24 +340,24 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .s4 {
-    .icons {
-      #think {
-        @include icons("../img/process-icons-mobile-white/think.svg");
-      }
-      #create {
-        @include icons("../img/process-icons-mobile-white/create.svg");
-      }
-      #iterate {
-        @include icons("../img/process-icons-mobile-white/iterate.svg");
-      }
-      #develop {
-        @include icons("../img/process-icons-mobile-white/develop.svg");
-      }
-      #deliver {
-        @include icons("../img/process-icons-mobile-white/deliver.svg");
-      }
-    }
-  }
-}
+// @media only screen and (min-width: 768px) {
+//   .s4 {
+//     .icons {
+//       #think {
+//         @include icons("../img/process-icons-mobile-white/think.svg");
+//       }
+//       #create {
+//         @include icons("../img/process-icons-mobile-white/create.svg");
+//       }
+//       #iterate {
+//         @include icons("../img/process-icons-mobile-white/iterate.svg");
+//       }
+//       #develop {
+//         @include icons("../img/process-icons-mobile-white/develop.svg");
+//       }
+//       #deliver {
+//         @include icons("../img/process-icons-mobile-white/deliver.svg");
+//       }
+//     }
+//   }
+// }

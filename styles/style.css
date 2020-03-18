@@ -312,7 +312,7 @@ h1 {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s3 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -722,7 +722,7 @@ h1 {
   background-color: transparent;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s4 {
     background: none;
     display: -ms-grid;
@@ -825,44 +825,6 @@ h1 {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .s4 .icons #think {
-    background-image: url("../img/process-icons-mobile-white/think.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-transition: all 350ms ease-in-out;
-    transition: all 350ms ease-in-out;
-  }
-  .s4 .icons #create {
-    background-image: url("../img/process-icons-mobile-white/create.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-transition: all 350ms ease-in-out;
-    transition: all 350ms ease-in-out;
-  }
-  .s4 .icons #iterate {
-    background-image: url("../img/process-icons-mobile-white/iterate.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-transition: all 350ms ease-in-out;
-    transition: all 350ms ease-in-out;
-  }
-  .s4 .icons #develop {
-    background-image: url("../img/process-icons-mobile-white/develop.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-transition: all 350ms ease-in-out;
-    transition: all 350ms ease-in-out;
-  }
-  .s4 .icons #deliver {
-    background-image: url("../img/process-icons-mobile-white/deliver.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    -webkit-transition: all 350ms ease-in-out;
-    transition: all 350ms ease-in-out;
-  }
-}
-
 .s5 {
   background: white;
   height: auto;
@@ -916,7 +878,7 @@ h1 {
   color: #616161;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s5 {
     background: none;
     padding-bottom: 120px;
@@ -1193,7 +1155,7 @@ select:-webkit-autofill:focus {
   mix-blend-mode: screen;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s6 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1324,7 +1286,7 @@ select:-webkit-autofill:focus {
   opacity: 0.7;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .footer .links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1349,7 +1311,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   html {
     background: #0d0020;
   }

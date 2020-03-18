@@ -170,7 +170,7 @@ select:-webkit-autofill:focus {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
   .s6 {
     flex-direction: row;
     .text {
