@@ -191,7 +191,24 @@ h1 {
   html {
     background: #0d0020;
   }
-
+  ::-webkit-scrollbar {
+    width: 7px;
+    opacity: 0.3;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    // background: #3b1f49;
+    // background: #8132a8;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 35, 122);
+    // background: #ae4dbf;
+    // background: rgb(136, 4, 148);
+  }
   .mobile-hero {
     display: none;
   }

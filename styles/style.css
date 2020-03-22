@@ -1371,6 +1371,20 @@ select:-webkit-autofill:focus {
   html {
     background: #0d0020;
   }
+  ::-webkit-scrollbar {
+    width: 7px;
+    opacity: 0.3;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #57237a;
+  }
   .mobile-hero {
     display: none;
   }

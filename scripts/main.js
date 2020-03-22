@@ -1,6 +1,5 @@
 particlesJS.load("particles-js", "../res/stars.json");
 particlesJS.load("particles2-js", "../res/particlesjs-config.json");
-
 // let myVideo = $("#myvideo");
 
 // myVideo[0].load();
@@ -42,20 +41,20 @@ var popup = $(".s4 .popup");
 var closePopUp = $(".s4 .popup .close-btn");
 var tl = new TimelineMax();
 
-var i = 0;
-$(window).scroll(function() {
-  if ($(window).scrollTop() < 10) {
-    i = 0;
-  }
-  if ($(window).scrollTop() > 10) {
-    if (i == 0) {
-      $("html, body").animate(
-        {
-          scrollTop: $(".s2").offset().top
-        },
-        0
-      );
-      i++;
-    }
-  }
-});
+// var i = 0;
+// $(window).scroll(function() {
+//   if ($(window).scrollTop() < 10) {
+//     i = 0;
+//   }
+//   if ($(window).scrollTop() > 10) {
+//     if (i == 0) {
+//       $("html, body").animate(
+//         {
+//           scrollTop: $(".s2").offset().top
+//         },
+//         0
+//       );
+//       i++;
+//     }
+//   }
+// });
