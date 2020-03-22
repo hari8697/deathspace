@@ -763,18 +763,74 @@ h1 {
   .s4 .icons {
     width: 100%;
     max-width: 700px;
-    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
         align-self: center;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: icons;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (70px)[5];
+        grid-template-columns: repeat(5, 70px);
+    grid-gap: 0;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "think create iterate develop deliver";
+  }
+  .s4 .icons .popup .one,
+  .s4 .icons .popup .two {
+    top: 1px;
+    width: 83%;
+    height: 170px;
+    left: -32%;
+  }
+  .s4 .icons .popup .two {
+    left: 50%;
+  }
+  .s4 .icons .popup p {
+    width: 80%;
+    margin-top: 85px;
+  }
+  .s4 .icons .popup .nav--indicators {
+    bottom: -45%;
+  }
+  .s4 .icons .popup .nav--hor {
+    top: 85px;
+    width: 140%;
+  }
+  .s4 .icons .popup .close-btn {
+    top: 0;
+    right: -28%;
+  }
+  .s4 .icons .container--think {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: think;
+  }
+  .s4 .icons .container--create {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: create;
+  }
+  .s4 .icons .container--iterate {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: iterate;
+  }
+  .s4 .icons .container--develop {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: develop;
+  }
+  .s4 .icons .container--deliver {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: deliver;
   }
   .s4 .icons .container--tap {
     display: none;

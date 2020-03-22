@@ -307,10 +307,63 @@
       align-self: center;
       justify-self: center;
       grid-area: icons;
-      display: flex;
+      // display: flex;
+      // justify-content: space-evenly;
+      display: grid;
+      grid-template-columns: repeat(5, 70px);
+      grid-gap: 0;
       justify-content: space-evenly;
+      grid-template-rows: 1fr;
 
+      grid-template-areas: "think create iterate develop deliver";
+
+      .popup {
+        .one,
+        .two {
+          top: 1px;
+          width: 83%;
+          height: 170px;
+          left: -32%;
+        }
+        .two {
+          left: 50%;
+        }
+
+        p {
+          width: 80%;
+          margin-top: 85px;
+        }
+
+        .nav--indicators {
+          bottom: -45%;
+        }
+
+        .nav--hor {
+          top: 85px;
+          width: 140%;
+        }
+
+        .close-btn {
+          top: 0;
+          right: -28%;
+        }
+      }
       .container {
+        &--think {
+          grid-area: think;
+        }
+        &--create {
+          grid-area: create;
+        }
+        &--iterate {
+          grid-area: iterate;
+        }
+        &--develop {
+          grid-area: develop;
+        }
+        &--deliver {
+          grid-area: deliver;
+        }
         &--tap {
           display: none;
         }

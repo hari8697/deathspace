@@ -226,7 +226,7 @@ $(document).ready(function() {
           opacity: "0",
           ease: Power2.easeOut
         },
-        "-=0.5"
+        "-=0.3"
       );
   }
 
@@ -346,7 +346,7 @@ $(document).ready(function() {
           opacity: "0",
           ease: Expo.easeOut
         },
-        "-=1.4"
+        "-=.5"
       );
 
     var s3SceneText = new ScrollMagic.Scene({
@@ -382,7 +382,7 @@ $(document).ready(function() {
   } else {
     tween = TweenMax.staggerFrom(
       s4icons,
-      2,
+      1.5,
       {
         opacity: "0",
         delay: 0.3
