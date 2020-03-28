@@ -335,6 +335,7 @@
         }
 
         .nav--indicators {
+          pointer-events: none;
           bottom: -45%;
         }
 
@@ -349,6 +350,18 @@
         }
       }
       .container {
+        &--think,
+        &--create,
+        &--iterate,
+        &--develop,
+        &--deliver {
+          &:hover {
+            cursor: pointer;
+            .dot {
+              background-color: #5e0ed8;
+            }
+          }
+        }
         &--think {
           grid-area: think;
         }
@@ -392,7 +405,6 @@
     }
   }
 }
-
 // @media only screen and (min-width: 768px) {
 //   .s4 {
 //     .icons {

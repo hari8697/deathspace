@@ -341,7 +341,7 @@ h1 {
   }
   .portfolio-btn {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.99;
   }
   .gallery-list {
     width: 50%;
@@ -797,6 +797,7 @@ h1 {
     margin-top: 85px;
   }
   .s4 .icons .popup .nav--indicators {
+    pointer-events: none;
     bottom: -45%;
   }
   .s4 .icons .popup .nav--hor {
@@ -806,6 +807,12 @@ h1 {
   .s4 .icons .popup .close-btn {
     top: 0;
     right: -28%;
+  }
+  .s4 .icons .container--think:hover, .s4 .icons .container--create:hover, .s4 .icons .container--iterate:hover, .s4 .icons .container--develop:hover, .s4 .icons .container--deliver:hover {
+    cursor: pointer;
+  }
+  .s4 .icons .container--think:hover .dot, .s4 .icons .container--create:hover .dot, .s4 .icons .container--iterate:hover .dot, .s4 .icons .container--develop:hover .dot, .s4 .icons .container--deliver:hover .dot {
+    background-color: #5e0ed8;
   }
   .s4 .icons .container--think {
     -ms-grid-row: 1;
@@ -1205,9 +1212,9 @@ select:-webkit-autofill:focus {
 
 .submit-btn:hover {
   cursor: pointer;
-  background-color: white;
-  color: #000;
   font-size: 1rem;
+  color: #510e66;
+  background: #fff;
   mix-blend-mode: screen;
 }
 
@@ -1227,17 +1234,18 @@ select:-webkit-autofill:focus {
     margin-left: auto;
     text-align: right;
     font-size: 50px;
+    opacity: 0.6;
     pointer-events: none;
   }
   .s6 p {
     text-align: right;
+    opacity: 0.75;
     color: #fff;
     font-family: "Futura", sans-serif;
     max-width: 300px;
     font-size: 1rem;
     margin: 0;
     margin-left: auto;
-    opacity: 1;
   }
   .s6 .form {
     width: 310px;
@@ -1364,6 +1372,7 @@ select:-webkit-autofill:focus {
   }
   .footer .copyright--info {
     margin-left: 12%;
+    padding-bottom: 20px;
   }
 }
 
@@ -1373,7 +1382,6 @@ select:-webkit-autofill:focus {
   }
   ::-webkit-scrollbar {
     width: 7px;
-    opacity: 0.3;
   }
   ::-webkit-scrollbar-track {
     background: #0d0020;

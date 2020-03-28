@@ -50,6 +50,10 @@ h1 {
   font-weight: 400;
 }
 
+.particles {
+  display: none;
+}
+
 .header {
   background-color: black;
   position: fixed;
@@ -149,3 +153,102 @@ h1 {
 
 @import "../../styles/contact";
 @import "../../styles/footer";
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  html {
+    background: #0d0020;
+  }
+  .logo-top {
+    width: 150px;
+    top: 16px;
+  }
+  .particles {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+    // height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    // background: #3b1f49;
+    // background: #8132a8;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 35, 122);
+    // background: #ae4dbf;
+    // background: rgb(136, 4, 148);
+  }
+  .portfolio {
+    h1 {
+      width: 75%;
+      max-width: 1280px;
+      opacity: 0.4;
+      margin-top: 0;
+      position: static;
+    }
+    background-color: transparent;
+
+    .item-wrapper {
+      margin-top: 0px;
+      display: grid;
+      justify-content: center;
+      // grid-template-columns: min-max(400px, 570px) min-max(400px, 570px);
+      grid-template-columns: minmax(400px, 570px) minmax(400px, 570px);
+      grid-gap: 5px 20px;
+    }
+
+    &--item {
+      margin-bottom: 0;
+      opacity: 0.8;
+      &--image {
+        &:hover {
+          cursor: pointer;
+        }
+        width: 100%;
+        height: 90%;
+        max-height: 25vw;
+        object-fit: cover;
+      }
+      &:hover {
+        cursor: auto;
+      }
+    }
+
+    .text-wrapper {
+      opacity: 0;
+      margin-top: 9px;
+      a {
+        color: #fff;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+  .portfolio {
+    .item-wrapper {
+      grid-template-rows: repeat(3, 356px);
+    }
+
+    &--item {
+      &--image {
+        width: 100%;
+        height: 90%;
+        max-height: none;
+        object-fit: cover;
+      }
+    }
+  }
+}

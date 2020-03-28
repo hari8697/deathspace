@@ -221,12 +221,12 @@ $(document).ready(function() {
       })
       .from(
         s2Textp,
-        1.5,
+        2,
         {
           opacity: "0",
           ease: Power2.easeOut
         },
-        "-=0.3"
+        "-=0.8"
       );
   }
 
@@ -241,7 +241,8 @@ $(document).ready(function() {
     var s2Scene = new ScrollMagic.Scene({
       triggerElement: ".s2",
       triggerHook: 1,
-      offset: vh * 0.6
+      offset: vh * 0.6,
+      reverse: false
     }).setTween(animS2);
   }
 
@@ -265,27 +266,11 @@ $(document).ready(function() {
       duration: vh
     }).setTween(animS3);
   } else {
-    animS3
-      .from(pimg1, 3, {
-        ease: Power2.easeOut,
-        opacity: 0,
-        delay: 1,
-        x: 50
-      })
-      .from(
-        pimg2,
-        2,
-        {
-          ease: Power2.easeOut,
-          opacity: 0,
-          x: 50
-        },
-        "-=2.5"
-      );
     var s3Scene = new ScrollMagic.Scene({
       triggerElement: ".s3",
       triggerHook: 1,
-      offset: vh * 0.2
+      offset: vh * 0.2,
+      reverse: false
     }).setTween(animS3);
   }
 
@@ -337,22 +322,44 @@ $(document).ready(function() {
         {
           opacity: "0"
         },
-        "-=0.6"
+        "-=0.8"
+      )
+      .from(
+        pimg1,
+        3,
+        {
+          ease: Power2.easeOut,
+          opacity: 0,
+          x: 50
+        },
+        "-=2"
+      )
+      .from(
+        pimg2,
+        2,
+        {
+          ease: Power2.easeOut,
+          opacity: 0,
+          x: 50
+        },
+        "-=2.5"
       )
       .from(
         s3Butt,
-        0.5,
+        0.25,
         {
+          x: -20,
           opacity: "0",
           ease: Expo.easeOut
         },
-        "-=.5"
+        "-=2.2"
       );
 
     var s3SceneText = new ScrollMagic.Scene({
       triggerElement: ".s3",
       triggerHook: 1,
-      offset: vh * 0.2
+      offset: vh * 0.2,
+      reverse: false
     }).setTween(animS3Text);
   }
 
@@ -403,7 +410,8 @@ $(document).ready(function() {
     var s4Scene = new ScrollMagic.Scene({
       triggerElement: ".s4",
       triggerHook: 1,
-      offset: vh * 0.4
+      offset: vh * 0.4,
+      reverse: false
     }).setTween(animS4);
   }
 
@@ -460,7 +468,8 @@ $(document).ready(function() {
     var s5Scene = new ScrollMagic.Scene({
       triggerElement: ".s6",
       triggerHook: 1,
-      offset: -vh * 0.3
+      offset: -vh * 0.3,
+      reverse: false
     }).setTween(anims5);
   }
 
@@ -512,12 +521,11 @@ $(document).ready(function() {
           y: "50",
           opacity: "0"
         },
-        0.2,
         0.2
       )
       .staggerFrom(
         s6form,
-        1.2,
+        1,
         {
           y: "100",
           opacity: "0"
@@ -527,13 +535,13 @@ $(document).ready(function() {
       )
       .from(
         s6formbtn,
-        0.3,
+        0.25,
         {
           ease: Expo.easeOut,
           x: -20,
           opacity: "0"
         },
-        "-=.6"
+        "-=.65"
       );
     var s6Scene = new ScrollMagic.Scene({
       triggerElement: ".s6",
@@ -620,7 +628,7 @@ $(document).ready(function() {
       triggerElement: ".footer",
       triggerHook: vh,
       offset: vh * 0.1,
-      reverse: true
+      reverse: false
     }).setTween(animFooter);
   } else {
     var footerScene = new ScrollMagic.Scene({

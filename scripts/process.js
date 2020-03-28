@@ -71,7 +71,7 @@ function switchStates() {
 }
 
 popupLeft.click(function(e) {
-  e.stopPropagation();
+  e.stopPropagation(); // stops the event to bubble up to the parent element.
   if (currDot > 1) {
     currDot -= 1;
     switchStates();
@@ -97,7 +97,7 @@ popupLeft.touchwipe({
 });
 
 popupRight.click(function(e) {
-  e.stopPropagation();
+  e.stopPropagation(); // stops the event to bubble up to the parent element.
   if (currDot < 5) {
     currDot += 1;
     switchStates();
@@ -431,7 +431,9 @@ if (vw < 768 && vh > vw) {
   closePopUp.on("click", function() {
     pContainer.css("pointer-events", "none");
     tl.clear();
-    pDot.css({ "background-image": pOriginalIcon });
+    pDot.css({
+      "background-image": pOriginalIcon
+    });
     tl.to(popup, 0.8, {
       opacity: "0",
       "pointer-events": "none"
@@ -468,51 +470,58 @@ if (vw < 768 && vh > vw) {
 
     switch (pOpen) {
       case "think":
-        setTimeout(function() {
+        setTimeout(() => {
           clickTitle.text("Think");
-          pDot.css(
-            "background-image",
-            "url('../img/process-icons-mobile/think.svg')"
-          );
+        }, 300);
+        setTimeout(function() {
+          pDot.css("background-image", "url('../img/process-icons/think.svg')");
         }, 800);
         break;
 
       case "create":
-        setTimeout(function() {
+        setTimeout(() => {
           clickTitle.text("Create");
+        }, 300);
+        setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons-mobile/create.svg')"
+            "url('../img/process-icons/create.svg')"
           );
         }, 800);
         break;
 
       case "iterate":
-        setTimeout(function() {
+        setTimeout(() => {
           clickTitle.text("Iterate");
+        }, 300);
+        setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons-mobile/iterate.svg')"
+            "url('../img/process-icons/iterate.svg')"
           );
         }, 800);
         break;
 
       case "develop":
-        setTimeout(function() {
+        setTimeout(() => {
           clickTitle.text("Develop");
+        }, 300);
+        setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons-mobile/develop.svg')"
+            "url('../img/process-icons/develop.svg')"
           );
         }, 800);
         break;
 
       case "deliver":
-        setTimeout(function() {
+        setTimeout(() => {
           clickTitle.text("Deliver");
+        }, 300);
+        setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons-mobile/deliver.svg')"
+            "url('../img/process-icons/deliver.svg')"
           );
         }, 800);
         break;
@@ -526,14 +535,14 @@ if (vw < 768 && vh > vw) {
       "background-color": "transparent"
     });
 
-    pDot.hover(
-      function() {
-        $(this).css("background-color", "#5e0ed8");
-      },
-      function() {
-        $(this).css("background-color", "transparent");
-      }
-    );
+    // pDot.hover(
+    //   function() {
+    //     $(this).css("background-color", "#5e0ed8");
+    //   },
+    //   function() {
+    //     $(this).css("background-color", "transparent");
+    //   }
+    // );
 
     tl.set(clickTitle, {
       position: "static",

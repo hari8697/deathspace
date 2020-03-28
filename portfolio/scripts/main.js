@@ -13,19 +13,15 @@ var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
 var footer3 = $(".footer .email *");
 var footer4 = $(".footer > p");
+var portTextAll = $(".portfolio--item .text-wrapper");
+
+var portItemsAll = $(".portfolio--item img");
 
 // particlesJS.load("particles-js", "../res/particlesjs-config.json");
 
 let animatedImages = false;
 
-if (!imgLoaded) {
-  $("html, body").css({
-    overflow: "hidden",
-    height: "100%",
-    "pointer-events": "none"
-  });
-}
-
+particlesJS.load("particles-js", "../res/stars.json");
 // $(window).on("load", function() {
 //   var originalUrl = window.location.href;
 //   history.pushState({}, "", "portfolio");
@@ -41,55 +37,216 @@ if (!imgLoaded) {
 // });
 
 // portItems.css({ opacity: 0 });
-
+window.onload = function() {
+  if (vh < vw) {
+    // var portTextAll = document.getElementsByClassName(
+    //   ".portfolio--item .text-wrapper"
+    // );
+    // var portItemsAll = document.getElementsByClassName(".portfolio--item");
+    // console.log(portItemsAll);
+  }
+};
 $(document).ready(function() {
-  animImages = function() {
-    if (imgLoaded && !animatedImages) {
-      tl.staggerFrom(
-        portItems,
-        1,
-        {
-          y: 70,
-          opacity: 0
-        },
-        0.25
-      );
+  var controller = new ScrollMagic.Controller();
 
-      tl.staggerFrom(
-        portText,
-        1,
+  if (vh > vw) {
+    if (!imgLoaded) {
+      $("html, body").css({
+        overflow: "hidden",
+        height: "100%",
+        "pointer-events": "none"
+      });
+    }
+
+    animImages = function() {
+      if (imgLoaded && !animatedImages) {
+        tl.staggerFrom(
+          portItems,
+          1,
+          {
+            y: 70,
+            opacity: 0
+          },
+          0.25
+        );
+
+        tl.staggerFrom(
+          portText,
+          1,
+          {
+            x: -20,
+            opacity: 0
+          },
+          0.35,
+          0.75
+        );
+        animatedImages = true;
+        setTimeout(() => {
+          $("html, body").css({
+            overflow: "auto",
+            height: "auto",
+            "pointer-events": "all"
+          });
+        }, 1800);
+      }
+    };
+
+    checkImg = function() {
+      portImages.each(function() {
+        if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
+          imgLoaded = true;
+        } else {
+          imgLoaded = false;
+        }
+      });
+    };
+
+    var update = setInterval(animImages, 200);
+    var update2 = setInterval(checkImg, 100);
+
+    var image4 = new ImageObject(4);
+    var image5 = new ImageObject(5);
+    var image6 = new ImageObject(6);
+
+    controller.addScene([image4.Scene, image5.Scene, image6.Scene]);
+  } else {
+    // tl.set(portTextAll, {
+    //   opacity: 0
+    // });
+    var imageTl = new TimelineMax();
+    var imageTl2 = new TimelineMax();
+    // imageTl2.set(portTextAll, {
+    //   opacity: 0
+    // });
+    // imageTl2.set(portItemsAll, {
+    //   opacity: 0.8
+    // });
+    portItemsAll.mouseenter(function() {
+      imageTl.clear();
+      imageTl.progress(0);
+      imageTl.play();
+
+      let self = $(this).parent();
+
+      imageTl.to(self, 0.2, {
+        opacity: 1,
+        ease: Power1.easeInOut
+      });
+
+      imageTl.staggerFromTo(
+        self.children(".text-wrapper"),
+        0.35,
         {
           x: -20,
           opacity: 0
         },
-        0.35,
-        0.75
+        {
+          x: 0,
+          opacity: 1
+        },
+        0.15,
+        0
       );
-      animatedImages = true;
-      setTimeout(() => {
-        $("html, body").css({
-          overflow: "auto",
-          height: "auto",
-          "pointer-events": "all"
-        });
-      }, 1800);
-    }
-  };
-
-  checkImg = function() {
-    portImages.each(function() {
-      if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
-        imgLoaded = true;
-      } else {
-        imgLoaded = false;
-      }
     });
-  };
+    portItemsAll.mouseleave(function() {
+      let self = $(this).parent();
 
-  var update = setInterval(animImages, 200);
-  var update2 = setInterval(checkImg, 100);
+      imageTl.reverse();
+      imageTl.progress(0);
 
-  var controller = new ScrollMagic.Controller();
+      // imageTl2.set(portTextAll, {
+      //   opacity: 0
+      // });
+      // imageTl2.set(portItemsAll, {
+      //   opacity: 0.8
+      // });
+    });
+  }
+
+  var animFooter = new TimelineMax();
+
+  if (vh < vw) {
+    animFooter
+      .from(footer1, 0.3, {
+        y: "40",
+        opacity: "0"
+      })
+      .staggerFrom(
+        footer2,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.2,
+        0.25
+      )
+      .staggerFrom(
+        footer3,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        0.25
+      )
+      .from(
+        footer4,
+        0.5,
+        {
+          opacity: "0"
+        },
+        0.7
+      );
+    var footerScene = new ScrollMagic.Scene({
+      triggerElement: ".footer",
+      triggerHook: vh,
+      offset: vh * 0.1,
+      reverse: false
+    }).setTween(animFooter);
+  } else {
+    animFooter
+      .from(footer1, 0.3, {
+        y: "40",
+        opacity: "0"
+      })
+      .staggerFrom(
+        footer2,
+        1,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        0.25
+      )
+      .staggerFrom(
+        footer3,
+        0.6,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.3,
+        1.2
+      )
+      .from(
+        footer4,
+        0.5,
+        {
+          opacity: "0"
+        },
+        2
+      );
+    var footerScene = new ScrollMagic.Scene({
+      triggerElement: ".footer",
+      triggerHook: vh,
+      duration: "25%",
+      offset: "10%",
+      reverse: true
+    }).setTween(animFooter);
+  }
 
   var titleAnim = new TimelineMax();
   titleAnim.to(title, 5, {
@@ -102,70 +259,7 @@ $(document).ready(function() {
     triggerHook: "0",
     duration: vh
   }).setTween(titleAnim);
-
-  var image4 = new ImageObject(4);
-  var image5 = new ImageObject(5);
-  var image6 = new ImageObject(6);
-
-  var animFooter = new TimelineMax();
-  animFooter
-    .from(footer1, 0.3, {
-      y: "40",
-      opacity: "0"
-    })
-    .staggerFrom(
-      footer2,
-      1,
-      {
-        y: "40",
-        opacity: "0"
-      },
-      0.3,
-      0.25
-    )
-    .staggerFrom(
-      footer3,
-      0.6,
-      {
-        y: "40",
-        opacity: "0"
-      },
-      0.3,
-      1.2
-    )
-    .from(
-      footer4,
-      0.5,
-      {
-        opacity: "0"
-      },
-      2
-    );
-  if (vh > 600) {
-    var footerScene = new ScrollMagic.Scene({
-      triggerElement: ".footer",
-      triggerHook: vh,
-      duration: "18%",
-      offset: "0",
-      reverse: true
-    }).setTween(animFooter);
-  } else {
-    var footerScene = new ScrollMagic.Scene({
-      triggerElement: ".footer",
-      triggerHook: vh,
-      duration: "25%",
-      offset: "10%",
-      reverse: true
-    }).setTween(animFooter);
-  }
-
-  controller.addScene([
-    titleScene,
-    image4.Scene,
-    image5.Scene,
-    image6.Scene,
-    footerScene
-  ]);
+  controller.addScene([titleScene, footerScene]);
 });
 
 function ImageObject(i) {

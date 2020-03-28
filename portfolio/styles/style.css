@@ -50,6 +50,10 @@ h1 {
   font-weight: 400;
 }
 
+.particles {
+  display: none;
+}
+
 .header {
   background-color: black;
   position: fixed;
@@ -394,9 +398,9 @@ select:-webkit-autofill:focus {
 
 .submit-btn:hover {
   cursor: pointer;
-  background-color: white;
-  color: #000;
   font-size: 1rem;
+  color: #510e66;
+  background: #fff;
   mix-blend-mode: screen;
 }
 
@@ -416,17 +420,18 @@ select:-webkit-autofill:focus {
     margin-left: auto;
     text-align: right;
     font-size: 50px;
+    opacity: 0.6;
     pointer-events: none;
   }
   .s6 p {
     text-align: right;
+    opacity: 0.75;
     color: #fff;
     font-family: "Futura", sans-serif;
     max-width: 300px;
     font-size: 1rem;
     margin: 0;
     margin-left: auto;
-    opacity: 1;
   }
   .s6 .form {
     width: 310px;
@@ -553,6 +558,98 @@ select:-webkit-autofill:focus {
   }
   .footer .copyright--info {
     margin-left: 12%;
+    padding-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  html {
+    background: #0d0020;
+  }
+  .logo-top {
+    width: 150px;
+    top: 16px;
+  }
+  .particles {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #57237a;
+  }
+  .portfolio {
+    background-color: transparent;
+  }
+  .portfolio h1 {
+    width: 75%;
+    max-width: 1280px;
+    opacity: 0.4;
+    margin-top: 0;
+    position: static;
+  }
+  .portfolio .item-wrapper {
+    margin-top: 0px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: minmax(400px, 570px) minmax(400px, 570px);
+        grid-template-columns: minmax(400px, 570px) minmax(400px, 570px);
+    grid-gap: 5px 20px;
+  }
+  .portfolio--item {
+    margin-bottom: 0;
+    opacity: 0.8;
+  }
+  .portfolio--item--image {
+    width: 100%;
+    height: 90%;
+    max-height: 25vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .portfolio--item--image:hover {
+    cursor: pointer;
+  }
+  .portfolio--item:hover {
+    cursor: auto;
+  }
+  .portfolio .text-wrapper {
+    opacity: 0;
+    margin-top: 9px;
+  }
+  .portfolio .text-wrapper a {
+    color: #fff;
+    opacity: 0.6;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+  .portfolio .item-wrapper {
+    -ms-grid-rows: (356px)[3];
+        grid-template-rows: repeat(3, 356px);
+  }
+  .portfolio--item--image {
+    width: 100%;
+    height: 90%;
+    max-height: none;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -147,7 +147,11 @@
 
   .portfolio-btn {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.99;
+
+    // &:hover {
+    //   opacity: 1;
+    // }
   }
   .gallery-list {
     width: 50%;

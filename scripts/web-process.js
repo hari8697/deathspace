@@ -227,10 +227,12 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
 var pDot;
 var clickTitle;
 var pSelf;
+var poppedOpen;
 
 if (vw > 768 && vh < vw) {
   pContainer.on("click", function(e) {
-    e.stopPropagation();
+    poppedOpen = true;
+    e.stopPropagation(); // stops the event to bubble up to the parent element.
     // set vars
     pself = $(this);
     pDot = $(this).children(".dot");
@@ -283,139 +285,156 @@ if (vw > 768 && vh < vw) {
     .add($(".s4"))
     .add($(".s5"))
     .on("click", function() {
-      if ($("this") == $(".s4 .icons .container--think")) {
-        return;
-      }
-      pContainer.css("pointer-events", "none");
-      tl.clear();
-      pDot.css({ "background-image": pOriginalIcon });
-      tl.to(popup, 0.8, {
-        opacity: "0",
-        "pointer-events": "none"
-      });
+      if (poppedOpen) {
+        poppedOpen = false;
+        pContainer.css("pointer-events", "none");
+        tl.clear();
+        pDot.css({
+          "background-image": pOriginalIcon
+        });
 
-      tl.to(
-        clickTitle,
-        0.2,
-        {
-          opacity: 0,
-          y: 70
-        },
-        0.2
-      );
-      tl.to(
-        pDot,
-        0.5,
-        {
-          width: "70px",
-          height: "70px",
-          "border-radius": "50%",
-          x: 0,
-          y: 0
-        },
-        "-=1"
-      ).to(
-        pDot,
-        0.5,
-        {
-          "background-position": "center"
-        },
-        "-=0.5"
-      );
+        tl.to(popup, 0.8, {
+          opacity: "0",
+          "pointer-events": "none"
+        });
 
-      switch (pOpen) {
-        case "think":
-          setTimeout(function() {
-            clickTitle.text("Think");
-            pDot.css(
-              "background-image",
-              "url('../img/process-icons/think.svg')"
-            );
-          }, 800);
-          break;
+        tl.to(
+          clickTitle,
+          0.2,
+          {
+            opacity: 0,
+            y: 70
+          },
+          0.2
+        );
+        tl.to(
+          pDot,
+          0.5,
+          {
+            width: "70px",
+            height: "70px",
+            "border-radius": "50%",
+            x: 0,
+            y: 0
+          },
+          "-=1"
+        ).to(
+          pDot,
+          0.5,
+          {
+            "background-position": "center"
+          },
+          "-=0.5"
+        );
 
-        case "create":
-          setTimeout(function() {
-            clickTitle.text("Create");
-            pDot.css(
-              "background-image",
-              "url('../img/process-icons/create.svg')"
-            );
-          }, 800);
-          break;
+        switch (pOpen) {
+          case "think":
+            setTimeout(() => {
+              clickTitle.text("Think");
+            }, 300);
+            setTimeout(function() {
+              pDot.css(
+                "background-image",
+                "url('../img/process-icons/think.svg')"
+              );
+            }, 800);
+            break;
 
-        case "iterate":
-          setTimeout(function() {
-            clickTitle.text("Iterate");
-            pDot.css(
-              "background-image",
-              "url('../img/process-icons/iterate.svg')"
-            );
-          }, 800);
-          break;
+          case "create":
+            setTimeout(() => {
+              clickTitle.text("Create");
+            }, 300);
+            setTimeout(function() {
+              pDot.css(
+                "background-image",
+                "url('../img/process-icons/create.svg')"
+              );
+            }, 800);
+            break;
 
-        case "develop":
-          setTimeout(function() {
-            clickTitle.text("Develop");
-            pDot.css(
-              "background-image",
-              "url('../img/process-icons/develop.svg')"
-            );
-          }, 800);
-          break;
+          case "iterate":
+            setTimeout(() => {
+              clickTitle.text("Iterate");
+            }, 300);
+            setTimeout(function() {
+              pDot.css(
+                "background-image",
+                "url('../img/process-icons/iterate.svg')"
+              );
+            }, 800);
+            break;
 
-        case "deliver":
-          setTimeout(function() {
-            clickTitle.text("Deliver");
-            pDot.css(
-              "background-image",
-              "url('../img/process-icons/deliver.svg')"
-            );
-          }, 800);
-          break;
+          case "develop":
+            setTimeout(() => {
+              clickTitle.text("Develop");
+            }, 300);
+            setTimeout(function() {
+              pDot.css(
+                "background-image",
+                "url('../img/process-icons/develop.svg')"
+              );
+            }, 800);
+            break;
 
-        default:
-          break;
-      }
+          case "deliver":
+            setTimeout(() => {
+              clickTitle.text("Deliver");
+            }, 300);
+            setTimeout(function() {
+              pDot.css(
+                "background-image",
+                "url('../img/process-icons/deliver.svg')"
+              );
+            }, 800);
+            break;
 
-      tl.set(pDot, {
-        position: "static",
-        "background-color": "transparent"
-      });
-
-      pDot.hover(
-        function() {
-          $(this).css("background-color", "#5e0ed8");
-        },
-        function() {
-          $(this).css("background-color", "transparent");
+          default:
+            break;
         }
-      );
 
-      tl.set(clickTitle, {
-        position: "static",
-        "margin-top": "15px",
-        width: "70px",
-        color: "#aeaeae",
-        x: 0,
-        y: 0,
-        "font-size": "1.25rem",
-        "font-family": "Futura",
-        opacity: 1,
-        "z-index": "0"
-      });
+        tl.set(pDot, {
+          position: "static",
+          "background-color": "transparent"
+        });
 
-      tl.set(pself, {
-        "z-index": 0
-      });
+        tl.set(clickTitle, {
+          position: "static",
+          "margin-top": "15px",
+          width: "70px",
+          color: "#aeaeae",
+          x: 0,
+          y: 0,
+          "font-size": "1.25rem",
+          "font-family": "Futura",
+          opacity: 1,
+          "z-index": "0"
+        });
 
-      tl.set(pContainer, {
-        "pointer-events": "all"
-      });
+        tl.set(pself, {
+          "z-index": 0
+        });
 
-      animS4.add(tween);
+        tl.set(pContainer, {
+          "pointer-events": "all"
+        });
 
-      animS4.restart();
-      animS4.progress(1);
+        animS4.add(tween);
+
+        animS4.restart();
+        animS4.progress(1);
+
+        hoverPleasse(pDot);
+      }
     });
+}
+
+function hoverPleasse(x) {
+  pself.hover(
+    function() {
+      x.css("background-color", "#5e0ed8");
+    },
+    function() {
+      x.css("background-color", "transparent");
+    }
+  );
 }
