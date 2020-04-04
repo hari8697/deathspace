@@ -1,5 +1,6 @@
 :root {
   --swiper-theme-color: #9d0bd6 !important;
+  --imageLoaded: hidden;
 }
 
 * {
@@ -12,6 +13,10 @@ html {
   background: black;
   font-size: 16px;
   overflow-x: hidden;
+}
+
+.particles2 {
+  display: none;
 }
 
 @font-face {
@@ -150,7 +155,6 @@ html {
 
 .images img {
   cursor: pointer;
-  opacity: 0;
   margin-bottom: 40px;
   border-radius: 5px;
   width: 90%;
@@ -632,6 +636,108 @@ select:-webkit-autofill:focus {
   .footer .copyright--info {
     margin-left: 12%;
     padding-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  html {
+    background: #0d0020;
+  }
+  .particles2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .logo-top {
+    width: 150px;
+    top: 16px;
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #57237a;
+  }
+  .arrow-wrapper {
+    left: 10%;
+  }
+  .text-wrapper {
+    margin-left: 60px;
+    margin-top: 130px;
+    z-index: 2;
+  }
+  .text-wrapper h1 {
+    font-size: 40px;
+    color: #fff;
+    opacity: 0.4;
+    margin-top: 0;
+  }
+  .portfolio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .images {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: minmax(400px, 570px) minmax(400px, 570px);
+        grid-template-columns: minmax(400px, 570px) minmax(400px, 570px);
+    -ms-grid-rows: (minmax(240px, 25vw))[3];
+        grid-template-rows: repeat(3, minmax(240px, 25vw));
+    grid-gap: 5px 20px;
+  }
+  .images img {
+    width: 100%;
+    visibility: hidden;
+    z-index: 2;
+    height: 90%;
+    max-height: 25vw;
+    margin: 0;
+    margin-bottom: 21px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+  .images {
+    -ms-grid-rows: (356px)[3];
+        grid-template-rows: repeat(3, 356px);
+  }
+  .images img {
+    width: 100%;
+    height: 90%;
+    max-height: none;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .text-wrapper {
+    margin-left: 100px;
   }
 }
 /*# sourceMappingURL=style.css.map */

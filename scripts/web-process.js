@@ -27,209 +27,212 @@ function start() {
 //   $(this).addClass("sel");
 // });
 
-function switchStates() {
-  paragraph(currDot);
-  arrows(currDot);
-  processSwitch(currDot);
-  changeSwitch(currDot);
-}
-
-function paragraph(a) {
-  if (a == 1) {
-    tl2.to(pDesc, 0.25, {
-      // "margin-top": "138px"
-    });
-  }
-  if (a == 2) {
-    tl2.to(pDesc, 0.25, {
-      // "margin-top": "145px"
-    });
-  }
-  if (a == 3) {
-    tl2.to(pDesc, 0.25, {
-      // "margin-top": "145px"
-    });
-  }
-  if (a == 4) {
-    tl2.to(pDesc, 0.25, {
-      // "margin-top": "140px"
-    });
-  }
-  if (a == 5) {
-    tl2.to(pDesc, 0.25, {
-      // "margin-top": "135px"
-    });
-  }
-}
-
-function processSwitch(process) {
-  switch (process) {
-    case "think":
-    case 1:
-      pDot.css({
-        "background-image": "url('../img/process-icons-mobile-white/think.svg')"
-      });
-
-      tl.to(
-        pDot,
-        0.3,
-        {
-          "background-position": "19% 41px"
-        },
-        "-=0.2"
-      );
-
-      break;
-
-    case "create":
-    case 2:
-      pDot.css({
-        "background-image":
-          "url('../img/process-icons-mobile-white/create.svg')"
-      });
-
-      tl.to(
-        pDot,
-        0.3,
-        {
-          "background-position": "18.6% 44px"
-        },
-        "-=0.2"
-      );
-      break;
-
-    case "iterate":
-    case 3:
-      pDot.css({
-        "background-image":
-          "url('../img/process-icons-mobile-white/iterate.svg')"
-      });
-      tl.to(
-        pDot,
-        0.3,
-        {
-          "background-position": "19% 41px"
-        },
-        "-=0.2"
-      );
-      break;
-
-    case "develop":
-    case 4:
-      pDot.css({
-        "background-image":
-          "url('../img/process-icons-mobile-white/develop.svg')"
-      });
-      tl.to(
-        pDot,
-        0.3,
-        {
-          "background-position": "19% 42px",
-          "background-size": "auto"
-        },
-        "-=0.2"
-      );
-      break;
-
-    case "deliver":
-    case 5:
-      pDot.css({
-        "background-image":
-          "url('../img/process-icons-mobile-white/deliver.svg')"
-      });
-      tl.to(
-        pDot,
-        0.3,
-        {
-          "background-position": "19% 41px"
-        },
-        "-=0.2"
-      );
-      break;
-
-    default:
-      break;
-  }
-}
-function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
-  //remove anim
-  animS4.remove(tween);
-
-  currDot = dotNo;
-  arrows(dotNo);
-  paragraph(dotNo);
-
-  pOpen = process;
-  //adjust title
-  tl.set(title, {
-    position: "absolute",
-    "margin-top": 0,
-    color: "white",
-    top: 0,
-    left: 0,
-    x: 97,
-    y: "40px",
-    "font-size": "24px",
-    "font-family": "Avenir-Black",
-    opacity: 0
-  });
-
-  tl.set(self, { "z-index": "3" }).to(pDot, 0.3, {
-    position: "absolute",
-    "border-radius": "10px",
-    width: "140%",
-    height: "170px",
-    y: yAxis,
-    x: xAxis,
-    "background-color": "#5e0ed8"
-  });
-
-  processSwitch(process);
-
-  tl.set($(".nav--indicators"), {
-    "z-index": 5
-  });
-  tl.to(popup, 0.8, {
-    ease: Power1.easeInOut,
-    opacity: "1",
-    "pointer-events": "all"
-  })
-    .fromTo(
-      popup,
-      0.6,
-      {
-        ease: Power1.easeInOut,
-        y: "-=30"
-      },
-      {
-        ease: Power1.easeInOut,
-        y: "0"
-      },
-      0.3
-    )
-    .to(
-      title,
-      0.5,
-      {
-        opacity: 1
-      },
-      "-=0.4"
-    )
-    .to(
-      closePopUp,
-      0.1,
-      {
-        "z-index": "5"
-      },
-      "-=0.4"
-    );
-}
-var pDot;
-var clickTitle;
-var pSelf;
-var poppedOpen;
-
 if (vw > 768 && vh < vw) {
+  function switchStates() {
+    paragraph(currDot);
+    arrows(currDot);
+    processSwitch(currDot);
+    changeSwitch(currDot);
+  }
+
+  function paragraph(a) {
+    if (a == 1) {
+      tl2.to(pDesc, 0.25, {
+        // "margin-top": "138px"
+      });
+    }
+    if (a == 2) {
+      tl2.to(pDesc, 0.25, {
+        // "margin-top": "145px"
+      });
+    }
+    if (a == 3) {
+      tl2.to(pDesc, 0.25, {
+        // "margin-top": "145px"
+      });
+    }
+    if (a == 4) {
+      tl2.to(pDesc, 0.25, {
+        // "margin-top": "140px"
+      });
+    }
+    if (a == 5) {
+      tl2.to(pDesc, 0.25, {
+        // "margin-top": "135px"
+      });
+    }
+  }
+
+  function processSwitch(process) {
+    switch (process) {
+      case "think":
+      case 1:
+        pDot.css({
+          "background-image":
+            "url('../img/process-icons-mobile-white/think.svg')"
+        });
+
+        tl.to(
+          pDot,
+          0.3,
+          {
+            "background-position": "19% 41px"
+          },
+          "-=0.2"
+        );
+
+        break;
+
+      case "create":
+      case 2:
+        pDot.css({
+          "background-image":
+            "url('../img/process-icons-mobile-white/create.svg')"
+        });
+
+        tl.to(
+          pDot,
+          0.3,
+          {
+            "background-position": "18.6% 44px"
+          },
+          "-=0.2"
+        );
+        break;
+
+      case "iterate":
+      case 3:
+        pDot.css({
+          "background-image":
+            "url('../img/process-icons-mobile-white/iterate.svg')"
+        });
+        tl.to(
+          pDot,
+          0.3,
+          {
+            "background-position": "19% 41px"
+          },
+          "-=0.2"
+        );
+        break;
+
+      case "develop":
+      case 4:
+        pDot.css({
+          "background-image":
+            "url('../img/process-icons-mobile-white/develop.svg')"
+        });
+        tl.to(
+          pDot,
+          0.3,
+          {
+            "background-position": "19% 42px",
+            "background-size": "auto"
+          },
+          "-=0.2"
+        );
+        break;
+
+      case "deliver":
+      case 5:
+        pDot.css({
+          "background-image":
+            "url('../img/process-icons-mobile-white/deliver.svg')"
+        });
+        tl.to(
+          pDot,
+          0.3,
+          {
+            "background-position": "19% 41px"
+          },
+          "-=0.2"
+        );
+        break;
+
+      default:
+        break;
+    }
+  }
+  function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
+    //remove anim
+    if (vw > 768 && vh < vw) {
+      animS4.remove(tween);
+
+      currDot = dotNo;
+      arrows(dotNo);
+      paragraph(dotNo);
+
+      pOpen = process;
+      //adjust title
+      tl.set(title, {
+        position: "absolute",
+        "margin-top": 0,
+        color: "white",
+        top: 0,
+        left: 0,
+        x: 97,
+        y: "40px",
+        "font-size": "24px",
+        "font-family": "Avenir-Black",
+        opacity: 0
+      });
+
+      tl.set(self, { "z-index": "3" }).to(pDot, 0.3, {
+        position: "absolute",
+        "border-radius": "10px",
+        width: "140%",
+        height: "170px",
+        y: yAxis,
+        x: xAxis,
+        "background-color": "#5e0ed8"
+      });
+
+      processSwitch(process);
+
+      tl.set($(".nav--indicators"), {
+        "z-index": 5
+      });
+      tl.to(popup, 0.8, {
+        ease: Power1.easeInOut,
+        opacity: "1",
+        "pointer-events": "all"
+      })
+        .fromTo(
+          popup,
+          0.6,
+          {
+            ease: Power1.easeInOut,
+            y: "-=30"
+          },
+          {
+            ease: Power1.easeInOut,
+            y: "0"
+          },
+          0.3
+        )
+        .to(
+          title,
+          0.5,
+          {
+            opacity: 1
+          },
+          "-=0.4"
+        )
+        .to(
+          closePopUp,
+          0.1,
+          {
+            "z-index": "5"
+          },
+          "-=0.4"
+        );
+    }
+  }
+  var pDot;
+  var clickTitle;
+  var pSelf;
+  var poppedOpen;
+
   pContainer.on("click", function(e) {
     poppedOpen = true;
     e.stopPropagation(); // stops the event to bubble up to the parent element.
@@ -426,15 +429,15 @@ if (vw > 768 && vh < vw) {
         hoverPleasse(pDot);
       }
     });
-}
 
-function hoverPleasse(x) {
-  pself.hover(
-    function() {
-      x.css("background-color", "#5e0ed8");
-    },
-    function() {
-      x.css("background-color", "transparent");
-    }
-  );
+  function hoverPleasse(x) {
+    pself.hover(
+      function() {
+        x.css("background-color", "#5e0ed8");
+      },
+      function() {
+        x.css("background-color", "transparent");
+      }
+    );
+  }
 }

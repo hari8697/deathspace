@@ -14,7 +14,6 @@ var footer2 = $(".footer .social--links");
 var footer3 = $(".footer .email *");
 var footer4 = $(".footer > p");
 var portTextAll = $(".portfolio--item .text-wrapper");
-
 var portItemsAll = $(".portfolio--item img");
 
 // particlesJS.load("particles-js", "../res/particlesjs-config.json");
@@ -22,30 +21,9 @@ var portItemsAll = $(".portfolio--item img");
 let animatedImages = false;
 
 particlesJS.load("particles-js", "../res/stars.json");
-// $(window).on("load", function() {
-//   var originalUrl = window.location.href;
-//   history.pushState({}, "", "portfolio");
-// });
-
-// $(window).on("beforeunload", function() {
-//   window.location = originalUrl;
-// });
-
-// tl.set(portItems, {
-//   y: 70,
+// tl.set(portItemsAll, {
 //   opacity: 0
 // });
-
-// portItems.css({ opacity: 0 });
-window.onload = function() {
-  if (vh < vw) {
-    // var portTextAll = document.getElementsByClassName(
-    //   ".portfolio--item .text-wrapper"
-    // );
-    // var portItemsAll = document.getElementsByClassName(".portfolio--item");
-    // console.log(portItemsAll);
-  }
-};
 $(document).ready(function() {
   var controller = new ScrollMagic.Controller();
 
@@ -60,22 +38,30 @@ $(document).ready(function() {
 
     animImages = function() {
       if (imgLoaded && !animatedImages) {
-        tl.staggerFrom(
+        tl.staggerFromTo(
           portItems,
           1,
           {
             y: 70,
             opacity: 0
           },
+          {
+            y: 0,
+            opacity: 1
+          },
           0.25
         );
 
-        tl.staggerFrom(
+        tl.staggerFromTo(
           portText,
           1,
           {
             x: -20,
             opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1
           },
           0.35,
           0.75
@@ -113,41 +99,97 @@ $(document).ready(function() {
     // tl.set(portTextAll, {
     //   opacity: 0
     // });
+
     var imageTl = new TimelineMax();
     var imageTl2 = new TimelineMax();
+    var hoverbool = false;
     // imageTl2.set(portTextAll, {
     //   opacity: 0
     // });
     // imageTl2.set(portItemsAll, {
     //   opacity: 0.8
     // });
-    portItemsAll.mouseenter(function() {
-      imageTl.clear();
-      imageTl.progress(0);
-      imageTl.play();
 
-      let self = $(this).parent();
+    animatedImages = false;
 
-      imageTl.to(self, 0.2, {
-        opacity: 1,
-        ease: Power1.easeInOut
+    if (!imgLoaded) {
+      $("html, body").css({
+        overflow: "hidden",
+        height: "100%",
+        "pointer-events": "none"
       });
+    }
 
-      imageTl.staggerFromTo(
-        self.children(".text-wrapper"),
-        0.35,
-        {
-          x: -20,
-          opacity: 0
-        },
-        {
-          x: 0,
-          opacity: 1
-        },
-        0.15,
-        0
-      );
+    // imageTl2.set(portItemsAll, {
+    //   opacity: 0
+    // });
+    animImages = function() {
+      if (imgLoaded && !animatedImages) {
+        imageTl2.staggerFrom(
+          portItemsAll,
+          0.8,
+          {
+            opacity: 0,
+            y: 70
+          },
+          0.1
+        );
+        hoverbool = true;
+
+        animatedImages = true;
+        setTimeout(() => {
+          $("html, body").css({
+            overflow: "auto",
+            height: "auto",
+            "pointer-events": "all"
+          });
+        }, 1000);
+      }
+    };
+
+    checkImg = function() {
+      portItemsAll.each(function() {
+        if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
+          imgLoaded = true;
+        } else {
+          imgLoaded = false;
+        }
+      });
+    };
+
+    var update = setInterval(animImages, 200);
+    var update2 = setInterval(checkImg, 100);
+
+    portItemsAll.mouseenter(function() {
+      if (imgLoaded && animatedImages && hoverbool) {
+        imageTl.clear();
+        imageTl.progress(0);
+        imageTl.play();
+
+        let self = $(this).parent();
+
+        imageTl.to(self, 0.2, {
+          opacity: 1,
+          ease: Power1.easeInOut
+        });
+
+        imageTl.staggerFromTo(
+          self.children(".text-wrapper"),
+          0.35,
+          {
+            x: -20,
+            opacity: 0
+          },
+          {
+            x: 0,
+            opacity: 1
+          },
+          0.15,
+          0
+        );
+      }
     });
+
     portItemsAll.mouseleave(function() {
       let self = $(this).parent();
 

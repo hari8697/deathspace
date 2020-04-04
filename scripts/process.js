@@ -377,8 +377,7 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
 var pDot;
 var clickTitle;
 var pSelf;
-
-if (vw < 768 && vh > vw) {
+if (vh > vw) {
   pContainer.on("click", function() {
     // set vars
     pself = $(this);
@@ -431,9 +430,12 @@ if (vw < 768 && vh > vw) {
   closePopUp.on("click", function() {
     pContainer.css("pointer-events", "none");
     tl.clear();
-    pDot.css({
-      "background-image": pOriginalIcon
-    });
+    setTimeout(() => {
+      pDot.css({
+        "background-image": pOriginalIcon
+      });
+    }, 800);
+
     tl.to(popup, 0.8, {
       opacity: "0",
       "pointer-events": "none"
@@ -474,7 +476,10 @@ if (vw < 768 && vh > vw) {
           clickTitle.text("Think");
         }, 300);
         setTimeout(function() {
-          pDot.css("background-image", "url('../img/process-icons/think.svg')");
+          pDot.css(
+            "background-image",
+            "url('../img/process-icons-mobile/think.svg')"
+          );
         }, 800);
         break;
 
@@ -485,7 +490,7 @@ if (vw < 768 && vh > vw) {
         setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons/create.svg')"
+            "url('../img/process-icons-mobile/create.svg')"
           );
         }, 800);
         break;
@@ -497,7 +502,7 @@ if (vw < 768 && vh > vw) {
         setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons/iterate.svg')"
+            "url('../img/process-icons-mobile/iterate.svg')"
           );
         }, 800);
         break;
@@ -509,7 +514,7 @@ if (vw < 768 && vh > vw) {
         setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons/develop.svg')"
+            "url('../img/process-icons-mobile/develop.svg')"
           );
         }, 800);
         break;
@@ -521,7 +526,7 @@ if (vw < 768 && vh > vw) {
         setTimeout(function() {
           pDot.css(
             "background-image",
-            "url('../img/process-icons/deliver.svg')"
+            "url('../img/process-icons-mobile/deliver.svg')"
           );
         }, 800);
         break;

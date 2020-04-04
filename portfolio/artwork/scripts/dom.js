@@ -34,6 +34,11 @@ if (x == 1) {
   setEmpty(i4, k4);
   setEmpty(i5, k5);
   setEmpty(i6, k6);
+
+  imagesPanel.css({
+    "grid-template-rows": "minmax(240px, 25vw)",
+    "grid-template-columns": "minmax(500px, 770px)"
+  });
 }
 if (x == 2) {
   setImages(2);

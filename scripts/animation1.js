@@ -332,7 +332,7 @@ $(document).ready(function() {
           opacity: 0,
           x: 50
         },
-        "-=2"
+        0.7
       )
       .from(
         pimg2,
@@ -352,7 +352,7 @@ $(document).ready(function() {
           opacity: "0",
           ease: Expo.easeOut
         },
-        "-=2.2"
+        "-=2.5"
       );
 
     var s3SceneText = new ScrollMagic.Scene({

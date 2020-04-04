@@ -1,5 +1,6 @@
 :root {
   --swiper-theme-color: #9d0bd6 !important;
+  --imageLoaded: hidden;
 }
 
 * {
@@ -14,6 +15,9 @@ html {
   overflow-x: hidden;
 }
 
+.particles2 {
+  display: none;
+}
 @font-face {
   font-family: "Avenir-Black";
   font-style: normal;
@@ -135,7 +139,6 @@ html {
   justify-content: center;
   img {
     cursor: pointer;
-    opacity: 0;
     margin-bottom: 40px;
     border-radius: 5px;
     width: 90%;
@@ -214,3 +217,112 @@ html {
 
 @import "../../../styles/contact";
 @import "../../../styles/footer";
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  html {
+    background: #0d0020;
+  }
+
+  .particles2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .logo-top {
+    width: 150px;
+    top: 16px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    // height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d0020;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(87, 35, 122, 0.4);
+    // background: #3b1f49;
+    // background: #8132a8;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 35, 122);
+    // background: #ae4dbf;
+    // background: rgb(136, 4, 148);
+  }
+
+  .arrow-wrapper {
+    left: 10%;
+  }
+
+  .text-wrapper {
+    margin-left: 60px;
+    margin-top: 130px;
+    // width: 90%;
+    z-index: 2;
+    h1 {
+      font-size: 40px;
+      color: #fff;
+      opacity: 0.4;
+      margin-top: 0;
+    }
+    p {
+      // max-width: 1200px;
+    }
+  }
+
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .images {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    justify-content: center;
+    // grid-template-columns: min-max(400px, 570px) min-max(400px, 570px);
+    grid-template-columns: minmax(400px, 570px) minmax(400px, 570px);
+    grid-template-rows: repeat(3, minmax(240px, 25vw));
+    grid-gap: 5px 20px;
+
+    img {
+      width: 100%;
+      visibility: hidden;
+      z-index: 2;
+      height: 90%;
+      // min-height: 200px;
+      max-height: 25vw;
+      margin: 0;
+      // opacity: 1;
+      margin-bottom: 21px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+  .images {
+    grid-template-rows: repeat(3, 356px);
+    img {
+      width: 100%;
+      height: 90%;
+      max-height: none;
+      object-fit: cover;
+    }
+  }
+
+  .text-wrapper {
+    margin-left: 100px;
+  }
+}
