@@ -23,11 +23,15 @@ var tl = new TimelineMax();
 
 var controller = new ScrollMagic.Controller();
 var animFooter = new TimelineMax();
-if (vh > vw) {
-  tl.set(portImages, {
-    y: 70
-  });
 
+tl.set(portImages, {
+  y: 70
+});
+tl.set(portImagesAll, {
+  opacity: 0,
+  y: 70
+});
+if (vh > vw) {
   animImages = function() {
     if (imgLoaded && !animatedImages) {
       tl.staggerTo(
@@ -137,13 +141,13 @@ if (vh > vw) {
 
   animImages = function() {
     if (imgLoaded && !animatedImages) {
-      portImagesAll.css({ visibility: "visible" });
-      tl.staggerFrom(
+      // portImagesAll.css({ visibility: "visible" });
+      tl.staggerTo(
         portImagesAll,
         1,
         {
-          opacity: 0,
-          y: 70
+          opacity: 1,
+          y: 0
         },
         0.25
       );

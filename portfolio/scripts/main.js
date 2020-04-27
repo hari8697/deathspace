@@ -21,9 +21,10 @@ var portItemsAll = $(".portfolio--item img");
 let animatedImages = false;
 
 particlesJS.load("particles-js", "../res/stars.json");
-// tl.set(portItemsAll, {
-//   opacity: 0
-// });
+tl.set(portItemsAll, {
+  opacity: 0,
+  y: 70
+});
 $(document).ready(function() {
   var controller = new ScrollMagic.Controller();
 
@@ -125,12 +126,12 @@ $(document).ready(function() {
     // });
     animImages = function() {
       if (imgLoaded && !animatedImages) {
-        imageTl2.staggerFrom(
+        imageTl2.staggerTo(
           portItemsAll,
           0.8,
           {
-            opacity: 0,
-            y: 70
+            opacity: 1,
+            y: 0
           },
           0.1
         );
@@ -255,12 +256,12 @@ $(document).ready(function() {
       })
       .staggerFrom(
         footer2,
-        1,
+        0.6,
         {
           y: "40",
           opacity: "0"
         },
-        0.3,
+        0.2,
         0.25
       )
       .staggerFrom(
@@ -271,7 +272,7 @@ $(document).ready(function() {
           opacity: "0"
         },
         0.3,
-        1.2
+        0.25
       )
       .from(
         footer4,
@@ -279,14 +280,13 @@ $(document).ready(function() {
         {
           opacity: "0"
         },
-        2
+        0.7
       );
     var footerScene = new ScrollMagic.Scene({
       triggerElement: ".footer",
       triggerHook: vh,
-      duration: "25%",
       offset: "10%",
-      reverse: true
+      reverse: false
     }).setTween(animFooter);
   }
 

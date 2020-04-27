@@ -298,7 +298,8 @@ html {
 
     img {
       width: 100%;
-      visibility: hidden;
+      // visibility: hidden;
+      opacity: 0;
       z-index: 2;
       height: 90%;
       // min-height: 200px;

@@ -29,15 +29,15 @@ if (x == 1) {
   h3.text("Landing Page");
   h4.text("2019");
   setImages(1);
-  setEmpty(i2, k2);
+  // setEmpty(i2, k2);
   setEmpty(i3, k3);
   setEmpty(i4, k4);
   setEmpty(i5, k5);
   setEmpty(i6, k6);
 
   imagesPanel.css({
-    "grid-template-rows": "minmax(240px, 25vw)",
-    "grid-template-columns": "minmax(500px, 770px)"
+    "grid-template-rows": "repeat(1, minmax(240px, 25vw))",
+    "grid-template-columns": "minmax(300px, 470px) minmax(500px, 770px)"
   });
 }
 if (x == 2) {

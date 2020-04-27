@@ -210,7 +210,7 @@ $(document).ready(function() {
           opacity: "0",
           ease: Expo.easeOut
         },
-        0.25
+        0.75
       );
   } else {
     animS2
@@ -352,7 +352,7 @@ $(document).ready(function() {
           opacity: "0",
           ease: Expo.easeOut
         },
-        "-=2.5"
+        "-=3"
       );
 
     var s3SceneText = new ScrollMagic.Scene({
@@ -561,23 +561,23 @@ $(document).ready(function() {
       })
       .staggerFrom(
         footer2,
+        0.75,
+        {
+          y: "40",
+          opacity: "0"
+        },
+        0.25,
+        "-=0.05"
+      )
+      .staggerFrom(
+        footer3,
         1,
         {
           y: "40",
           opacity: "0"
         },
-        0.3,
-        0.25
-      )
-      .staggerFrom(
-        footer3,
-        0.6,
-        {
-          y: "40",
-          opacity: "0"
-        },
-        0.3,
-        1.2
+        0.5,
+        0.3
       )
       .from(
         footer4,
@@ -585,7 +585,7 @@ $(document).ready(function() {
         {
           opacity: "0"
         },
-        2
+        "-=0.2"
       );
   } else {
     animFooter
@@ -634,10 +634,10 @@ $(document).ready(function() {
     var footerScene = new ScrollMagic.Scene({
       triggerElement: ".footer",
       triggerHook: vh,
-      duration: "25%",
       offset: "10%",
-      reverse: true
+      reverse: false
     }).setTween(animFooter);
+    //duration: "25%",
   }
 
   controller.addScene([

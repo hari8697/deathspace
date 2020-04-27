@@ -5,7 +5,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: black;
+  background: #0d0020;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -131,7 +131,7 @@ h1 {
 .s2 .text-wrapper h1 {
   color: #fff;
   font-family: "Avenir-Black", sans-serif;
-
+  opacity: 0.4;
   font-size: 1.5em;
   line-height: 1.5rem;
   max-width: 210px;
@@ -141,7 +141,8 @@ h1 {
   font-family: "Futura";
   margin-top: 1rem;
   max-width: 230px;
-  color: #aeaeae;
+  opacity: 0.8;
+  color: #fff;
   width: 100%;
   font-size: 1rem;
 }
@@ -173,6 +174,7 @@ h1 {
   pointer-events: none;
   background: transparent;
   z-index: 1;
+  transform: translate(0, -25%);
   // background: transparent url("./img/preview-2.png") 50% 50% / cover no-repeat;
   // background-size: cover;
 
@@ -210,11 +212,12 @@ h1 {
     // background: rgb(136, 4, 148);
   }
   .mobile-hero {
-    display: none;
+    width: 100%;
   }
   #myvideo {
     height: 100%;
     display: block;
+    transform: translate(0, 0);
   }
 
   .particles {
