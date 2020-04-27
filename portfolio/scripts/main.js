@@ -21,10 +21,7 @@ var portItemsAll = $(".portfolio--item img");
 let animatedImages = false;
 
 particlesJS.load("particles-js", "../res/stars.json");
-tl.set(portItemsAll, {
-  opacity: 0,
-  y: 70
-});
+
 $(document).ready(function() {
   var controller = new ScrollMagic.Controller();
 
@@ -100,6 +97,11 @@ $(document).ready(function() {
     // tl.set(portTextAll, {
     //   opacity: 0
     // });
+
+    tl.set(portItemsAll, {
+      opacity: 0,
+      y: 70
+    });
 
     var imageTl = new TimelineMax();
     var imageTl2 = new TimelineMax();
