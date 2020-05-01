@@ -21,7 +21,17 @@ var portItemsAll = $(".portfolio--item img");
 let animatedImages = false;
 
 particlesJS.load("particles-js", "../res/stars.json");
-
+if (vh > vw) {
+  tl.set(portItems, {
+    opacity: 0,
+    y: 70,
+  });
+} else {
+  tl.set(portItemsAll, {
+    opacity: 0,
+    y: 70,
+  });
+}
 $(document).ready(function () {
   var controller = new ScrollMagic.Controller();
 
@@ -36,13 +46,9 @@ $(document).ready(function () {
 
     animImages = function () {
       if (imgLoaded && !animatedImages) {
-        tl.staggerFromTo(
+        tl.staggerTo(
           portItems,
           1,
-          {
-            y: 70,
-            opacity: 0,
-          },
           {
             y: 0,
             opacity: 1,
@@ -109,10 +115,11 @@ $(document).ready(function () {
     // });
 
     animatedImages = false;
-    imageTl.set(portItemsAll, {
-      opacity: 0,
-      y: 70,
-    });
+
+    // imageTl.set(portItemsAll, {
+    //   opacity: 0,
+    //   y: 70,
+    // });
 
     if (!imgLoaded) {
       $("html, body").css({
@@ -145,7 +152,7 @@ $(document).ready(function () {
             height: "auto",
             "pointer-events": "all",
           });
-        }, 600);
+        }, 1200);
       }
     };
 
@@ -292,16 +299,28 @@ $(document).ready(function () {
   }
 
   var titleAnim = new TimelineMax();
-  titleAnim.to(title, 5, {
-    ease: Power4.easeOut,
-    y: "520",
-  });
+  if (vh > vw) {
+    titleAnim.to(title, 5, {
+      y: "1400px",
+    });
 
-  var titleScene = new ScrollMagic.Scene({
-    triggerElement: "body" - 20,
-    triggerHook: "0",
-    duration: vh,
-  }).setTween(titleAnim);
+    var titleScene = new ScrollMagic.Scene({
+      triggerElement: "body" - 20,
+      triggerHook: "0",
+      duration: 1400,
+    }).setTween(titleAnim);
+  } else {
+    titleAnim.to(title, 5, {
+      ease: Power4.easeOut,
+      y: "520",
+    });
+
+    var titleScene = new ScrollMagic.Scene({
+      triggerElement: "body" - 20,
+      triggerHook: "0",
+      duration: vh,
+    }).setTween(titleAnim);
+  }
   controller.addScene([titleScene, footerScene]);
 });
 

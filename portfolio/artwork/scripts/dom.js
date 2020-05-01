@@ -74,8 +74,8 @@ if (x == 4) {
   imagesPanel.css({
     // "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
     // "grid-template-columns": "minmax(500px, 770px)"
-    "grid-template-rows": "repeat(2, minmax(240px, 20vw))",
-    "grid-template-columns": "minmax(250px, 350px) minmax(300px, 600px)",
+    "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
+    "grid-template-columns": "minmax(300px, 450px) minmax(500px, 800px)",
   });
 }
 if (x == 5) {
@@ -93,12 +93,11 @@ if (x == 5) {
     "grid-template-rows": "300px 500px",
     "grid-template-columns": "300px 500px",
   });
-  i1.css({ "grid-row": "1/2", "grid-column": "1/2", "margin-bottom": 0 });
+  i1.css({ "grid-row": "1/2", "grid-column": "1/2" });
   i2.css({
     "grid-row": "1/3",
     "grid-column": "2/3",
     height: "100%",
-    "margin-bottom": 0,
   });
 }
 if (x == 6) {
@@ -150,6 +149,7 @@ function setImagespng(i) {
   j5.attr("src", `./img/${i}/5.png`);
   j6.attr("src", `./img/${i}/6.png`);
 }
+
 function setEmpty(i, k) {
   i.attr("src", "");
   i.css("display", "none");

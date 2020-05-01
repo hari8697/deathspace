@@ -39,7 +39,7 @@ start();
 
 function start() {
   tl.set(popup, {
-    x: "-50%"
+    x: "-50%",
   });
 }
 
@@ -70,7 +70,7 @@ function switchStates() {
   changeSwitch(currDot);
 }
 
-popupLeft.click(function(e) {
+popupLeft.click(function (e) {
   e.stopPropagation(); // stops the event to bubble up to the parent element.
   if (currDot > 1) {
     currDot -= 1;
@@ -79,13 +79,13 @@ popupLeft.click(function(e) {
 });
 
 popupLeft.touchwipe({
-  wipeLeft: function() {
+  wipeLeft: function () {
     if (currDot < 5) {
       currDot += 1;
       switchStates();
     }
   },
-  wipeRight: function() {
+  wipeRight: function () {
     if (currDot > 1) {
       currDot -= 1;
       switchStates();
@@ -93,10 +93,10 @@ popupLeft.touchwipe({
   },
   min_move_x: 30,
   min_move_y: 20,
-  preventDefaultEvents: false
+  preventDefaultEvents: false,
 });
 
-popupRight.click(function(e) {
+popupRight.click(function (e) {
   e.stopPropagation(); // stops the event to bubble up to the parent element.
   if (currDot < 5) {
     currDot += 1;
@@ -105,13 +105,13 @@ popupRight.click(function(e) {
 });
 
 popupRight.touchwipe({
-  wipeLeft: function() {
+  wipeLeft: function () {
     if (currDot < 5) {
       currDot += 1;
       switchStates();
     }
   },
-  wipeRight: function() {
+  wipeRight: function () {
     if (currDot > 1) {
       currDot -= 1;
       switchStates();
@@ -119,33 +119,33 @@ popupRight.touchwipe({
   },
   min_move_x: 30,
   min_move_y: 20,
-  preventDefaultEvents: false
+  preventDefaultEvents: false,
 });
 
 function paragraph(a) {
   if (a == 1) {
     tl2.to(pDesc, 0.25, {
-      "margin-top": "138px"
+      "margin-top": "138px",
     });
   }
   if (a == 2) {
     tl2.to(pDesc, 0.25, {
-      "margin-top": "145px"
+      "margin-top": "145px",
     });
   }
   if (a == 3) {
     tl2.to(pDesc, 0.25, {
-      "margin-top": "145px"
+      "margin-top": "145px",
     });
   }
   if (a == 4) {
     tl2.to(pDesc, 0.25, {
-      "margin-top": "140px"
+      "margin-top": "140px",
     });
   }
   if (a == 5) {
     tl2.to(pDesc, 0.25, {
-      "margin-top": "135px"
+      "margin-top": "140px",
     });
   }
 }
@@ -213,14 +213,15 @@ function processSwitch(process) {
     case "think":
     case 1:
       pDot.css({
-        "background-image": "url('../img/process-icons-mobile-white/think.svg')"
+        "background-image":
+          "url('../img/process-icons-mobile-white/think.svg')",
       });
 
       tl.to(
         pDot,
         0.3,
         {
-          "background-position": "48px 64px"
+          "background-position": "48px 64px",
         },
         "-=0.2"
       );
@@ -231,14 +232,14 @@ function processSwitch(process) {
     case 2:
       pDot.css({
         "background-image":
-          "url('../img/process-icons-mobile-white/create.svg')"
+          "url('../img/process-icons-mobile-white/create.svg')",
       });
 
       tl.to(
         pDot,
         0.3,
         {
-          "background-position": "42px 68px"
+          "background-position": "42px 68px",
         },
         "-=0.2"
       );
@@ -248,13 +249,13 @@ function processSwitch(process) {
     case 3:
       pDot.css({
         "background-image":
-          "url('../img/process-icons-mobile-white/iterate.svg')"
+          "url('../img/process-icons-mobile-white/iterate.svg')",
       });
       tl.to(
         pDot,
         0.3,
         {
-          "background-position": "48px 66px"
+          "background-position": "48px 66px",
         },
         "-=0.2"
       );
@@ -264,14 +265,14 @@ function processSwitch(process) {
     case 4:
       pDot.css({
         "background-image":
-          "url('../img/process-icons-mobile-white/develop.svg')"
+          "url('../img/process-icons-mobile-white/develop.svg')",
       });
       tl.to(
         pDot,
         0.3,
         {
           "background-position": "47px 66px",
-          "background-size": "auto"
+          "background-size": "auto",
         },
         "-=0.2"
       );
@@ -281,13 +282,13 @@ function processSwitch(process) {
     case 5:
       pDot.css({
         "background-image":
-          "url('../img/process-icons-mobile-white/deliver.svg')"
+          "url('../img/process-icons-mobile-white/deliver.svg')",
       });
       tl.to(
         pDot,
         0.3,
         {
-          "background-position": "47px 67px"
+          "background-position": "47px 67px",
         },
         "-=0.2"
       );
@@ -317,7 +318,7 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
     y: "64px",
     "font-size": "24px",
     "font-family": "Avenir-Black",
-    opacity: 0
+    opacity: 0,
   });
 
   var urlStart = "url('../img/process-icons-mobile-white/";
@@ -331,29 +332,29 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
     "border-radius": "10px",
     y: yAxis,
     x: xAxis,
-    "background-color": "#5e0ed8"
+    "background-color": "#5e0ed8",
   });
 
   processSwitch(process);
 
   tl.set($(".nav--indicators"), {
-    "z-index": 5
+    "z-index": 5,
   });
   tl.to(popup, 0.8, {
     ease: Power1.easeInOut,
     opacity: "1",
-    "pointer-events": "all"
+    "pointer-events": "all",
   })
     .fromTo(
       popup,
       0.6,
       {
         ease: Power1.easeInOut,
-        y: "-=30"
+        y: "-=30",
       },
       {
         ease: Power1.easeInOut,
-        y: "0"
+        y: "0",
       },
       0.3
     )
@@ -361,7 +362,7 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
       title,
       0.5,
       {
-        opacity: 1
+        opacity: 1,
       },
       "-=0.4"
     )
@@ -369,7 +370,7 @@ function clickIcon(title, pDot, self, process, xAxis, yAxis, dotNo) {
       closePopUp,
       0.1,
       {
-        "z-index": "5"
+        "z-index": "5",
       },
       "-=0.4"
     );
@@ -378,7 +379,7 @@ var pDot;
 var clickTitle;
 var pSelf;
 if (vh > vw) {
-  pContainer.on("click", function() {
+  pContainer.on("click", function () {
     // set vars
     pself = $(this);
     pDot = $(this).children(".dot");
@@ -386,11 +387,11 @@ if (vh > vw) {
     clickTitle = $(this).children("a");
 
     tl.set(pContainer, {
-      "pointer-events": "none"
+      "pointer-events": "none",
     });
 
     tl.set(s4icons, {
-      opacity: 1
+      opacity: 1,
     });
 
     if ($(this).hasClass("container--think")) {
@@ -427,18 +428,18 @@ if (vh > vw) {
     }
   });
 
-  closePopUp.on("click", function() {
+  closePopUp.on("click", function () {
     pContainer.css("pointer-events", "none");
     tl.clear();
     setTimeout(() => {
       pDot.css({
-        "background-image": pOriginalIcon
+        "background-image": pOriginalIcon,
       });
     }, 800);
 
     tl.to(popup, 0.8, {
       opacity: "0",
-      "pointer-events": "none"
+      "pointer-events": "none",
     });
 
     tl.to(
@@ -446,7 +447,7 @@ if (vh > vw) {
       0.2,
       {
         opacity: 0,
-        y: 70
+        y: 70,
       },
       0.2
     );
@@ -458,14 +459,14 @@ if (vh > vw) {
         height: "70px",
         "border-radius": "50%",
         x: 0,
-        y: 0
+        y: 0,
       },
       "-=1"
     ).to(
       pDot,
       0.5,
       {
-        "background-position": "center"
+        "background-position": "center",
       },
       "-=0.5"
     );
@@ -475,7 +476,7 @@ if (vh > vw) {
         setTimeout(() => {
           clickTitle.text("Think");
         }, 300);
-        setTimeout(function() {
+        setTimeout(function () {
           pDot.css(
             "background-image",
             "url('../img/process-icons-mobile/think.svg')"
@@ -487,7 +488,7 @@ if (vh > vw) {
         setTimeout(() => {
           clickTitle.text("Create");
         }, 300);
-        setTimeout(function() {
+        setTimeout(function () {
           pDot.css(
             "background-image",
             "url('../img/process-icons-mobile/create.svg')"
@@ -499,7 +500,7 @@ if (vh > vw) {
         setTimeout(() => {
           clickTitle.text("Iterate");
         }, 300);
-        setTimeout(function() {
+        setTimeout(function () {
           pDot.css(
             "background-image",
             "url('../img/process-icons-mobile/iterate.svg')"
@@ -511,7 +512,7 @@ if (vh > vw) {
         setTimeout(() => {
           clickTitle.text("Develop");
         }, 300);
-        setTimeout(function() {
+        setTimeout(function () {
           pDot.css(
             "background-image",
             "url('../img/process-icons-mobile/develop.svg')"
@@ -523,7 +524,7 @@ if (vh > vw) {
         setTimeout(() => {
           clickTitle.text("Deliver");
         }, 300);
-        setTimeout(function() {
+        setTimeout(function () {
           pDot.css(
             "background-image",
             "url('../img/process-icons-mobile/deliver.svg')"
@@ -537,7 +538,7 @@ if (vh > vw) {
 
     tl.set(pDot, {
       position: "static",
-      "background-color": "transparent"
+      "background-color": "transparent",
     });
 
     // pDot.hover(
@@ -559,15 +560,15 @@ if (vh > vw) {
       "font-size": "1.25rem",
       "font-family": "Futura",
       opacity: 1,
-      "z-index": "0"
+      "z-index": "0",
     });
 
     tl.set(pself, {
-      "z-index": 0
+      "z-index": 0,
     });
 
     tl.set(pContainer, {
-      "pointer-events": "all"
+      "pointer-events": "all",
     });
 
     animS4.add(tween);

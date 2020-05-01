@@ -25,12 +25,14 @@ var controller = new ScrollMagic.Controller();
 var animFooter = new TimelineMax();
 
 tl.set(portImages, {
+  opacity: 0,
   y: 70,
 });
 tl.set(portImagesAll, {
   opacity: 0,
   y: 70,
 });
+
 if (vh > vw) {
   animImages = function () {
     if (imgLoaded && !animatedImages) {
