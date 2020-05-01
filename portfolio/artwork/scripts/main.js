@@ -3,7 +3,7 @@ particlesJS.load("particles2-js", "../../../res/particlesjs-config.json");
 particlesJS.load("particles-js", "../../../res/stars.json");
 
 new window.JustValidate(".s6 .form", {
-  colorWrong: "#FFA602"
+  colorWrong: "#FFA602",
   // colorWrong: "#d0ff00"
 });
 
@@ -25,21 +25,21 @@ var controller = new ScrollMagic.Controller();
 var animFooter = new TimelineMax();
 
 tl.set(portImages, {
-  y: 70
+  y: 70,
 });
 tl.set(portImagesAll, {
   opacity: 0,
-  y: 70
+  y: 70,
 });
 if (vh > vw) {
-  animImages = function() {
+  animImages = function () {
     if (imgLoaded && !animatedImages) {
       tl.staggerTo(
         portImages,
         0.8,
         {
           opacity: 1,
-          y: 0
+          y: 0,
         },
         0.35
       );
@@ -50,8 +50,8 @@ if (vh > vw) {
     }
   };
 
-  checkImg = function() {
-    portImagesCheck.each(function() {
+  checkImg = function () {
+    portImagesCheck.each(function () {
       if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
         imgLoaded = true;
       } else {
@@ -71,75 +71,66 @@ if (vh > vw) {
   animFooter
     .from(footer1, 0.3, {
       y: "40",
-      opacity: "0"
+      opacity: "0",
     })
     .staggerFrom(
       footer2,
-      1,
+      0.75,
       {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       },
-      0.3,
-      0.25
+      0.25,
+      "-=0.05"
     )
     .staggerFrom(
       footer3,
-      0.6,
+      1,
       {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       },
-      0.3,
-      1.2
+      0.5,
+      0.3
     )
     .from(
       footer4,
       0.5,
       {
-        opacity: "0"
+        opacity: "0",
       },
-      2
+      "-=0.2"
     );
-  if (vh > 600) {
-    var footerScene = new ScrollMagic.Scene({
-      triggerElement: ".footer",
-      triggerHook: vh,
-      duration: "18%",
-      offset: "0"
-    }).setTween(animFooter);
-  } else {
-    var footerScene = new ScrollMagic.Scene({
-      triggerElement: ".footer",
-      triggerHook: vh,
-      duration: "25%",
-      offset: "10%"
-    }).setTween(animFooter);
-  }
+  var footerScene = new ScrollMagic.Scene({
+    triggerElement: ".footer",
+    triggerHook: vh,
+    offset: vh * 0.1,
+    reverse: false,
+  }).setTween(animFooter);
 
-  var update3 = setInterval(function() {
+  var update3 = setInterval(function () {
     if (animatedImages) {
       controller.addScene([
         image3.Scene,
         image4.Scene,
         image5.Scene,
-        image6.Scene
+        image6.Scene,
       ]);
     }
   }, 100);
 } else {
-  $(document).ready(function() {
+  $(document).ready(function () {
     $(window).scrollTop(0);
   });
   if (!imgLoaded) {
     $("html, body").css({
       overflow: "hidden",
       height: "100%",
-      "pointer-events": "none"
+      "pointer-events": "none",
     });
   }
 
-  animImages = function() {
+  animImages = function () {
     if (imgLoaded && !animatedImages) {
       // portImagesAll.css({ visibility: "visible" });
       tl.staggerTo(
@@ -147,7 +138,7 @@ if (vh > vw) {
         1,
         {
           opacity: 1,
-          y: 0
+          y: 0,
         },
         0.25
       );
@@ -156,14 +147,14 @@ if (vh > vw) {
         $("html, body").css({
           overflow: "auto",
           height: "auto",
-          "pointer-events": "all"
+          "pointer-events": "all",
         });
       }, 500);
     }
   };
 
-  checkImg = function() {
-    portImagesCheck.each(function() {
+  checkImg = function () {
+    portImagesCheck.each(function () {
       if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
         imgLoaded = true;
       } else {
@@ -178,14 +169,14 @@ if (vh > vw) {
   animFooter
     .from(footer1, 0.3, {
       y: "40",
-      opacity: "0"
+      opacity: "0",
     })
     .staggerFrom(
       footer2,
       0.6,
       {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       },
       0.2,
       0.25
@@ -195,7 +186,7 @@ if (vh > vw) {
       0.6,
       {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       },
       0.3,
       0.25
@@ -204,15 +195,15 @@ if (vh > vw) {
       footer4,
       0.5,
       {
-        opacity: "0"
+        opacity: "0",
       },
       0.7
     );
   var footerScene = new ScrollMagic.Scene({
     triggerElement: ".footer",
     triggerHook: vh,
-    offset: vh * 0.1,
-    reverse: true
+    offset: "10%",
+    reverse: false,
   }).setTween(animFooter);
 }
 
@@ -225,11 +216,11 @@ function ImageObject(i) {
     0.8,
     {
       opacity: 0,
-      y: 70
+      y: 70,
     },
     {
       opacity: 1,
-      y: 0
+      y: 0,
     }
   );
   // var x =
@@ -237,6 +228,6 @@ function ImageObject(i) {
   this.Scene = new ScrollMagic.Scene({
     triggerElement: `.images img:nth-child(${i - 1})`,
     offset: 300,
-    triggerHook: 1
+    triggerHook: 1,
   }).setTween(this.tl);
 }

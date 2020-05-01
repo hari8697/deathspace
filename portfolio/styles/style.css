@@ -610,7 +610,7 @@ select:-webkit-autofill:focus {
             justify-content: center;
     -ms-grid-columns: minmax(400px, 570px) minmax(400px, 570px);
         grid-template-columns: minmax(400px, 570px) minmax(400px, 570px);
-    grid-gap: 5px 20px;
+    grid-gap: 10px 20px;
   }
   .portfolio--item {
     margin-bottom: 0;

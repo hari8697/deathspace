@@ -22,7 +22,7 @@ let animatedImages = false;
 
 particlesJS.load("particles-js", "../res/stars.json");
 
-$(document).ready(function() {
+$(document).ready(function () {
   var controller = new ScrollMagic.Controller();
 
   if (vh > vw) {
@@ -30,22 +30,22 @@ $(document).ready(function() {
       $("html, body").css({
         overflow: "hidden",
         height: "100%",
-        "pointer-events": "none"
+        "pointer-events": "none",
       });
     }
 
-    animImages = function() {
+    animImages = function () {
       if (imgLoaded && !animatedImages) {
         tl.staggerFromTo(
           portItems,
           1,
           {
             y: 70,
-            opacity: 0
+            opacity: 0,
           },
           {
             y: 0,
-            opacity: 1
+            opacity: 1,
           },
           0.25
         );
@@ -55,11 +55,11 @@ $(document).ready(function() {
           1,
           {
             x: -20,
-            opacity: 0
+            opacity: 0,
           },
           {
             x: 0,
-            opacity: 1
+            opacity: 1,
           },
           0.35,
           0.75
@@ -69,14 +69,14 @@ $(document).ready(function() {
           $("html, body").css({
             overflow: "auto",
             height: "auto",
-            "pointer-events": "all"
+            "pointer-events": "all",
           });
-        }, 1800);
+        }, 600);
       }
     };
 
-    checkImg = function() {
-      portImages.each(function() {
+    checkImg = function () {
+      portImages.each(function () {
         if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
           imgLoaded = true;
         } else {
@@ -98,11 +98,6 @@ $(document).ready(function() {
     //   opacity: 0
     // });
 
-    tl.set(portItemsAll, {
-      opacity: 0,
-      y: 70
-    });
-
     var imageTl = new TimelineMax();
     var imageTl2 = new TimelineMax();
     var hoverbool = false;
@@ -114,26 +109,30 @@ $(document).ready(function() {
     // });
 
     animatedImages = false;
+    imageTl.set(portItemsAll, {
+      opacity: 0,
+      y: 70,
+    });
 
     if (!imgLoaded) {
       $("html, body").css({
         overflow: "hidden",
         height: "100%",
-        "pointer-events": "none"
+        "pointer-events": "none",
       });
     }
 
     // imageTl2.set(portItemsAll, {
     //   opacity: 0
     // });
-    animImages = function() {
+    animImages = function () {
       if (imgLoaded && !animatedImages) {
         imageTl2.staggerTo(
           portItemsAll,
           0.8,
           {
             opacity: 1,
-            y: 0
+            y: 0,
           },
           0.1
         );
@@ -144,14 +143,14 @@ $(document).ready(function() {
           $("html, body").css({
             overflow: "auto",
             height: "auto",
-            "pointer-events": "all"
+            "pointer-events": "all",
           });
-        }, 1000);
+        }, 600);
       }
     };
 
-    checkImg = function() {
-      portItemsAll.each(function() {
+    checkImg = function () {
+      portItemsAll.each(function () {
         if ($(this)[0].complete && $(this)[0].naturalHeight !== 0) {
           imgLoaded = true;
         } else {
@@ -163,7 +162,7 @@ $(document).ready(function() {
     var update = setInterval(animImages, 200);
     var update2 = setInterval(checkImg, 100);
 
-    portItemsAll.mouseenter(function() {
+    portItemsAll.mouseenter(function () {
       if (imgLoaded && animatedImages && hoverbool) {
         imageTl.clear();
         imageTl.progress(0);
@@ -173,7 +172,7 @@ $(document).ready(function() {
 
         imageTl.to(self, 0.2, {
           opacity: 1,
-          ease: Power1.easeInOut
+          ease: Power1.easeInOut,
         });
 
         imageTl.staggerFromTo(
@@ -181,11 +180,11 @@ $(document).ready(function() {
           0.35,
           {
             x: -20,
-            opacity: 0
+            opacity: 0,
           },
           {
             x: 0,
-            opacity: 1
+            opacity: 1,
           },
           0.15,
           0
@@ -193,7 +192,7 @@ $(document).ready(function() {
       }
     });
 
-    portItemsAll.mouseleave(function() {
+    portItemsAll.mouseleave(function () {
       let self = $(this).parent();
 
       imageTl.reverse();
@@ -210,58 +209,58 @@ $(document).ready(function() {
 
   var animFooter = new TimelineMax();
 
-  if (vh < vw) {
+  if (vh > vw) {
     animFooter
       .from(footer1, 0.3, {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       })
       .staggerFrom(
         footer2,
-        0.6,
+        0.75,
         {
           y: "40",
-          opacity: "0"
+          opacity: "0",
         },
-        0.2,
-        0.25
+        0.25,
+        "-=0.05"
       )
       .staggerFrom(
         footer3,
-        0.6,
+        1,
         {
           y: "40",
-          opacity: "0"
+          opacity: "0",
         },
-        0.3,
-        0.25
+        0.5,
+        0.3
       )
       .from(
         footer4,
         0.5,
         {
-          opacity: "0"
+          opacity: "0",
         },
-        0.7
+        "-=0.2"
       );
     var footerScene = new ScrollMagic.Scene({
       triggerElement: ".footer",
       triggerHook: vh,
       offset: vh * 0.1,
-      reverse: false
+      reverse: false,
     }).setTween(animFooter);
   } else {
     animFooter
       .from(footer1, 0.3, {
         y: "40",
-        opacity: "0"
+        opacity: "0",
       })
       .staggerFrom(
         footer2,
         0.6,
         {
           y: "40",
-          opacity: "0"
+          opacity: "0",
         },
         0.2,
         0.25
@@ -271,7 +270,7 @@ $(document).ready(function() {
         0.6,
         {
           y: "40",
-          opacity: "0"
+          opacity: "0",
         },
         0.3,
         0.25
@@ -280,7 +279,7 @@ $(document).ready(function() {
         footer4,
         0.5,
         {
-          opacity: "0"
+          opacity: "0",
         },
         0.7
       );
@@ -288,20 +287,20 @@ $(document).ready(function() {
       triggerElement: ".footer",
       triggerHook: vh,
       offset: "10%",
-      reverse: false
+      reverse: false,
     }).setTween(animFooter);
   }
 
   var titleAnim = new TimelineMax();
   titleAnim.to(title, 5, {
     ease: Power4.easeOut,
-    y: "520"
+    y: "520",
   });
 
   var titleScene = new ScrollMagic.Scene({
     triggerElement: "body" - 20,
     triggerHook: "0",
-    duration: vh
+    duration: vh,
   }).setTween(titleAnim);
   controller.addScene([titleScene, footerScene]);
 });
@@ -314,11 +313,11 @@ function ImageObject(i) {
       0.8,
       {
         opacity: 0,
-        y: 70
+        y: 70,
       },
       {
         opacity: 1,
-        y: 0
+        y: 0,
       }
     )
     .fromTo(
@@ -326,15 +325,15 @@ function ImageObject(i) {
       0.8,
       {
         opacity: 0,
-        x: -20
+        x: -20,
       },
       {
         opacity: 1,
-        x: 0
+        x: 0,
       }
     );
   this.Scene = new ScrollMagic.Scene({
     triggerElement: `.portfolio--item:nth-child(${i})`,
-    triggerHook: 1
+    triggerHook: 1,
   }).setTween(this.tl);
 }

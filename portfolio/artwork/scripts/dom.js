@@ -24,7 +24,12 @@ var h4 = $(".text-wrapper h4");
 var p = $(".text-wrapper p");
 
 if (x == 1) {
-  imagesPanel.css("margin-bottom", "30px");
+  setImages(2);
+}
+if (x == 2) {
+  if (vh < vw) {
+    imagesPanel.css("margin-bottom", "130px");
+  }
   h1.text("Nike Case Study");
   h3.text("Landing Page");
   h4.text("2019");
@@ -36,24 +41,84 @@ if (x == 1) {
   setEmpty(i6, k6);
 
   imagesPanel.css({
-    "grid-template-rows": "repeat(1, minmax(240px, 25vw))",
-    "grid-template-columns": "minmax(300px, 470px) minmax(500px, 770px)"
+    "grid-template-rows": "repeat(1, minmax(240px, 26vw))",
+    "grid-template-columns": "minmax(300px, 450px) minmax(500px, 800px)",
   });
 }
-if (x == 2) {
-  setImages(2);
-}
 if (x == 3) {
+  if (vh < vw) {
+    imagesPanel.css("margin-bottom", "130px");
+  }
+  h1.text("McLaren P1");
+  h3.text("Landing Page");
+  h4.text("2020");
   setImages(3);
+  setEmpty(i3, k3);
+  setEmpty(i4, k4);
+  setEmpty(i5, k5);
+  setEmpty(i6, k6);
+  imagesPanel.css({
+    // "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
+    // "grid-template-columns": "minmax(500px, 770px)"
+    "grid-template-rows": "repeat(1, minmax(240px, 26vw))",
+    "grid-template-columns": "minmax(300px, 450px) minmax(500px, 900px)",
+  });
 }
 if (x == 4) {
-  setImages(4);
+  setImagespng(4);
+  setEmpty(i5, k5);
+  setEmpty(i6, k6);
+  h1.text("Netflix Anime");
+  h3.text("Landing Page");
+  h4.text("2020");
+  imagesPanel.css({
+    // "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
+    // "grid-template-columns": "minmax(500px, 770px)"
+    "grid-template-rows": "repeat(2, minmax(240px, 20vw))",
+    "grid-template-columns": "minmax(250px, 350px) minmax(300px, 600px)",
+  });
 }
 if (x == 5) {
-  setImages(5);
+  setImagespng(5);
+  setEmpty(i3, k3);
+  setEmpty(i4, k4);
+  setEmpty(i5, k5);
+  setEmpty(i6, k6);
+  h1.text("Jellyy Diver's Club");
+  h3.text("Landing Page");
+  h4.text("2020");
+  imagesPanel.css({
+    // "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
+    // "grid-template-columns": "minmax(500px, 770px)"
+    "grid-template-rows": "300px 500px",
+    "grid-template-columns": "300px 500px",
+  });
+  i1.css({ "grid-row": "1/2", "grid-column": "1/2", "margin-bottom": 0 });
+  i2.css({
+    "grid-row": "1/3",
+    "grid-column": "2/3",
+    height: "100%",
+    "margin-bottom": 0,
+  });
 }
 if (x == 6) {
-  setImages(6);
+  setImagespng(6);
+  if (vh < vw) {
+    imagesPanel.css("margin-bottom", "130px");
+  }
+  h1.text("Switzerland Travel");
+  h3.text("Landing Page");
+  h4.text("2020");
+  setEmpty(i3, k3);
+  setEmpty(i4, k4);
+  setEmpty(i5, k5);
+  setEmpty(i6, k6);
+  imagesPanel.css({
+    // "grid-template-rows": "repeat(2, minmax(240px, 25vw))",
+    // "grid-template-columns": "minmax(500px, 770px)"
+    "grid-template-rows": "repeat(1, minmax(240px, 26vw))",
+    "grid-template-columns": "minmax(300px, 450px) minmax(500px, 850px)",
+  });
 }
 
 function setImages(i) {
@@ -69,6 +134,21 @@ function setImages(i) {
   j4.attr("src", `./img/${i}/4.jpg`);
   j5.attr("src", `./img/${i}/5.jpg`);
   j6.attr("src", `./img/${i}/6.jpg`);
+}
+
+function setImagespng(i) {
+  i1.attr("src", `./img/${i}/1.png`);
+  i2.attr("src", `./img/${i}/2.png`);
+  i3.attr("src", `./img/${i}/3.png`);
+  i4.attr("src", `./img/${i}/4.png`);
+  i5.attr("src", `./img/${i}/5.png`);
+  i6.attr("src", `./img/${i}/6.png`);
+  j1.attr("src", `./img/${i}/1.png`);
+  j2.attr("src", `./img/${i}/2.png`);
+  j3.attr("src", `./img/${i}/3.png`);
+  j4.attr("src", `./img/${i}/4.png`);
+  j5.attr("src", `./img/${i}/5.png`);
+  j6.attr("src", `./img/${i}/6.png`);
 }
 function setEmpty(i, k) {
   i.attr("src", "");
