@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: black;
+  background: #0d0020;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -682,6 +682,9 @@ select:-webkit-autofill:focus {
     color: #fff;
     opacity: 0.4;
     margin-top: 0;
+  }
+  .text-wrapper p {
+    width: 69%;
   }
   .portfolio {
     display: -webkit-box;

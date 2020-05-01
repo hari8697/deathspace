@@ -13,6 +13,9 @@ var portImagesCheck = $(".images img:nth-child(1)");
 var portImages = $(".images img:nth-child(-n+2)");
 var portImagesAll = $(".images img");
 var portImagesUnloaded = $(".images img:nth-child(n+3)");
+var s6text = $(".s6 .text *");
+var s6form = $(".s6 .form .input, .s6 .form textarea");
+var s6formbtn = $(".s6 .submit-btn");
 var footer1 = $(".footer .follow p");
 var footer2 = $(".footer .social--links");
 var footer3 = $(".footer .email *");
@@ -23,6 +26,7 @@ var tl = new TimelineMax();
 
 var controller = new ScrollMagic.Controller();
 var animFooter = new TimelineMax();
+var anims6 = new TimelineMax();
 
 tl.set(portImages, {
   opacity: 0,
@@ -64,7 +68,43 @@ if (vh > vw) {
 
   var update = setInterval(animImages, 200);
   var update2 = setInterval(checkImg, 100);
-
+  anims6
+    .staggerFrom(
+      s6text,
+      2,
+      {
+        y: "50",
+        opacity: "0",
+      },
+      0.2,
+      0.2
+    )
+    .staggerFrom(
+      s6form,
+      2,
+      {
+        y: "100",
+        opacity: "0",
+      },
+      0.2,
+      0.2
+    )
+    .from(
+      s6formbtn,
+      1,
+      {
+        ease: Power2.easeOut,
+        y: "30",
+        opacity: "0",
+      },
+      1.6
+    );
+  var s6Scene = new ScrollMagic.Scene({
+    triggerElement: ".s6",
+    triggerHook: "1",
+    offset: vh * 0.3,
+    duration: vh * 0.6,
+  }).setTween(anims6);
   var image3 = new ImageObject(3);
   var image4 = new ImageObject(4);
   var image5 = new ImageObject(5);
@@ -168,6 +208,43 @@ if (vh > vw) {
   var update = setInterval(animImages, 200);
   var update2 = setInterval(checkImg, 100);
 
+  anims6
+    .staggerFrom(
+      s6text,
+      1.2,
+      {
+        y: "50",
+        opacity: "0",
+      },
+      0.2
+    )
+    .staggerFrom(
+      s6form,
+      1,
+      {
+        y: "100",
+        opacity: "0",
+      },
+      0.2,
+      0.2
+    )
+    .from(
+      s6formbtn,
+      0.25,
+      {
+        ease: Expo.easeOut,
+        x: -20,
+        opacity: "0",
+      },
+      "-=.65"
+    );
+  var s6Scene = new ScrollMagic.Scene({
+    triggerElement: ".s6",
+    triggerHook: 1,
+    offset: vh * 0.5,
+    reverse: false,
+  }).setTween(anims6);
+
   animFooter
     .from(footer1, 0.3, {
       y: "40",
@@ -209,7 +286,7 @@ if (vh > vw) {
   }).setTween(animFooter);
 }
 
-controller.addScene([footerScene]);
+controller.addScene([footerScene, s6Scene]);
 
 function ImageObject(i) {
   this.tl = new TimelineMax();
@@ -226,7 +303,6 @@ function ImageObject(i) {
     }
   );
   // var x =
-  console.log($(`.images img:nth-child(${i - 1})`).height());
   this.Scene = new ScrollMagic.Scene({
     triggerElement: `.images img:nth-child(${i - 1})`,
     offset: 300,
