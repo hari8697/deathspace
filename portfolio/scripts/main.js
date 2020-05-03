@@ -37,13 +37,13 @@ $(document).ready(function () {
 
   if (vh > vw) {
     if (!imgLoaded) {
+      imgLoaded = false;
       $("html, body").css({
         overflow: "hidden",
         height: "100%",
         "pointer-events": "none",
       });
     }
-
     animImages = function () {
       if (imgLoaded && !animatedImages) {
         tl.staggerTo(
@@ -77,7 +77,7 @@ $(document).ready(function () {
             height: "auto",
             "pointer-events": "all",
           });
-        }, 600);
+        }, 1800);
       }
     };
 
