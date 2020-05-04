@@ -134,33 +134,33 @@ if (x == 6) {
 }
 
 function setImages(i) {
-  i1.attr("src", `./img/${i}/1.jpg`);
-  i2.attr("src", `./img/${i}/2.jpg`);
-  i3.attr("src", `./img/${i}/3.jpg`);
-  i4.attr("src", `./img/${i}/4.jpg`);
-  i5.attr("src", `./img/${i}/5.jpg`);
-  i6.attr("src", `./img/${i}/6.jpg`);
-  j1.attr("src", `./img/${i}/1.jpg`);
-  j2.attr("src", `./img/${i}/2.jpg`);
-  j3.attr("src", `./img/${i}/3.jpg`);
-  j4.attr("src", `./img/${i}/4.jpg`);
-  j5.attr("src", `./img/${i}/5.jpg`);
-  j6.attr("src", `./img/${i}/6.jpg`);
+  i1.attr("src", `./img/${i}/minified/1.jpg`);
+  i2.attr("src", `./img/${i}/minified/2.jpg`);
+  i3.attr("src", `./img/${i}/minified/3.jpg`);
+  i4.attr("src", `./img/${i}/minified/4.jpg`);
+  i5.attr("src", `./img/${i}/minified/5.jpg`);
+  i6.attr("src", `./img/${i}/minified/6.jpg`);
+  j1.attr("src", `./img/${i}/minified/1.jpg`);
+  j2.attr("src", `./img/${i}/minified/2.jpg`);
+  j3.attr("src", `./img/${i}/minified/3.jpg`);
+  j4.attr("src", `./img/${i}/minified/4.jpg`);
+  j5.attr("src", `./img/${i}/minified/5.jpg`);
+  j6.attr("src", `./img/${i}/minified/6.jpg`);
 }
 
 function setImagespng(i) {
-  i1.attr("src", `./img/${i}/1.png`);
-  i2.attr("src", `./img/${i}/2.png`);
-  i3.attr("src", `./img/${i}/3.png`);
-  i4.attr("src", `./img/${i}/4.png`);
-  i5.attr("src", `./img/${i}/5.png`);
-  i6.attr("src", `./img/${i}/6.png`);
-  j1.attr("src", `./img/${i}/1.png`);
-  j2.attr("src", `./img/${i}/2.png`);
-  j3.attr("src", `./img/${i}/3.png`);
-  j4.attr("src", `./img/${i}/4.png`);
-  j5.attr("src", `./img/${i}/5.png`);
-  j6.attr("src", `./img/${i}/6.png`);
+  i1.attr("src", `./img/${i}/minified/1.png`);
+  i2.attr("src", `./img/${i}/minified/2.png`);
+  i3.attr("src", `./img/${i}/minified/3.png`);
+  i4.attr("src", `./img/${i}/minified/4.png`);
+  i5.attr("src", `./img/${i}/minified/5.png`);
+  i6.attr("src", `./img/${i}/minified/6.png`);
+  j1.attr("src", `./img/${i}/minified/1.png`);
+  j2.attr("src", `./img/${i}/minified/2.png`);
+  j3.attr("src", `./img/${i}/minified/3.png`);
+  j4.attr("src", `./img/${i}/minified/4.png`);
+  j5.attr("src", `./img/${i}/minified/5.png`);
+  j6.attr("src", `./img/${i}/minified/6.png`);
 }
 
 function setEmpty(i, k) {
