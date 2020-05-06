@@ -145,14 +145,17 @@ $(document).ready(function () {
         );
         hoverbool = true;
 
-        animatedImages = true;
+        setTimeout(() => {
+          animatedImages = true;
+        }, 900);
+
         setTimeout(() => {
           $("html, body").css({
             overflow: "auto",
             height: "auto",
             "pointer-events": "all",
           });
-        }, 1200);
+        }, 600);
       }
     };
 

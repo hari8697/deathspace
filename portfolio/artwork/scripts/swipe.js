@@ -7,14 +7,14 @@ var mySwiper = new Swiper(".swiper-container", {
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
-    dynamicBullets: true
+    dynamicBullets: true,
   },
 
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
+    prevEl: ".swiper-button-prev",
+  },
 
   // And if we need scrollbar
   // scrollbar: {
@@ -28,15 +28,15 @@ const ports = $(".images img");
 const tl3 = new TimelineMax();
 
 tl3.set(po, {
-  opacity: 0
+  opacity: 0,
 });
 
-ports.on("click", function() {
+ports.on("click", function () {
   mySwiper.updateSlides();
   $("html, body").css({
     overflow: "hidden",
     height: "92vh",
-    "pointer-events": "none"
+    "pointer-events": "none",
   });
   var $this = $(this);
   if ($this.index() === 0 || $this.is(":nth-child(1)")) {
@@ -63,21 +63,37 @@ ports.on("click", function() {
     mySwiper.activeIndex = 5;
     mySwiper.update();
   }
+  if ($this.index() === 6 || $this.is(":nth-child(7)")) {
+    mySwiper.activeIndex = 6;
+    mySwiper.update();
+  }
+  if ($this.index() === 7 || $this.is(":nth-child(8)")) {
+    mySwiper.activeIndex = 7;
+    mySwiper.update();
+  }
+  if ($this.index() === 8 || $this.is(":nth-child(9)")) {
+    mySwiper.activeIndex = 8;
+    mySwiper.update();
+  }
+  if ($this.index() === 9 || $this.is(":nth-child(10)")) {
+    mySwiper.activeIndex = 9;
+    mySwiper.update();
+  }
 
   tl3.to(po, 0.5, {
     opacity: 1,
-    "pointer-events": "all"
+    "pointer-events": "all",
   });
 });
 
-close.on("click", function() {
+close.on("click", function () {
   $("html, body").css({
     overflow: "auto",
     height: "auto",
-    "pointer-events": "all"
+    "pointer-events": "all",
   });
   tl3.to(po, 0.5, {
     opacity: 0,
-    "pointer-events": "none"
+    "pointer-events": "none",
   });
 });

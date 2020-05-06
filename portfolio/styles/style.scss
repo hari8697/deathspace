@@ -212,6 +212,7 @@ h1 {
       margin-bottom: 0;
       opacity: 0.8;
       &--image {
+        opacity: 0;
         &:hover {
           cursor: pointer;
         }

@@ -109,6 +109,10 @@ if (vh > vw) {
   var image4 = new ImageObject(4);
   var image5 = new ImageObject(5);
   var image6 = new ImageObject(6);
+  var image7 = new ImageObject(7);
+  var image8 = new ImageObject(8);
+  var image9 = new ImageObject(9);
+  var image10 = new ImageObject(10);
 
   animFooter
     .from(footer1, 0.3, {
@@ -157,6 +161,10 @@ if (vh > vw) {
         image4.Scene,
         image5.Scene,
         image6.Scene,
+        image7.Scene,
+        image8.Scene,
+        image9.Scene,
+        image10.Scene,
       ]);
     }
   }, 100);
@@ -241,7 +249,7 @@ if (vh > vw) {
   var s6Scene = new ScrollMagic.Scene({
     triggerElement: ".s6",
     triggerHook: 1,
-    offset: vh * 0.5,
+    offset: vh * 0.4,
     reverse: false,
   }).setTween(anims6);
 
