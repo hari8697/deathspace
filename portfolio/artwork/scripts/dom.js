@@ -111,7 +111,7 @@ if (x == 4) {
   h3.text("Landing Page");
   h4.text("2020");
   p.html(
-    ` Not a weeb, but I do watch anime occasionally. I was wondering what the anime version of netflix would look like. Definitely needs more work. 
+    ` I watch anime occasionally, and was wondering what the anime version of netflix would look like. This concept definitely needs more work. 
     Oh, and if you're wondering, Your Name is a wonderful movie. `
   );
   imagesPanel.css({

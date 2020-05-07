@@ -11,7 +11,7 @@
 }
 
 .s6 {
-  height: 90vh;
+  height: 95vh;
   background: linear-gradient(
     69.73deg,
     #ff0023 0.71%,
@@ -49,11 +49,12 @@
     font-family: "Futura", sans-serif;
     max-width: 250px;
     text-align: center;
-    font-size: 1rem;
+    // font-size: 12px;
+    // font-size: 1rem;
   }
 
   .text {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
     text-align: right;
     z-index: 1;
 
@@ -199,6 +200,11 @@ select:-webkit-autofill:focus {
       margin: 0;
       margin-left: auto;
     }
+
+    .text {
+      margin-top: 2rem;
+    }
+
     .form {
       width: 310px;
       margin-left: 3.75rem;

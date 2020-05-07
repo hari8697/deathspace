@@ -131,7 +131,8 @@ h1 {
       margin-top: 6px;
       align-self: flex-end;
       display: flex;
-      a {
+      p {
+        pointer-events: none;
         text-decoration: none;
         color: #616161;
       }
@@ -190,7 +191,9 @@ h1 {
     // background: rgb(136, 4, 148);
   }
   .portfolio {
+    pointer-events: none;
     h1 {
+      pointer-events: all;
       width: 75%;
       max-width: 1280px;
       opacity: 0.4;
@@ -209,6 +212,7 @@ h1 {
     }
 
     &--item {
+      pointer-events: all;
       margin-bottom: 0;
       opacity: 0.8;
       &--image {
@@ -229,7 +233,7 @@ h1 {
     .text-wrapper {
       opacity: 0;
       margin-top: 9px;
-      a {
+      p {
         color: #fff;
         opacity: 0.6;
       }

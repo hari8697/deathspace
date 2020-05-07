@@ -205,7 +205,7 @@ $(document).ready(function () {
       })
       .from(
         s2Textp,
-        2,
+        3,
         {
           opacity: "0",
           ease: Expo.easeOut,
@@ -234,8 +234,8 @@ $(document).ready(function () {
     var s2Scene = new ScrollMagic.Scene({
       triggerElement: ".s2",
       triggerHook: 0,
-      offset: -vh * 0.5,
-      duration: vh,
+      offset: -vh * 0.6,
+      duration: vh * 1.2,
     }).setTween(animS2);
   } else {
     var s2Scene = new ScrollMagic.Scene({
@@ -252,7 +252,7 @@ $(document).ready(function () {
     animS3
       .to(pimg1, 2, {
         ease: Expo.easeInOut,
-        y: "-220%",
+        y: "-200%",
       })
       .to(pimg2, 2, {
         ease: Expo.easeInOut,

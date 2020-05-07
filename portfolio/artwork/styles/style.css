@@ -268,7 +268,7 @@ html {
 }
 
 .s6 {
-  height: 90vh;
+  height: 95vh;
   background: linear-gradient(69.73deg, #ff0023 0.71%, #ab00e7 40.37%, #0056ff 79.06%, #00ffb1 116.07%);
   background-size: 5028px;
   -webkit-animation: bg-animation 60s infinite;
@@ -309,11 +309,10 @@ html {
   font-family: "Futura", sans-serif;
   max-width: 250px;
   text-align: center;
-  font-size: 1rem;
 }
 
 .s6 .text {
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   text-align: right;
   z-index: 1;
 }
@@ -513,6 +512,9 @@ select:-webkit-autofill:focus {
     font-size: 1rem;
     margin: 0;
     margin-left: auto;
+  }
+  .s6 .text {
+    margin-top: 2rem;
   }
   .s6 .form {
     width: 310px;
