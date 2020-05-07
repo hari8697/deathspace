@@ -9,6 +9,7 @@
     width: 80%;
     max-width: 235px;
     margin: 0 auto;
+    pointer-events: all;
   }
 
   h3 {
@@ -17,10 +18,12 @@
     font-size: 1.25rem;
     margin-top: 1.75rem;
     font-weight: 400;
+    pointer-events: all;
   }
 
   ul {
     list-style: none;
+    pointer-events: all;
   }
 
   .services-content {
@@ -53,6 +56,7 @@
   .s5 {
     background: none;
     padding-bottom: 120px;
+    pointer-events: none;
 
     h1 {
       font-size: 40px;

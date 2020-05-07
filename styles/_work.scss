@@ -124,6 +124,9 @@
   .s3 .text-wrapper {
     width: 50%;
     background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .text-container {
       // margin: 0;
