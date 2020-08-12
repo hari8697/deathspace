@@ -24,3 +24,7 @@ $("#art5").click(function () {
   localStorage.setItem("key", "6");
   window.location.href = "./artwork";
 });
+$("#art6").click(function () {
+  localStorage.setItem("key", "7");
+  window.location.href = "./artwork";
+});
